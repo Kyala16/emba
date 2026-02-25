@@ -1,0 +1,26 @@
+# EMBA - SBOM Native Profile (NO Docker, NO QEMU)
+# Обязательно отключаем Docker и эмуляцию
+
+export USE_DOCKER=0
+export IN_DOCKER=0
+export QEMULATION=0
+
+export FORMAT_LOG=1
+export THREADED=1
+export SHORT_PATH=1
+export HTML=1
+
+export SBOM_MINIMAL=0
+export SBOM_UNTRACKED_FILES=1
+export DISABLE_DEEP=1
+export DEEP_EXT_DEPTH=1
+export SBOM_MAX_FILE_LOG=500
+
+# ТОЛЬКО необходимые модули для SBOM (БЕЗ S115/S116!)
+export SELECT_MODULES+=( "S06" "S08" "S09" "S24" "S25" "F14" "F15" )
+
+export VEX_METRICS=0
+export DISABLE_STATUS_BAR=0
+export SILENT=1
+export DISABLE_NOTIFICATIONS=1
+export DISABLE_DOTS=1

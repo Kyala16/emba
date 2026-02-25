@@ -55,7 +55,13 @@ binwalker_matryoshka() {
     mkdir -p "${lOUTPUT_DIR_BINWALK}"
   fi
 
-  timeout --preserve-status --signal SIGINT "${lTIMEOUT}" "${BINWALK_BIN[@]}" -v -e -c -M -d "${lOUTPUT_DIR_BINWALK}" "${lFIRMWARE_PATH}" | tee -a "${LOG_FILE}" || print_error "[-] WARNING: Binwalk returned with error state for ${lFIRMWARE_PATH}"
+  # Добавить проверку массива
+  if [[ -z "${BINWALK_BIN}" ]] || [[ "${#BINWALK_BIN[@]}" -eq 0 ]]; then
+    BINWALK_BIN=("binwalk")
+  fi
+
+# Исправленный вызов (убрать -v и -c, добавить --run-as=root)
+  timeout --preserve-status "${lTIMEOUT}" "${BINWALK_BIN[@]}" --run-as=root -e -M -d "${lOUTPUT_DIR_BINWALK}" "${lFIRMWARE_PATH}"
   print_ln
 }
 
