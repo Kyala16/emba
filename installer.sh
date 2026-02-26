@@ -445,7 +445,7 @@ if [[ "${CVE_SEARCH}" -ne 1 ]] || [[ "${DOCKER_SETUP}" -ne 1 ]] || [[ "${IN_DOCK
 
   #I05_emba_docker_image_dl
 
-  IP00_extractors
+  #IP00_extractors
 
   IP35_uefi_extraction
 

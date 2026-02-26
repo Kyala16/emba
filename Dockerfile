@@ -78,6 +78,32 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # =============================================================================
+# МОДУЛЬ: IP00_extractors
+# Устанавливает: python3-pip, patool, bsdiff4, payload_dumper, smcbmc,
+#                dji-firmware-tools, python3-pycryptodome, pycryptodome,
+#                liblzo2-dev, python-lzo, guestfs-tools, fsspec,
+#                buffalo-enc.c/lib/h, gcc, libc6-dev, mtd-utils
+# Для Docker нужны: patool, bsdiff4, pycryptodome, python-lzo,
+#                   fsspec, libc6-dev, mtd-utils
+# Исключено: smcbmc, dji-firmware-tools, buffalo-enc.c/lib/h
+# Причина: python3-pip, liblzo2-dev, gcc уже в I01_default_apps_host
+#          guestfs-tools уже в I01_default_apps
+#          smcbmc, dji-firmware-tools, buffalo специфичны для вендоров
+# =============================================================================
+RUN apt-get update && apt-get install -y \
+    patool \
+    libc6-dev \
+    mtd-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install \
+    bsdiff4 \
+    pycryptodome \
+    python-lzo \
+    fsspec \
+    && rm -rf /root/.cache/pip
+
+# =============================================================================
 # 2. СБОРКА JO 1.9 (вместо snap/apt)
 # =============================================================================
 RUN git clone https://github.com/jpmens/jo.git     /tmp/jo && \
