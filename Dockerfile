@@ -104,6 +104,15 @@ RUN pip3 install \
     && rm -rf /root/.cache/pip
 
 # =============================================================================
+# МОДУЛЬ: IP35_uefi_extraction
+# Устанавливает: UEFIExtract, unzip, uefi_firmware, biosutilities
+# Для Docker нужны: uefi_firmware, biosutilities
+# Исключено: UEFIExtract
+# Причина: unzip уже в секции "ИНСТРУМЕНТЫ АНАЛИЗА"
+#          UEFIExtract - бинарник, специфичен для UEFI анализа
+# =============================================================================
+
+# =============================================================================
 # 2. СБОРКА JO 1.9 (вместо snap/apt)
 # =============================================================================
 RUN git clone https://github.com/jpmens/jo.git     /tmp/jo && \
@@ -137,6 +146,7 @@ RUN pip3 install --upgrade pip && \
     packaging pefile pyelftools python-magic \
     unblob jefferson ubi_reader yara-python \
     stacs flare-capa cve-bin-tool \
+    uefi_firmware biosutilities \
     && rm -rf /root/.cache/pip
     
 RUN apt-get update && apt-get install -y uuid-runtime 

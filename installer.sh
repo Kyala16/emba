@@ -447,7 +447,7 @@ if [[ "${CVE_SEARCH}" -ne 1 ]] || [[ "${DOCKER_SETUP}" -ne 1 ]] || [[ "${IN_DOCK
 
   #IP00_extractors
 
-  IP35_uefi_extraction
+  #IP35_uefi_extraction
 
   IP61_unblob
 
