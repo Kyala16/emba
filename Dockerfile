@@ -3,12 +3,18 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Moscow
 ENV USE_DOCKER=0
-ENV IN_DOCKER=0
+ENV IN_DOCKER=1
 
 WORKDIR /emba
 
 # =============================================================================
-# 1. БАЗОВЫЕ ЗАВИСИМОСТИ
+# МОДУЛЬ: I01_default_apps_host
+# Устанавливает: jq, shellcheck, unzip, bc, coreutils, ncurses-bin, 
+#                libnotify-bin, inotify-tools, dbus-x11, git, net-tools, 
+#                curl, file, python3-pip, requests
+# Для Docker нужны: jq, unzip, bc, coreutils, git, curl, file, python3-pip
+# Исключено: shellcheck, ncurses-bin, libnotify-bin, inotify-tools, 
+#            dbus-x11, net-tools, requests
 # =============================================================================
 RUN apt-get update && apt-get install -y \
     git wget curl sudo \
@@ -30,7 +36,7 @@ RUN apt-get update && apt-get install -y \
 # =============================================================================
 # 2. СБОРКА JO 1.9 (вместо snap/apt)
 # =============================================================================
-RUN git clone https://github.com/jpmens/jo.git /tmp/jo && \
+RUN git clone https://github.com/jpmens/jo.git   /tmp/jo && \
     cd /tmp/jo && \
     git checkout tags/1.9 && \
     autoreconf -i  && \
