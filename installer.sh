@@ -26,7 +26,7 @@ ORIG_GROUP=$(groups "${ORIG_USER}" | cut -d: -f2 | awk '{print $1}')
 export DEBIAN_FRONTEND=noninteractive
 export INSTALL_APP_LIST=()
 export DOWNLOAD_FILE_LIST=()
-export INSTALLER_DIR="./installer"git reset --hard origin/main
+export INSTALLER_DIR="./installer"
 
 if [[ "${STRICT_MODE}" -eq 1 ]]; then
   export DEBUG_SCRIPT=0
@@ -118,7 +118,8 @@ while getopts CdDfFghlrsc: OPT ; do
       export FORCE=1
       export DOCKER_SETUP=0
       export CVE_SEARCH=0
-      echo -e "${GREEN}${BOLD}Forcing install - bypassing multiple checks${NC}"
+      export IN_DOCKER=1
+      echo -e "${GREEN}${BOLD}Install for Docker build (SBOM mode)${NC}"
       ;;
     F)
       export FULL=1
