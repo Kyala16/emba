@@ -441,7 +441,7 @@ if [[ "${CVE_SEARCH}" -ne 1 ]] || [[ "${DOCKER_SETUP}" -ne 1 ]] || [[ "${IN_DOCK
 
   #I01_default_apps
 
-  I13_disasm
+  #I13_disasm
 
   #I05_emba_docker_image_dl
 
