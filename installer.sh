@@ -435,6 +435,7 @@ if [[ "${WSL}" -eq 1 ]]; then
   sleep 3
   reset
 fi
+# Все что выше удалить в будущем так как wsl  использоваться не будет.
 
 if [[ "${CVE_SEARCH}" -ne 1 ]] || [[ "${DOCKER_SETUP}" -ne 1 ]] || [[ "${IN_DOCKER}" -eq 1 ]]; then
 
@@ -442,7 +443,7 @@ if [[ "${CVE_SEARCH}" -ne 1 ]] || [[ "${DOCKER_SETUP}" -ne 1 ]] || [[ "${IN_DOCK
 
   I13_disasm
 
-  I05_emba_docker_image_dl
+  #I05_emba_docker_image_dl
 
   IP00_extractors
 
