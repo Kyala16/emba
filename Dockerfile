@@ -62,6 +62,8 @@ RUN pip3 install --upgrade pip && \
     unblob jefferson ubi_reader yara-python \
     stacs flare-capa cve-bin-tool \
     && rm -rf /root/.cache/pip
+    
+RUN apt-get update && apt-get install -y uuid-runtime 
 
 # =============================================================================
 # 5. КОПИРОВАНИЕ ПРОЕКТА
