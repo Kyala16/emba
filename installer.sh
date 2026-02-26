@@ -439,7 +439,7 @@ fi
 
 if [[ "${CVE_SEARCH}" -ne 1 ]] || [[ "${DOCKER_SETUP}" -ne 1 ]] || [[ "${IN_DOCKER}" -eq 1 ]]; then
 
-  I01_default_apps
+  #I01_default_apps
 
   I13_disasm
 

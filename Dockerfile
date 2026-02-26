@@ -34,9 +34,53 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # =============================================================================
+# МОДУЛЬ: I01_default_apps
+# Устанавливает: file, jq, bc, make, tree, device-tree-compiler, qemu-user,
+#                qemu-user-static, libguestfs-tools, ent, tcllib, u-boot-tools,
+#                python3-bandit, john, john-data, curl, git, strace, rpm,
+#                python3-pip, requests, iputils-ping, colordiff, ssdeep, xdot,
+#                libimage-exiftool-perl, readpe, tidy, metasploit-framework
+# Для Docker нужны: bc, libguestfs-tools, u-boot-tools, rpm, colordiff, tidy
+# Исключено: qemu-user, qemu-user-static, tcllib, python3-bandit, john,
+#            john-data, strace, iputils-ping, ssdeep, xdot, readpe,
+#            metasploit-framework, device-tree-compiler
+# =============================================================================
+RUN apt-get update && apt-get install -y \
+    bc \
+    libguestfs-tools \
+    u-boot-tools \
+    rpm \
+    colordiff \
+    tidy \
+    && rm -rf /var/lib/apt/lists/*
+
+# =============================================================================
+# МОДУЛЬ: ID1_ubuntu_os
+# Устанавливает: notification-daemon, dbus, dbus-x11, linux-modules-extra
+# Для Docker нужны: (нет)
+# Исключено: notification-daemon, dbus, dbus-x11, linux-modules-extra
+# Причина: Уведомления и модули ядра не работают в контейнере
+# =============================================================================
+
+# =============================================================================
+# МОДУЛЬ: I13_disasm
+# Устанавливает: binutils-2.45, capa v9.2.1, texinfo, git, wget, gcc, make,
+#                build-essential, gawk, bison, debuginfod, python3,
+#                python-is-python3, libzip-dev, meson, radare2, r2dec
+# Для Docker нужны: python-is-python3
+# Исключено: texinfo, build-essential, bison, debuginfod, libzip-dev, meson,
+#            radare2, r2dec
+# Причина: binutils, git, wget, gcc, make, gawk, python3 уже в I01_default_apps_host
+#          capa уже в pip (flare-capa), radare2 не нужен для SBOM
+# =============================================================================
+RUN apt-get update && apt-get install -y \
+    python-is-python3 \
+    && rm -rf /var/lib/apt/lists/*
+
+# =============================================================================
 # 2. СБОРКА JO 1.9 (вместо snap/apt)
 # =============================================================================
-RUN git clone https://github.com/jpmens/jo.git   /tmp/jo && \
+RUN git clone https://github.com/jpmens/jo.git     /tmp/jo && \
     cd /tmp/jo && \
     git checkout tags/1.9 && \
     autoreconf -i  && \
