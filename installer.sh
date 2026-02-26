@@ -418,12 +418,12 @@ if ! [[ -v DOCKER_COMPOSE[@] ]]; then
 fi
 
 # initial installation of the host environment:
-I01_default_apps_host
+#I01_default_apps_host disabled all "needed" dependencies added to dockerfile
 
 if [[ "${OTHER_OS}" -eq 1 ]]; then
   # UBUNTU
   if [[ "${UBUNTU_OS}" -eq 1 ]]; then
-    ID1_ubuntu_os
+    #ID1_ubuntu_os
   fi
 fi
 
