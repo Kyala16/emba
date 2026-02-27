@@ -113,6 +113,42 @@ RUN pip3 install \
 # =============================================================================
 
 # =============================================================================
+# МОДУЛЬ: IP61_unblob
+# Устанавливает: python3-pip, libpython3-dev, zlib1g, zlib1g-dev, liblzo2-2,
+#                liblzo2-dev, python3-lzo, e2fsprogs, gcc, git,
+#                android-sdk-libsparse-utils, lz4, lziprecover, lzop, 7zip,
+#                unar, xz-utils, libhyperscan5, libhyperscan-dev, zstd,
+#                python3-magic, pkg-config, pkgconf, erofs-utils, partclone,
+#                python3-lief, sasquatch, unblob (pip)
+# Для Docker нужны: libpython3-dev, zlib1g-dev, e2fsprogs,
+#                   android-sdk-libsparse-utils, lz4, lziprecover,
+#                   unar, xz-utils, libhyperscan5, libhyperscan-dev,
+#                   pkgconf, erofs-utils, partclone, python3-lief,
+#                   sasquatch, unblob (pip)
+# Исключено: (нет, все пакеты нужны для извлечения прошивок)
+# Причина: python3-pip, liblzo2-dev, gcc, git, pkg-config уже в I01_default_apps_host
+#          liblzo2-2, python3-lzo уже в IP00_extractors
+#          lzop, zstd, 7zip (p7zip-full) уже в секции "ИНСТРУМЕНТЫ АНАЛИЗА"
+#          python3-magic уже в pip (python-magic)
+# =============================================================================
+
+# =============================================================================
+# МОДУЛЬ: I05_emba_docker_image_dl
+# Устанавливает: Готовый Docker-образ EMBA
+# Для Docker нужны: (нет)
+# Исключено: Все
+# Причина: Собираем образ сами через Dockerfile
+# =============================================================================
+
+# =============================================================================
+# МОДУЛЬ: IF20_nvd_feed
+# Устанавливает: Базы уязвимостей NVD CVE (~2GB)
+# Для Docker нужны: (нет)
+# Исключено: Все
+# Причина: CVE-базы не нужны для генерации SBOM
+# =============================================================================
+
+# =============================================================================
 # 2. СБОРКА JO 1.9 (вместо snap/apt)
 # =============================================================================
 RUN git clone https://github.com/jpmens/jo.git     /tmp/jo && \
