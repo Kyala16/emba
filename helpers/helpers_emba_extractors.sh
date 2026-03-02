@@ -61,7 +61,8 @@ binwalker_matryoshka() {
   fi
 
 # Исправленный вызов (убрать -v и -c, добавить --run-as=root)
-  timeout --preserve-status "${lTIMEOUT}" "${BINWALK_BIN[@]}" --run-as=root -e -M -d "${lOUTPUT_DIR_BINWALK}" "${lFIRMWARE_PATH}"
+  print_output "Start ${BINWALK_BIN[@]}"
+  timeout --preserve-status "${lTIMEOUT}" "${BINWALK_BIN[@]}" -e --run-as=root -C "${lOUTPUT_DIR_BINWALK}" "${lFIRMWARE_PATH}"
   print_ln
 }
 

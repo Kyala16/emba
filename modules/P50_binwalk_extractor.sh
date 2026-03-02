@@ -63,19 +63,25 @@ P50_binwalk_extractor() {
   local lWAIT_PIDS_P99_ARR=()
 
   module_title "Binwalk binary firmware extractor"
+  print_output "TEST"
   pre_module_reporter "${FUNCNAME[0]}"
 
   local lLINUX_PATH_COUNTER_BINWALK=0
   local lOUTPUT_DIR_BINWALK="${LOG_DIR}"/firmware/binwalk_extracted
 
   if [[ -f "${lFW_PATH_BINWALK}" ]]; then
+    print_output "start matryoshka"
     binwalker_matryoshka "${lFW_PATH_BINWALK}" "${lOUTPUT_DIR_BINWALK}"
+    print_output "end matryoshka"
   fi
 
   print_ln
   if [[ -d "${lOUTPUT_DIR_BINWALK}" ]]; then
+    print_output "what..."
     remove_uprintable_paths "${lOUTPUT_DIR_BINWALK}"
+    print_output "whaaat..."
     mapfile -t lFILES_BINWALK_ARR < <(find "${lOUTPUT_DIR_BINWALK}" -type f)
+    print_output "${#lFILES_BINWALK_ARR[@]}"
   fi
 
   if [[ "${#lFILES_BINWALK_ARR[@]}" -gt 0 ]]; then
