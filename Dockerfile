@@ -45,7 +45,7 @@ RUN apt-get update && apt-get install -y \
 #            john-data, strace, iputils-ping, ssdeep, xdot, readpe,
 #            metasploit-framework, device-tree-compiler
 # =============================================================================
-RUN apt-get update && apt-get install -y \
+RUN apt-get install -y \
     bc \
     libguestfs-tools \
     u-boot-tools \
@@ -73,7 +73,7 @@ RUN apt-get update && apt-get install -y \
 # Причина: binutils, git, wget, gcc, make, gawk, python3 уже в I01_default_apps_host
 #          capa уже в pip (flare-capa), radare2 не нужен для SBOM
 # =============================================================================
-RUN apt-get update && apt-get install -y \
+RUN apt-get install -y \
     python-is-python3 \
     && rm -rf /var/lib/apt/lists/*
 
@@ -90,7 +90,7 @@ RUN apt-get update && apt-get install -y \
 #          guestfs-tools уже в I01_default_apps
 #          smcbmc, dji-firmware-tools, buffalo специфичны для вендоров
 # =============================================================================
-RUN apt-get update && apt-get install -y \
+RUN apt-get install -y \
     patool \
     libc6-dev \
     mtd-utils \
@@ -149,6 +149,38 @@ RUN pip3 install \
 # =============================================================================
 
 # =============================================================================
+# МОДУЛЬ: I24_25_kernel_tools (для S24/S25 в профиле default-sbom.emba)
+#
+# Устанавливает (apt): python3-pip, flex, pahole(dwarves), bison, pkg-config
+# Устанавливает (pip): python-lzo, vmlinux-to-elf (git+https)
+# Устанавливает (git): kconfig-hardened-check
+#
+# Для Docker нужны (apt): kmod
+# Для Docker нужны (pip): (опционально, см. ниже)
+#
+# Исключено (apt): python3-pip, flex, bison, pkg-config, dwarves(pahole)
+# Исключено (pip): python-lzo, vmlinux-to-elf
+# Исключено (git): kconfig-hardened-check
+#
+# Причина:
+#   • SBOM_MINIMAL=1 в профиле → отключается глубокий анализ ядра:
+#     - no readelf symbol counting
+#     - no kconfig-hardened-check
+#     - no linux-exploit-suggester
+#   • S24/S25 в SBOM-режиме извлекают только: версию ядра, архитектуру, .ko метаданные
+#   • Для этого достаточно: strings, grep, jq, file (уже в I01) + modinfo (из kmod)
+#   • vmlinux-to-elf нужен ТОЛЬКО если firmware содержит raw vmlinux (не ELF)
+#   • python-lzo нужен ТОЛЬКО если есть LZO-сжатые артефакты ядра (редко)
+#
+# КРИТИЧНО: modinfo (из пакета kmod) НЕ указан в installer, но используется в S25!
+# =============================================================================
+
+# --- apt: критичная зависимость, отсутствующая в installer ---
+RUN apt-get install -y \
+    kmod \
+    && rm -rf /var/lib/apt/lists/*
+
+# =============================================================================
 # 2. СБОРКА JO 1.9 (вместо snap/apt)
 # =============================================================================
 RUN git clone https://github.com/jpmens/jo.git     /tmp/jo && \
@@ -181,8 +213,10 @@ RUN pip3 install --upgrade pip && \
     requests urllib3 lxml jsonschema Jinja2 pyyaml \
     packaging pefile pyelftools python-magic \
     unblob jefferson ubi_reader yara-python \
-    stacs flare-capa cve-bin-tool \
+    stacs flare-capa \
     uefi_firmware biosutilities \
+    cyclonedx-python-lib \
+    cyclonedx-bom \
     && rm -rf /root/.cache/pip
     
 RUN apt-get update && apt-get install -y uuid-runtime 
