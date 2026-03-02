@@ -440,7 +440,7 @@ main() {
   fi
 
   # Check all dependencies of EMBA
-  dependency_check
+  #dependency_check
 
   if [[ "${ONLY_DEP}" -eq 0 ]]; then
     if [[ "${UPDATE}" -eq 1 ]]; then

@@ -3,7 +3,10 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Moscow
 ENV USE_DOCKER=0
-ENV IN_DOCKER=1
+ENV IN_DOCKER=0
+ENV EXT_DIR=/external
+
+RUN mkdir -p /external
 
 WORKDIR /emba
 
@@ -31,8 +34,6 @@ RUN apt-get update && apt-get install -y \
     graphviz file binutils procps \
     autoconf automake libtool make gcc \
     jq \
-    && rm -rf /var/lib/apt/lists/*
-
 # =============================================================================
 # МОДУЛЬ: I01_default_apps
 # Устанавливает: file, jq, bc, make, tree, device-tree-compiler, qemu-user,
@@ -45,23 +46,12 @@ RUN apt-get update && apt-get install -y \
 #            john-data, strace, iputils-ping, ssdeep, xdot, readpe,
 #            metasploit-framework, device-tree-compiler
 # =============================================================================
-RUN apt-get install -y \
     bc \
     libguestfs-tools \
     u-boot-tools \
     rpm \
     colordiff \
     tidy \
-    && rm -rf /var/lib/apt/lists/*
-
-# =============================================================================
-# МОДУЛЬ: ID1_ubuntu_os
-# Устанавливает: notification-daemon, dbus, dbus-x11, linux-modules-extra
-# Для Docker нужны: (нет)
-# Исключено: notification-daemon, dbus, dbus-x11, linux-modules-extra
-# Причина: Уведомления и модули ядра не работают в контейнере
-# =============================================================================
-
 # =============================================================================
 # МОДУЛЬ: I13_disasm
 # Устанавливает: binutils-2.45, capa v9.2.1, texinfo, git, wget, gcc, make,
@@ -73,9 +63,33 @@ RUN apt-get install -y \
 # Причина: binutils, git, wget, gcc, make, gawk, python3 уже в I01_default_apps_host
 #          capa уже в pip (flare-capa), radare2 не нужен для SBOM
 # =============================================================================
-RUN apt-get install -y \
-    python-is-python3 \
+    python-is-python3 \  
+# =============================================================================
+# МОДУЛЬ: IP00_extractors
+# Устанавливает: python3-pip, patool, bsdiff4, payload_dumper, smcbmc,
+#                dji-firmware-tools, python3-pycryptodome, pycryptodome,
+#                liblzo2-dev, python-lzo, guestfs-tools, fsspec,
+#                buffalo-enc.c/lib/h, gcc, libc6-dev, mtd-utils
+# Для Docker нужны: patool, bsdiff4, pycryptodome, python-lzo,
+#                   fsspec, libc6-dev, mtd-utils
+# Исключено: smcbmc, dji-firmware-tools, buffalo-enc.c/lib/h
+# Причина: python3-pip, liblzo2-dev, gcc уже в I01_default_apps_host
+#          guestfs-tools уже в I01_default_apps
+#          smcbmc, dji-firmware-tools, buffalo специфичны для вендоров
+# =============================================================================
+    patool \
+    libc6-dev \
+    mtd-utils \ 
     && rm -rf /var/lib/apt/lists/*
+
+# =============================================================================
+# МОДУЛЬ: ID1_ubuntu_os
+# Устанавливает: notification-daemon, dbus, dbus-x11, linux-modules-extra
+# Для Docker нужны: (нет)
+# Исключено: notification-daemon, dbus, dbus-x11, linux-modules-extra
+# Причина: Уведомления и модули ядра не работают в контейнере
+# =============================================================================
+
 
 # =============================================================================
 # МОДУЛЬ: IP00_extractors
@@ -94,6 +108,35 @@ RUN apt-get install -y \
     patool \
     libc6-dev \
     mtd-utils \
+# =============================================================================
+# МОДУЛЬ: I24_25_kernel_tools (для S24/S25 в профиле default-sbom.emba)
+#
+# Устанавливает (apt): python3-pip, flex, pahole(dwarves), bison, pkg-config
+# Устанавливает (pip): python-lzo, vmlinux-to-elf (git+https)
+# Устанавливает (git): kconfig-hardened-check
+#
+# Для Docker нужны (apt): kmod
+# Для Docker нужны (pip): (опционально, см. ниже)
+#
+# Исключено (apt): python3-pip, flex, bison, pkg-config, dwarves(pahole)
+# Исключено (pip): python-lzo, vmlinux-to-elf
+# Исключено (git): kconfig-hardened-check
+#
+# Причина:
+#   • SBOM_MINIMAL=1 в профиле → отключается глубокий анализ ядра:
+#     - no readelf symbol counting
+#     - no kconfig-hardened-check
+#     - no linux-exploit-suggester
+#   • S24/S25 в SBOM-режиме извлекают только: версию ядра, архитектуру, .ko метаданные
+#   • Для этого достаточно: strings, grep, jq, file (уже в I01) + modinfo (из kmod)
+#   • vmlinux-to-elf нужен ТОЛЬКО если firmware содержит raw vmlinux (не ELF)
+#   • python-lzo нужен ТОЛЬКО если есть LZO-сжатые артефакты ядра (редко)
+#
+# КРИТИЧНО: modinfo (из пакета kmod) НЕ указан в installer, но используется в S25!
+# =============================================================================
+
+# --- apt: критичная зависимость, отсутствующая в installer ---
+    kmod \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install \
@@ -141,46 +184,6 @@ RUN pip3 install \
 # =============================================================================
 
 # =============================================================================
-# МОДУЛЬ: IF20_nvd_feed
-# Устанавливает: Базы уязвимостей NVD CVE (~2GB)
-# Для Docker нужны: (нет)
-# Исключено: Все
-# Причина: CVE-базы не нужны для генерации SBOM
-# =============================================================================
-
-# =============================================================================
-# МОДУЛЬ: I24_25_kernel_tools (для S24/S25 в профиле default-sbom.emba)
-#
-# Устанавливает (apt): python3-pip, flex, pahole(dwarves), bison, pkg-config
-# Устанавливает (pip): python-lzo, vmlinux-to-elf (git+https)
-# Устанавливает (git): kconfig-hardened-check
-#
-# Для Docker нужны (apt): kmod
-# Для Docker нужны (pip): (опционально, см. ниже)
-#
-# Исключено (apt): python3-pip, flex, bison, pkg-config, dwarves(pahole)
-# Исключено (pip): python-lzo, vmlinux-to-elf
-# Исключено (git): kconfig-hardened-check
-#
-# Причина:
-#   • SBOM_MINIMAL=1 в профиле → отключается глубокий анализ ядра:
-#     - no readelf symbol counting
-#     - no kconfig-hardened-check
-#     - no linux-exploit-suggester
-#   • S24/S25 в SBOM-режиме извлекают только: версию ядра, архитектуру, .ko метаданные
-#   • Для этого достаточно: strings, grep, jq, file (уже в I01) + modinfo (из kmod)
-#   • vmlinux-to-elf нужен ТОЛЬКО если firmware содержит raw vmlinux (не ELF)
-#   • python-lzo нужен ТОЛЬКО если есть LZO-сжатые артефакты ядра (редко)
-#
-# КРИТИЧНО: modinfo (из пакета kmod) НЕ указан в installer, но используется в S25!
-# =============================================================================
-
-# --- apt: критичная зависимость, отсутствующая в installer ---
-RUN apt-get install -y \
-    kmod \
-    && rm -rf /var/lib/apt/lists/*
-
-# =============================================================================
 # 2. СБОРКА JO 1.9 (вместо snap/apt)
 # =============================================================================
 RUN git clone https://github.com/jpmens/jo.git     /tmp/jo && \
@@ -193,10 +196,20 @@ RUN git clone https://github.com/jpmens/jo.git     /tmp/jo && \
     rm -rf /tmp/jo
 
 # =============================================================================
-# 3. ИНСТРУМЕНТЫ АНАЛИЗА
+# 3. BINWALK ИЗ ИСХОДНИКОВ (если apt версия не работает)
 # =============================================================================
 RUN apt-get update && apt-get install -y \
-    binwalk \
+    python3-setuptools \
+    python3-pycryptodome \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone --depth 1 --branch v2.3.3 https://github.com/ReFirmLabs/binwalk.git /tmp/binwalk && \
+    cd /tmp/binwalk && \
+    python3 setup.py install && \
+    rm -rf /tmp/binwalk
+
+# Зависимости для извлечения
+RUN apt-get update && apt-get install -y \
     squashfs-tools \
     libimage-exiftool-perl \
     lzop zstd unzip p7zip-full \
@@ -221,12 +234,13 @@ RUN pip3 install --upgrade pip && \
     
 RUN apt-get update && apt-get install -y uuid-runtime 
 
+
 # =============================================================================
 # 5. КОПИРОВАНИЕ ПРОЕКТА
 # =============================================================================
 COPY . .
 
-
+RUN sed -i 's/^dependency_check$/# dependency_check # disabled for minimal mode/' ./emba
 # =============================================================================
 # 8. ПРАВА
 # =============================================================================
