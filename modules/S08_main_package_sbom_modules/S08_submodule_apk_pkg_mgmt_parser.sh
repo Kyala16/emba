@@ -19,7 +19,7 @@
 S08_submodule_apk_pkg_mgmt_parser() {
   local lPACKAGING_SYSTEM="apk_pkg_mgmt"
   local lOS_IDENTIFIED="${1:-}"
-
+  print_output "[*] ${ORANGE}START++++++++apk"
   sub_module_title "APK package management identification" "${LOG_PATH_MODULE}/${lPACKAGING_SYSTEM}.txt"
 
   local lAPK_MGMT_STATUS_ARR=()
@@ -199,7 +199,7 @@ apk_pkg_analysis_threader() {
 
   # create component entry - this allows adding entries very flexible:
   build_sbom_json_component_arr "${lPACKAGING_SYSTEM}" "${lAPP_TYPE:-library}" "${lAPP_NAME:-NA}" "${lAPP_VERS:-NA}" "${lAPP_MAINT:-NA}" "${lAPP_LIC:-NA}" "${lCPE_IDENTIFIER:-NA}" "${lPURL_IDENTIFIER:-NA}" "${lAPP_DESC:-NA}"
-
+    print_output "[*] ${ORANGE}END++++++++apk"
   write_log "[*] Alpine APK package details: ${ORANGE}${lPACKAGE_FILE}${NC} - ${ORANGE}${lAPP_NAME}${NC} - ${ORANGE}${lAPP_VERS}${NC}" "${LOG_PATH_MODULE}/${lPACKAGING_SYSTEM}.txt"
   write_csv_log "${lPACKAGING_SYSTEM}" "${lPACKAGE_FILE}" "${lMD5_CHECKSUM:-NA}/${lSHA256_CHECKSUM:-NA}/${lSHA512_CHECKSUM:-NA}" "${lAPP_NAME}" "${lAPP_VERS}" "${lSTRIPPED_VERSION:-NA}" "${lAPP_LIC}" "${lAPP_MAINT}" "${lAPP_ARCH}" "${lCPE_IDENTIFIER}" "${lPURL_IDENTIFIER}" "${SBOM_COMP_BOM_REF:-NA}" "${lAPP_DESC}"
 }

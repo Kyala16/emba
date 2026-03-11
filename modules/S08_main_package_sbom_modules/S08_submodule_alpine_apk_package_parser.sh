@@ -19,7 +19,7 @@
 S08_submodule_alpine_apk_package_parser() {
   local lPACKAGING_SYSTEM="alpine_apk"
   local lOS_IDENTIFIED="${1:-}"
-
+  print_output "[*] ${ORANGE}START++++++++alpin"
   sub_module_title "Alpine apk archive identification" "${LOG_PATH_MODULE}/${lPACKAGING_SYSTEM}.txt"
 
   local lAPK_ARCHIVES_ARR=()
@@ -153,6 +153,7 @@ S08_submodule_alpine_apk_package_parser() {
     if [[ "${lPOS_RES}" -eq 0 ]]; then
       write_log "[-] No Alpine apk packages found!" "${LOG_PATH_MODULE}/${lPACKAGING_SYSTEM}.txt"
     fi
+  print_output "[*] ${ORANGE}END++++++++alpin"
   else
     write_log "[-] No Alpine apk package files found!" "${LOG_PATH_MODULE}/${lPACKAGING_SYSTEM}.txt"
   fi
