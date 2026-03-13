@@ -4,235 +4,82 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Moscow
 ENV USE_DOCKER=0
 ENV IN_DOCKER=0
+ENV CVE_SEARCH=0
+ENV SBOM_MINIMAL=1
 ENV EXT_DIR=/external
 
 RUN mkdir -p /external
 
 WORKDIR /emba
 
+
 # =============================================================================
-# МОДУЛЬ: I01_default_apps_host
-# Устанавливает: jq, shellcheck, unzip, bc, coreutils, ncurses-bin, 
-#                libnotify-bin, inotify-tools, dbus-x11, git, net-tools, 
-#                curl, file, python3-pip, requests
-# Для Docker нужны: jq, unzip, bc, coreutils, git, curl, file, python3-pip
-# Исключено: shellcheck, ncurses-bin, libnotify-bin, inotify-tools, 
-#            dbus-x11, net-tools, requests
+# 1. БАЗОВЫЕ ЗАВИСИМОСТИ (один слой, --no-install-recommends)
 # =============================================================================
-RUN apt-get update && apt-get install -y \
-    git wget curl sudo \
-    python3 python3-pip python3-venv python3-dev \
-    bsdmainutils \
-    psmisc \
-    ent \
-    pkg-config \ 
-    coreutils \
-    tree \
-    findutils grep gawk sed \
-    libmagic1 libxml2-dev libxslt1-dev \
-    liblzo2-dev liblz4-dev \
-    graphviz file binutils procps \
-    autoconf automake libtool make gcc \
-    jq \
-# =============================================================================
-# МОДУЛЬ: I01_default_apps
-# Устанавливает: file, jq, bc, make, tree, device-tree-compiler, qemu-user,
-#                qemu-user-static, libguestfs-tools, ent, tcllib, u-boot-tools,
-#                python3-bandit, john, john-data, curl, git, strace, rpm,
-#                python3-pip, requests, iputils-ping, colordiff, ssdeep, xdot,
-#                libimage-exiftool-perl, readpe, tidy, metasploit-framework
-# Для Docker нужны: bc, libguestfs-tools, u-boot-tools, rpm, colordiff, tidy
-# Исключено: qemu-user, qemu-user-static, tcllib, python3-bandit, john,
-#            john-data, strace, iputils-ping, ssdeep, xdot, readpe,
-#            metasploit-framework, device-tree-compiler
-# =============================================================================
-    bc \
-    libguestfs-tools \
-    u-boot-tools \
-    rpm \
-    colordiff \
-    tidy \
-# =============================================================================
-# МОДУЛЬ: I13_disasm
-# Устанавливает: binutils-2.45, capa v9.2.1, texinfo, git, wget, gcc, make,
-#                build-essential, gawk, bison, debuginfod, python3,
-#                python-is-python3, libzip-dev, meson, radare2, r2dec
-# Для Docker нужны: python-is-python3
-# Исключено: texinfo, build-essential, bison, debuginfod, libzip-dev, meson,
-#            radare2, r2dec
-# Причина: binutils, git, wget, gcc, make, gawk, python3 уже в I01_default_apps_host
-#          capa уже в pip (flare-capa), radare2 не нужен для SBOM
-# =============================================================================
-    python-is-python3 \  
-# =============================================================================
-# МОДУЛЬ: IP00_extractors
-# Устанавливает: python3-pip, patool, bsdiff4, payload_dumper, smcbmc,
-#                dji-firmware-tools, python3-pycryptodome, pycryptodome,
-#                liblzo2-dev, python-lzo, guestfs-tools, fsspec,
-#                buffalo-enc.c/lib/h, gcc, libc6-dev, mtd-utils
-# Для Docker нужны: patool, bsdiff4, pycryptodome, python-lzo,
-#                   fsspec, libc6-dev, mtd-utils
-# Исключено: smcbmc, dji-firmware-tools, buffalo-enc.c/lib/h
-# Причина: python3-pip, liblzo2-dev, gcc уже в I01_default_apps_host
-#          guestfs-tools уже в I01_default_apps
-#          smcbmc, dji-firmware-tools, buffalo специфичны для вендоров
-# =============================================================================
-    patool \
-    libc6-dev \
-    mtd-utils \ 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    # === Базовые утилиты ===
+    bash coreutils findutils psmisc pkg-config libtool automake make autoconf gcc grep sed gawk curl ca-certificates \
+    \
+    # === S06: Distribution identification ===
+    file jq libxml2-utils \
+    \
+    # === S08: Package identification ===
+    dpkg-dev python3-pip python3-venv python3-dev \
+    \
+    # === S09: Firmware extraction ===
+    p7zip-full squashfs-tools \
+    \
+    # === S24/S25: Kernel analysis ===
+    binutils kmod \
+    \
+    # === Общие ===
+    libimage-exiftool-perl uuid-runtime git \
+    \
+    # === Для сборки binwalk из исходников ===
+    python3-setuptools \
+    \
     && rm -rf /var/lib/apt/lists/*
 
 # =============================================================================
-# МОДУЛЬ: ID1_ubuntu_os
-# Устанавливает: notification-daemon, dbus, dbus-x11, linux-modules-extra
-# Для Docker нужны: (нет)
-# Исключено: notification-daemon, dbus, dbus-x11, linux-modules-extra
-# Причина: Уведомления и модули ядра не работают в контейнере
+# 2. BINWALK ИЗ ИСХОДНИКОВ (v2.3.3 — последний с setup.py)
 # =============================================================================
+RUN git clone --depth 1 --branch v2.3.3 https://github.com/ReFirmLabs/binwalk.git /tmp/binwalk && \
+    cd /tmp/binwalk && \
+    python3 setup.py install && \
+    rm -rf /tmp/binwalk
 
-
 # =============================================================================
-# МОДУЛЬ: IP00_extractors
-# Устанавливает: python3-pip, patool, bsdiff4, payload_dumper, smcbmc,
-#                dji-firmware-tools, python3-pycryptodome, pycryptodome,
-#                liblzo2-dev, python-lzo, guestfs-tools, fsspec,
-#                buffalo-enc.c/lib/h, gcc, libc6-dev, mtd-utils
-# Для Docker нужны: patool, bsdiff4, pycryptodome, python-lzo,
-#                   fsspec, libc6-dev, mtd-utils
-# Исключено: smcbmc, dji-firmware-tools, buffalo-enc.c/lib/h
-# Причина: python3-pip, liblzo2-dev, gcc уже в I01_default_apps_host
-#          guestfs-tools уже в I01_default_apps
-#          smcbmc, dji-firmware-tools, buffalo специфичны для вендоров
+# 3. PYTHON ЗАВИСИМОСТИ (только нужные для профиля)
 # =============================================================================
-RUN apt-get install -y \
-    patool \
-    libc6-dev \
-    mtd-utils \
-# =============================================================================
-# МОДУЛЬ: I24_25_kernel_tools (для S24/S25 в профиле default-sbom.emba)
-#
-# Устанавливает (apt): python3-pip, flex, pahole(dwarves), bison, pkg-config
-# Устанавливает (pip): python-lzo, vmlinux-to-elf (git+https)
-# Устанавливает (git): kconfig-hardened-check
-#
-# Для Docker нужны (apt): kmod
-# Для Docker нужны (pip): (опционально, см. ниже)
-#
-# Исключено (apt): python3-pip, flex, bison, pkg-config, dwarves(pahole)
-# Исключено (pip): python-lzo, vmlinux-to-elf
-# Исключено (git): kconfig-hardened-check
-#
-# Причина:
-#   • SBOM_MINIMAL=1 в профиле → отключается глубокий анализ ядра:
-#     - no readelf symbol counting
-#     - no kconfig-hardened-check
-#     - no linux-exploit-suggester
-#   • S24/S25 в SBOM-режиме извлекают только: версию ядра, архитектуру, .ko метаданные
-#   • Для этого достаточно: strings, grep, jq, file (уже в I01) + modinfo (из kmod)
-#   • vmlinux-to-elf нужен ТОЛЬКО если firmware содержит raw vmlinux (не ELF)
-#   • python-lzo нужен ТОЛЬКО если есть LZO-сжатые артефакты ядра (редко)
-#
-# КРИТИЧНО: modinfo (из пакета kmod) НЕ указан в installer, но используется в S25!
-# =============================================================================
-
-# --- apt: критичная зависимость, отсутствующая в installer ---
-    kmod \
-    && rm -rf /var/lib/apt/lists/*
-
 RUN pip3 install \
-    bsdiff4 \
-    pycryptodome \
-    python-lzo \
-    fsspec \
+    # === S08: Package parsers ===
+    requirements-parser \
+    \
+    # === S09: Extractors ===
+    unblob jefferson ubi_reader yara-python \
+    \
+    # === F15: CycloneDX SBOM ===
+    cyclonedx-python-lib cyclonedx-bom \
+    \
+    # === Общие ===
+    requests lxml jsonschema Jinja2 pyyaml packaging pefile pyelftools python-magic \
     && rm -rf /root/.cache/pip
 
 # =============================================================================
-# МОДУЛЬ: IP35_uefi_extraction
-# Устанавливает: UEFIExtract, unzip, uefi_firmware, biosutilities
-# Для Docker нужны: uefi_firmware, biosutilities
-# Исключено: UEFIExtract
-# Причина: unzip уже в секции "ИНСТРУМЕНТЫ АНАЛИЗА"
-#          UEFIExtract - бинарник, специфичен для UEFI анализа
+# 4. JO (нужен для JSON-форматирования в helpers)
 # =============================================================================
-
-# =============================================================================
-# МОДУЛЬ: IP61_unblob
-# Устанавливает: python3-pip, libpython3-dev, zlib1g, zlib1g-dev, liblzo2-2,
-#                liblzo2-dev, python3-lzo, e2fsprogs, gcc, git,
-#                android-sdk-libsparse-utils, lz4, lziprecover, lzop, 7zip,
-#                unar, xz-utils, libhyperscan5, libhyperscan-dev, zstd,
-#                python3-magic, pkg-config, pkgconf, erofs-utils, partclone,
-#                python3-lief, sasquatch, unblob (pip)
-# Для Docker нужны: libpython3-dev, zlib1g-dev, e2fsprogs,
-#                   android-sdk-libsparse-utils, lz4, lziprecover,
-#                   unar, xz-utils, libhyperscan5, libhyperscan-dev,
-#                   pkgconf, erofs-utils, partclone, python3-lief,
-#                   sasquatch, unblob (pip)
-# Исключено: (нет, все пакеты нужны для извлечения прошивок)
-# Причина: python3-pip, liblzo2-dev, gcc, git, pkg-config уже в I01_default_apps_host
-#          liblzo2-2, python3-lzo уже в IP00_extractors
-#          lzop, zstd, 7zip (p7zip-full) уже в секции "ИНСТРУМЕНТЫ АНАЛИЗА"
-#          python3-magic уже в pip (python-magic)
-# =============================================================================
-
-# =============================================================================
-# МОДУЛЬ: I05_emba_docker_image_dl
-# Устанавливает: Готовый Docker-образ EMBA
-# Для Docker нужны: (нет)
-# Исключено: Все
-# Причина: Собираем образ сами через Dockerfile
-# =============================================================================
-
-# =============================================================================
-# 2. СБОРКА JO 1.9 (вместо snap/apt)
-# =============================================================================
-RUN git clone https://github.com/jpmens/jo.git     /tmp/jo && \
+RUN git clone --depth 1 --branch 1.9 https://github.com/jpmens/jo.git /tmp/jo && \
     cd /tmp/jo && \
-    git checkout tags/1.9 && \
-    autoreconf -i  && \
+    autoreconf -i && \
     ./configure && \
     make && \
     make install && \
     rm -rf /tmp/jo
 
 # =============================================================================
-# 3. BINWALK ИЗ ИСХОДНИКОВ (если apt версия не работает)
+# 5. КОПИРОВАНИЕ ПРОЕКТА
 # =============================================================================
-RUN apt-get update && apt-get install -y \
-    python3-setuptools \
-    python3-pycryptodome \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN git clone --depth 1 --branch v2.3.3 https://github.com/ReFirmLabs/binwalk.git /tmp/binwalk && \
-    cd /tmp/binwalk && \
-    python3 setup.py install && \
-    rm -rf /tmp/binwalk
-
-# Зависимости для извлечения
-RUN apt-get update && apt-get install -y \
-    squashfs-tools \
-    libimage-exiftool-perl \
-    lzop zstd unzip p7zip-full \
-    dpkg-dev rpm \
-    openjdk-11-jdk-headless \
-    maven gradle \
-    && rm -rf /var/lib/apt/lists/*
-
-# =============================================================================
-# 4. PYTHON ЗАВИСИМОСТИ
-# =============================================================================
-RUN pip3 install --upgrade pip && \
-    pip3 install \
-    requests urllib3 lxml jsonschema Jinja2 pyyaml \
-    packaging pefile pyelftools python-magic \
-    unblob jefferson ubi_reader yara-python \
-    stacs flare-capa \
-    uefi_firmware biosutilities \
-    cyclonedx-python-lib \
-    cyclonedx-bom \
-    && rm -rf /root/.cache/pip
-    
-RUN apt-get update && apt-get install -y uuid-runtime 
+COPY . .
 
 
 # =============================================================================
