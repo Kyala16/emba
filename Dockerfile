@@ -18,7 +18,7 @@ WORKDIR /emba
 # =============================================================================
 RUN apt-get update && apt-get install -y --no-install-recommends \
     # === Базовые утилиты ===
-    bash coreutils findutils psmisc pkg-config libtool automake make autoconf gcc grep sed gawk curl ca-certificates \
+    bash coreutils findutils tree psmisc pkg-config libtool automake make autoconf gcc grep sed gawk curl ca-certificates \
     \
     # === S06: Distribution identification ===
     file jq libxml2-utils \
@@ -81,15 +81,8 @@ RUN git clone --depth 1 --branch 1.9 https://github.com/jpmens/jo.git /tmp/jo &&
 # =============================================================================
 COPY . .
 
-
 # =============================================================================
-# 5. КОПИРОВАНИЕ ПРОЕКТА
-# =============================================================================
-COPY . .
-
-RUN sed -i 's/^dependency_check$/# dependency_check # disabled for minimal mode/' ./emba
-# =============================================================================
-# 8. ПРАВА
+# 6. ПРАВА
 # =============================================================================
 RUN chmod +x ./emba
 
