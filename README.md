@@ -1,9 +1,7 @@
 # EMBA_Minimal_SBOM
-____
 
-## This project for Hard lab (Q1)
+## Hard lab (Q1)
 
-You should: 
 ```
 # Clone this project
 git clone https://github.com/Kyala16/emba.git
