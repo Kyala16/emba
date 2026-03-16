@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" http-equiv="pragma" content="no-cache" />
+    <title></title>
+    <link rel="stylesheet" media="all" href="../script/jqueryui/jquery-ui.min.css" />
+    <link rel="stylesheet" media="all" href="css/subcommon.css" />
+    <link rel="stylesheet" media="all" href="css/imagesettings.css" />
+    <script src="../script/jquery-3.5.1.min.js"></script>
+    <script src="../script/jqueryui/jquery-ui.min.js"></script>
+    <script src="../script/bvipccgisdk.js"></script>
+    <script src="../script/timeredit.js"></script>
+    <script src="../script/translator.js"></script>
+    <script src="/script/flvplayer/mpegts.js" charset="utf-8"></script>
+    <link rel="stylesheet" media="all" href="/ui/css/mpegts.css" />
+    <script src="script/imagesettings.js"></script>
+  </head>
+  <body>
+    <div id="div_image_main">
+      <div id="div_image_titlebar">
+        <div id="div_table_image_base" class="cls_tablebar_item cls_tablebar_item_selected">
+          <div id="div_table_image_base_text" class="cls_tablebar_item_text">Image</div>
+        </div>
+        <div id="div_table_image_schedule" class="cls_tablebar_item">
+          <div id="div_table_image_schedule_text" class="cls_tablebar_item_text">Schedule</div>
+        </div>
+        <div id="div_table_image_daynight" class="cls_tablebar_item">
+          <div id="div_table_image_daynight_text" class="cls_tablebar_item_text">Day/Night</div>
+        </div>
+      </div>
+      <div id="div_image_baseinfo" class="cls_image_tab_context">
+        <div id="div_image_video_show">
+          <object id="preview_player" class="cls_plugin_player" width="460" height="288" align="center" classid="clsid:FEB29125-2FEA-403E-985B-8E4930ABBA56"></object>
+          <script type="text/javascript" language="JavaScript" event="OnLoad" for="preview_player">
+            fun_on_ieplugin_load();
+          </script>
+          <script type="text/javascript" event="OnVideoLoad" for="preview_player">
+            fun_on_stream_load();
+          </script>
+        </div>
+        <div id="div_image_baseinfo_settings">
+          <div id="div_image_baseinfo_content">
+            <div id="div_image_video_standard" class="cls_image_baseinfo_normal" style="margin-left: 44px; margin-top: 0">
+              <div id="div_video_standard_name" class="cls_image_settings_item_name cls_item_mini_font">Video standard:</div>
+              <div id="div_video_standard_value">
+                <select id="select_video_standard" class="cls_subpage_content_select" style="width: 190px">
+                  <option value="0">50Hz</option>
+                  <option value="1">60Hz</option>
+                </select>
+              </div>
+            </div>
+            <div id="div_image_video_mirror" class="cls_image_baseinfo_normal" style="margin-left: 44px">
+              <div id="div_video_mirror_name" class="cls_image_settings_item_name cls_item_mini_font">Mirror:</div>
+              <div id="div_video_mirror_value">
+                <select id="select_video_mirror" class="cls_subpage_content_select" style="width: 190px">
+                  <option value="0">None</option>
+                  <option value="1">Vertical</option>
+                  <option value="2">Horizontal</option>
+                  <option value="3">Horizontal & Vertical</option>
+                </select>
+              </div>
+            </div>
+            <div id="div_image_video_corridor" class="cls_image_baseinfo_normal" style="margin-left: 44px; display: none">
+              <div id="div_video_corridor_name" class="cls_image_settings_item_name cls_item_mini_font">Corridor mode:</div>
+              <div id="div_video_corridor_value">
+                <select id="select_video_corridor" class="cls_subpage_content_select" style="width: 190px">
+                  <option value="0">Disable</option>
+                  <option value="1">Enable</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="div_image_video_model" class="cls_image_baseinfo_normal" style="height: 46px">
+              <div id="div_image_video_model_title" class="cls_item_mini_font cls_item_font_light" style="height: 18px">Mode</div>
+              <div id="div_iamge_video_model_items" style="margin: 0 0 0 20px; height: 28px">
+                <div id="div_image_model_template_item" style="float: left; width: 480px">
+                  <div id="div_image_model_template_item_name" class="cls_image_settings_item_name cls_item_mini_font">Current template:</div>
+                  <div id="div_image_model_templates">
+                    <select id="select_video_image_templates" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Normal</option>
+                      <option value="1">Day</option>
+                      <option value="2">Night</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="div_image_adjustmnet" class="cls_image_baseinfo_category">
+              <div id="div_image_adjustment_title" class="cls_image_accordion_title">
+                <div id="div_image_adjustment_title_image" class="cls_image_accordion_item cls_image_accordion_item_open"></div>
+                <div id="div_image_adjustment_title_text" class="cls_item_mini_font cls_item_font_light" style="float: left; width: 160px; height: 20px; overflow: hidden; margin-top: 1px">Image adjustment</div>
+              </div>
+              <div id="div_image_adjustment_group" class="cls_image_baseinfo_itemgroup" style="display: block">
+                <div id="div_image_output_mode" class="cls_image_settings_item">
+                  <div id="div_image_output_mode_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Output mode:</div>
+                  <div id="div_image_output_mode_value">
+                    <select id="select_image_output_mode" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Standard</option>
+                      <option value="1">Bright</option>
+                      <option value="2">Vivid</option>
+                      <option value="3">Gentle</option>
+                      <option value="4">Custom</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="div_image_output_items" style="display: none">
+                  <div id="div_image_saturation" class="cls_image_settings_item">
+                    <div id="div_image_saturation_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Saturation:</div>
+                    <div id="slider_image_saturation_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                    <div id="div_image_saturation_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                  </div>
+                  <div id="div_image_brightness" class="cls_image_settings_item">
+                    <div id="div_image_brightness_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Brightness:</div>
+                    <div id="slider_image_brightness_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                    <div id="div_image_brightness_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                  </div>
+                  <div id="div_image_sharpness" class="cls_image_settings_item">
+                    <div id="div_image_sharpness_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Sharpness:</div>
+                    <div id="slider_image_sharpness_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                    <div id="div_image_sharpness_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                  </div>
+                  <div id="div_image_contrast" class="cls_image_settings_item">
+                    <div id="div_image_contrast_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Contrast:</div>
+                    <div id="slider_image_contrast_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                    <div id="div_image_contrast_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                  </div>
+                </div>
+                <div id="div_image_blc" class="cls_image_settings_item">
+                  <div id="div_image_blc_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">BLC:</div>
+                  <div id="div_image_blc_value">
+                    <select id="select_image_blc_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Disable</option>
+                      <option value="1">Enable</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="div_image_blc_level" class="cls_image_settings_item">
+                  <div id="div_image_blclevel_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">BLC Adjustment</div>
+                  <div id="slider_image_blclevel_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                  <div id="div_image_blclevel_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                </div>
+                <div id="div_image_hlc" class="cls_image_settings_item">
+                  <div id="div_image_hlc_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">HLC:</div>
+                  <div id="div_image_hlc_value">
+                    <select id="select_image_hlc_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Disable</option>
+                      <option value="1">Enable</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="div_image_hlc_level" class="cls_image_settings_item">
+                  <div id="div_image_hlclevel_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">HLC Adjustment</div>
+                  <div id="slider_image_hlclevel_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                  <div id="div_image_hlclevel_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                </div>
+                <div id="div_image_wdr" class="cls_image_settings_item">
+                  <div id="div_image_wdr_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">WDR:</div>
+                  <div id="div_image_wdr_value">
+                    <select id="select_image_wdr_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Disable</option>
+                      <option value="1">Enable</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="div_image_wdr_level" class="cls_image_settings_item">
+                  <div id="div_image_wdrlevel_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">WDR Adjustment</div>
+                  <div id="slider_image_wdrlevel_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                  <div id="div_image_wdrlevel_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                </div>
+                <div id="div_image_whitebalance" class="cls_image_settings_item">
+                  <div id="div_image_whitebalance_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">White balance:</div>
+                  <div id="div_image_whitebalance_value">
+                    <select id="select_image_whitebalance_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Auto</option>
+                      <option value="1">Outdoor</option>
+                      <option value="2">Indoor</option>
+                      <option value="3">Fluorescent Lamp</option>
+                      <option value="4">Manual</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="div_image_whitebalance_manual_items" style="width: 418px; height: 98px; float: left; display: none">
+                  <div id="div_image_whitebalance_redgain" class="cls_image_settings_item">
+                    <div id="div_image_redgain_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Red gain:</div>
+                    <div id="slider_image_redgain_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                    <div id="div_image_redgain_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                  </div>
+                  <div id="div_image_whitebalance_bluegain" class="cls_image_settings_item">
+                    <div id="div_image_greengain_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Green gain:</div>
+                    <div id="slider_image_greengain_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                    <div id="div_image_greengain_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                  </div>
+                  <div id="div_image_whitebalance_greengain" class="cls_image_settings_item">
+                    <div id="div_image_bluegain_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Blue gain:</div>
+                    <div id="slider_image_bluegain_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                    <div id="div_image_bluegain_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="div_image_exposure" class="cls_image_baseinfo_category">
+              <div id="div_image_exposure_title" class="cls_image_accordion_title">
+                <div id="div_image_exposure_title_image" class="cls_image_accordion_item cls_image_accordion_item_close"></div>
+                <div id="div_image_exposure_title_text" class="cls_item_mini_font cls_item_font_light" style="margin-left: 22px; height: 20px; overflow: hidden; margin-top: 1px">Exposure settings</div>
+              </div>
+              <div id="div_image_exposure_group" class="cls_image_baseinfo_itemgroup" style="display: none">
+                <div id="div_image_exposure_mode" class="cls_image_settings_item">
+                  <div id="div_image_exposure_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Exposure Mode:</div>
+                  <div id="div_image_exposure_value" class="cls_image_settings_item_value">
+                    <select id="select_image_exposure_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Auto</option>
+                      <option value="1">Fixed</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="div_image_shutter" class="cls_image_settings_item">
+                  <div id="div_image_shutter_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Shutter:</div>
+                  <div id="div_image_shutter_value" class="cls_image_settings_item_value">
+                    <select id="select_image_shutter_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">1/2</option>
+                      <option value="1">1/4</option>
+                      <option value="2">1/8</option>
+                      <option value="3">1/10</option>
+                      <option value="4">1/12</option>
+                      <option value="5">1/15</option>
+                      <option value="6">1/25(50Hz)1/30(60Hz)</option>
+                      <option value="7">1/50(50Hz)1/60(60Hz)</option>
+                      <option value="8">1/100(50Hz)1/120(60Hz)</option>
+                      <option value="9">1/125</option>
+                      <option value="10">1/200</option>
+                      <option value="11">1/250</option>
+                      <option value="12">1/500</option>
+                      <option value="13">1/1000</option>
+                      <option value="14">1/1250</option>
+                      <option value="15">1/2500</option>
+                      <option value="16">1/5000</option>
+                      <option value="17">1/10000</option>
+                      <option value="18">1/12500</option>
+                      <option value="19">1/25000</option>
+                      <option value="20">1/50000</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- ---- -->
+                <div id="div_image_lightsense" class="cls_image_settings_item" style="display: none;">
+                  <div id="div_image_lightsense_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Light sensitivity</div>
+                  <div id="slider_image_lightsense_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                  <div id="div_image_lightsense_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                </div>
+                <div id="div_image_aegain" class="cls_image_settings_item" style="display: none;">
+                  <div id="div_image_aegain_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Gain</div>
+                  <div id="slider_image_aegain_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 8px 0 0 4px; background-color: #c4c4c4; float: left"></div>
+                  <div id="div_image_aegain_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                </div>
+              </div>
+            </div>
+            <div id="div_image_enhancement" class="cls_image_baseinfo_category">
+              <div id="div_image_enhancement_title" class="cls_image_accordion_title">
+                <div id="div_image_enhancement_title_image" class="cls_image_accordion_item cls_image_accordion_item_close"></div>
+                <div id="div_image_enhancement_title_text" class="cls_item_mini_font cls_item_font_light" style="margin-left: 22px; height: 20px; overflow: hidden; margin-top: 1px">Image enhancement</div>
+              </div>
+              <div id="div_image_enhancement_group" class="cls_image_baseinfo_itemgroup" style="display: none">
+                <div id="div_image_lightmetering" class="cls_image_settings_item" style="display: block">
+                  <div id="div_image_lightmetering_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Light metering:</div>
+                  <div id="div_image_lightmetering_value" class="cls_image_settings_item_value">
+                    <select id="select_image_lightmetering_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Global</option>
+                      <option value="1">Middle</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="div_image_autoiris" class="cls_image_settings_item">
+                  <div id="div_image_autoiris_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Auto IRIS</div>
+                  <div id="div_image_autoiris_value" class="cls_image_settings_item_value">
+                    <select id="select_image_autoiris_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Disable</option>
+                      <option value="1">Enable</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="div_image_defog" class="cls_image_settings_item">
+                  <div id="div_image_defog_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Defog</div>
+                  <div id="div_image_defog_value" class="cls_image_settings_item_value">
+                    <select id="select_image_defog_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Disable</option>
+                      <option value="1">Enable</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="div_image_dnr2d" class="cls_image_settings_item">
+                  <div id="div_image_dnr2d_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">2D NR</div>
+                  <div id="div_image_dnr2d_value" class="cls_image_settings_item_value">
+                    <select id="select_image_dnr2d_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Disable</option>
+                      <option value="1">Enable</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="div_image_3dnr" class="cls_image_settings_item" style="height: 28px">
+                  <div id="div_image_3dnr_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="height: 24px; line-height: 24px">3D NR:</div>
+                  <div id="slider_image_3dnr_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 5px; background-color: #c4c4c4; float: left"></div>
+                  <div id="div_image_3dnr_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                </div>
+                <div id="div_image_dnr3d" class="cls_image_settings_item">
+                  <div id="div_image_dnr3d_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">3D NR</div>
+                  <div id="div_image_dnr3d_value" class="cls_image_settings_item_value">
+                    <select id="select_image_dnr3d_value" class="cls_subpage_content_select" style="width: 190px">
+                      <option value="0">Disable</option>
+                      <option value="1">Enable</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="div_image_advanced" class="cls_image_baseinfo_category" style="display: none">
+              <div id="div_image_advanced_title" class="cls_image_accordion_title">
+                <div id="div_image_advanced_title_image" class="cls_image_accordion_item cls_image_accordion_item_close"></div>
+                <div id="div_image_advanced_title_text" class="cls_item_mini_font cls_item_font_light" style="margin-left: 22px; height: 20px; overflow: hidden; margin-top: 1px">Advance</div>
+              </div>
+              <div id="div_image_advanced_group" class="cls_image_baseinfo_itemgroup" style="display: none">
+                <div id="div_image_ldc" class="cls_image_settings_item" style="height: 28px">
+                  <div id="div_image_ldc_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="height: 24px; line-height: 24px">LDC:</div>
+                  <div id="slider_image_ldc_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 5px; background-color: #c4c4c4; float: left"></div>
+                  <div id="div_image_ldc_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="div_image_baseinfo_option" style="width: 100%; height: 42px; margin: 10px 0 0 22px; float: left">
+            <input type="button" id="button_image_baseinfo_restore" class="cls_subpage_content_button" value="Restore default" />
+            <input type="button" id="button_image_baseinfo_refresh" class="cls_subpage_content_button" value="Refresh" />
+            <input type="button" id="button_image_baseinfo_save" class="cls_subpage_content_button" value="Save" />
+          </div>
+        </div>
+      </div>
+      <div id="div_iamge_schedule" class="cls_image_tab_context" style="display: none">
+        <div id="div_image_schedule_items" style="float: left; width: 100%; height: auto">
+          <div id="div_image_schedule_day" class="cls_image_settings_item">
+            <div id="div_image_schedule_day_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Working mode:</div>
+            <div id="div_image_schedule_day_value" class="cls_image_settings_item_value">
+              <select id="select_image_schedule_day_value" class="cls_subpage_content_select" style="width: 190px">
+                <option value="0">Normal</option>
+                <option value="1">Day</option>
+                <option value="2">Night</option>
+                <option value="3">Timing</option>
+                <option value="4">Auto</option>
+              </select>
+            </div>
+          </div>
+          <div id="div_schedule_timing_settings" style="display: none">
+            <div id="div_image_schedule_timing" class="cls_image_settings_item" style="width: 760px">
+              <div id="div_image_schedule_timing_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light">Period setting:</div>
+              <div id="slider_daynight_schedule_timing_value" class="slider_range_style"></div>
+            </div>
+            <div id="div_image_schedule_timing_note" class="cls_image_settings_item">
+              <div id="div_image_schedule_period_indicator_space" class="cls_image_settings_item_name"></div>
+              <div id="div_image_schedule_period_day" class="cls_image_settings_item_value">
+                <div id="div_image_period_day" class="cls_image_period_indicator" style="background-color: #ffa500"></div>
+                <div id="div_image_period_day_name" style="width: 66px; float: left; margin-left: 4px" class="cls_item_font_light cls_item_mini_font">Day</div>
+              </div>
+              <div id="div_image_schedule_period_night" class="cls_image_settings_item_value">
+                <div id="div_image_period_night" class="cls_image_period_indicator" style="background-color: #f2f2f2"></div>
+                <div id="div_image_period_night_name" style="width: 66px; float: left; margin-left: 4px" class="cls_item_font_light cls_item_mini_font">Night</div>
+              </div>
+            </div>
+          </div>
+          <div id="div_image_schedule_option" style="width: 100%; height: 42px; margin: 10px 0 0 0; float: left">
+            <input type="button" id="button_image_schedule_restore" class="cls_subpage_content_button" value="Restore default" />
+            <input type="button" id="button_image_schedule_refresh" class="cls_subpage_content_button" value="Refresh" />
+            <input type="button" id="button_image_schedule_save" class="cls_subpage_content_button" value="Save" />
+          </div>
+        </div>
+      </div>
+
+      <div id="div_image_daynight" class="cls_image_tab_context" style="display: none">
+        <div id="div_image_daynight_items" style="float: left; width: 460px; height: auto">
+          <div id="div_image_daynight_double_light" class="cls_image_settings_item" style="margin-left: 12px; display: none">
+            <div id="div_image_daynight_double_light_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 175px">Lighting control:</div>
+            <div id="div_image_daynight_light_double_value" class="cls_image_settings_item_value">
+              <select id="select_image_daynight_light_double_value" class="cls_subpage_content_select" style="width: 190px">
+                <option value="0">Smart switching</option>
+                <option value="1">Infrared light mode</option>
+                <option value="2">white light mode</option>
+                <option value="3">Turn off the lights</option>
+              </select>
+            </div>
+          </div>
+          <div id="div_image_daynight_mode" class="cls_image_settings_item" style="margin-left: 12px">
+            <div id="div_image_daynight_mode_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 175px">Day/Night mode:</div>
+            <div id="div_image_daynight_mode_value" class="cls_image_settings_item_value">
+              <select id="select_image_daynight_mode_value" class="cls_subpage_content_select" style="width: 190px">
+                <option value="0">Auto</option>
+                <option value="1">Color</option>
+                <option value="2">B &amp; W</option>
+                <option value="3">Timing</option>
+                <option value="4">Auto(Inter sync)</option>
+              </select>
+            </div>
+          </div>
+          <div id="div_image_daynight_timing_items" style="display: none; margin-left: 12px">
+            <div id="div_image_daynight_timing" class="cls_image_settings_item" style="width: 760px; height: 28px; margin-top: 3px">
+              <div id="div_image_daynight_timing_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 135px">Period setting:</div>
+              <div id="slider_daynight_daynight_timing_value" class="slider_range_style"></div>
+            </div>
+            <div id="div_image_daynight_timing_note" class="cls_image_settings_item" style="height: 20px">
+              <div id="div_image_daynight_period_indicator_space" class="cls_image_settings_item_name" style="width: 175px; height: 20px"></div>
+              <div id="div_image_daynight_timing_period_day" class="cls_image_settings_item_value" style="height: 20px">
+                <div id="div_image_daynight_period_day" class="cls_image_period_indicator" style="background-color: #ffa500"></div>
+                <div id="div_image_daynight_period_day_name" style="width: 96px; float: left; margin-left: 4px" class="cls_item_font_light cls_item_mini_font">Day</div>
+              </div>
+              <div id="div_image_daynight_timing_period_night" class="cls_image_settings_item_value">
+                <div id="div_image_daynight_period_night" class="cls_image_period_indicator" style="background-color: #f2f2f2"></div>
+                <div id="div_image_daynight_period_night_name" style="width: 96px; float: left; margin-left: 4px" class="cls_item_font_light cls_item_mini_font">Night</div>
+              </div>
+            </div>
+          </div>
+          <div id="div_image_daynight_intersync_items" style="display: none; margin-left: 12px">
+          <!-- realtime Brightness -->
+          <div id="div_image_daynight_intersync_realtime" class="cls_image_settings_item" style="height: 28px">
+            <div id="div_image_daynight_intersync_realtime_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 180px; height: 24px; line-height: 24px">Realtime Brightness:</div>
+            <div id="div_image_daynight_intersync_realtime_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey"></div>
+          </div>
+          <div id="div_image_daynight_intersync_tocolor" class="cls_image_settings_item" style="height: 28px">
+            <div id="div_image_daynight_intersync_tocolor_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 180px; height: 24px; line-height: 24px">THR. of day:</div>
+            <div id="slider_image_daynight_intersync_tocolor_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 3px; background-color: #c4c4c4; float: left"></div>
+            <div id="div_image_daynight_intersync_tocolor_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey" style="width: 88px;">0</div>
+          </div>
+          <div id="div_image_daynight_intersync_togrey" class="cls_image_settings_item" style="height: 28px">
+            <div id="div_image_daynight_intersync_togrey_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 180px; height: 24px; line-height: 24px">THR. of night:</div>
+            <div id="slider_image_daynight_intersync_togrey_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 3px; background-color: #c4c4c4; float: left"></div>
+            <div id="div_image_daynight_intersync_togrey_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey" style="width: 88px;">0</div>
+          </div>
+          <!-- day range -->
+          <div id="div_image_daynight_intersync_dayrange" class="cls_image_settings_item" style="height: 28px">
+            <div id="div_image_daynight_intersync_dayrange_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 180px; height: 24px; line-height: 24px">Day Range:</div>
+            <div id="slider_image_daynight_intersync_dayrange_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 3px; background-color: #c4c4c4; float: left"></div>
+            <div id="div_image_daynight_intersync_dayrange_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+          </div>
+          <!-- night range -->
+          <div id="div_image_daynight_intersync_nightrange" class="cls_image_settings_item" style="height: 28px">
+            <div id="div_image_daynight_intersync_nightrange_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 180px; height: 24px; line-height: 24px">Night Range:</div>
+            <div id="slider_image_daynight_intersync_nightrange_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 3px; background-color: #c4c4c4; float: left"></div>
+            <div id="div_image_daynight_intersync_nightrange_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+          </div>
+        </div>
+          <div id="div_image_daynight_light" class="cls_image_settings_item" style="margin-left: 12px; display: none">
+            <div id="div_image_daynight_light_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 175px">Light control:</div>
+            <div id="div_image_daynight_light_value" class="cls_image_settings_item_value">
+              <select id="select_image_daynight_light_value" class="cls_subpage_content_select" style="width: 190px">
+                <option value="0">Auto</option>
+                <option value="1">Open</option>
+                <option value="2">Close</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="div_image_smartir_contain">
+            <div id="div_image_smartir" class="cls_image_settings_item" style="margin-left: 12px">
+              <div id="div_image_smartir_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 175px">Smart IR:</div>
+              <div id="div_image_smartir_value" class="cls_image_settings_item_value">
+                <select id="select_image_smartir_value" class="cls_subpage_content_select" style="width: 190px">
+                  <option value="0">Disable</option>
+                  <option value="1">Enable</option>
+                </select>
+              </div>
+            </div>
+            <div id="div_maxlevel" class="cls_image_settings_item" style="height: 28px; margin-left: 12px">
+              <div id="div_maxlevel_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="height: 24px; line-height: 24px; width: 145px; margin-left: 30px">Maximum brightness:</div>
+              <div id="slider_maxlevel_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 5px; background-color: #c4c4c4; float: left"></div>
+              <div id="div_maxlevel_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+            </div>
+          </div>
+
+          <div id="div_smartlevel" class="cls_image_settings_item" style="height: 28px; display: none; margin-left: 12px">
+            <div id="div_smartlevel_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="height: 24px; line-height: 24px; width: 175px">Idle level</div>
+            <div id="slider_smartlevel_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 5px; background-color: #c4c4c4; float: left"></div>
+            <div id="div_smartlevel_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+          </div>
+          <div id="div_ledlevel" class="cls_image_settings_item" style="height: 28px; margin-left: 12px">
+            <div id="div_ledlevel_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="height: 24px; line-height: 24px; width: 175px">Idle level</div>
+            <div id="slider_ledlevel_value" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 5px; background-color: #c4c4c4; float: left"></div>
+            <div id="div_ledlevel_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+          </div>
+          <div id="div_smartevt" class="cls_image_settings_item" style="margin-left: 12px">
+            <div id="div_blacklight_title_text" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 175px">Smart Blacklight</div>
+            <div id="div_smartevt_value" class="cls_image_settings_item_value">
+              <select id="select_smartevt_value" class="cls_subpage_content_select" style="width: 190px">
+                <option value="0">Disable</option>
+                <option value="1">Enable</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="div_speed" class="cls_image_settings_item" style="margin-left: 12px">
+            <div id="div_speed_title_text" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 175px">Strobe speed</div>
+            <div id="div_speed_value" class="cls_image_settings_item_value">
+              <select id="select_speed_value" class="cls_subpage_content_select" style="width: 190px">
+                <option value="0">Always on</option>
+                <option value="1">Slow flash</option>
+                <option value="2">Medium flash</option>
+                <option value="3">Flash</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="div_ledthreshonlevel" class="cls_image_settings_item" style="margin-left: 12px; display: none">
+            <div id="div_ledthreshonlevel_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 175px"></div>
+            <div id="slider_ledthreshonlevel" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 5px; background-color: #c4c4c4; float: left"></div>
+            <div id="div_ledthreshonlevel_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+          </div>
+          <div id="div_ledthreshofflevel" class="cls_image_settings_item" style="margin-left: 12px; display: none">
+            <div id="div_ledthreshofflevel_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 175px">LED turn off threshold</div>
+            <div id="slider_ledthreshofflevel" class="cls_image_settings_item_value cls_slider_container" style="height: 6px; margin: 7px 0 0 5px; background-color: #c4c4c4; float: left"></div>
+            <div id="div_ledthreshofflevel_value_text" class="cls_image_settings_slider_value cls_item_mini_font cls_item_font_grey">0</div>
+          </div>
+          <div id="div_image_icut_timing_items" style="display: block; margin-left: 12px">
+            <div id="div_image_icut_timing" class="cls_image_settings_item" style="width: 760px; height: 28px; margin-top: 3px">
+              <div id="div_image_icut_timing_name" class="cls_image_settings_item_name cls_item_mini_font cls_item_font_light" style="width: 135px">IR-CUT filter:</div>
+              <div id="slider_icut_daynight_timing_value" class="slider_range_style_"></div>
+            </div>
+            <div id="div_image_icut_timing_note" class="cls_image_settings_item" style="height: 14px; margin-left: 50px">
+              <div id="div_image_icut_period_indicator_space" class="cls_image_settings_item_name" style="height: 14px; width: 135px"></div>
+              <div id="div_image_icut_timing_period_day" class="cls_image_settings_item_value" style="height: 14px">
+                <div id="div_image_icut_period_day" class="cls_image_period_indicator" style="background-color: rgb(123, 185, 51)"></div>
+                <div id="div_image_icut_period_day_name" style="width: 96px; float: left; margin-left: 4px" class="cls_item_font_light cls_item_mini_font">Auto</div>
+              </div>
+              <div id="div_image_icut_timing_period_night" class="cls_image_settings_item_value">
+                <div id="div_image_icut_period_night" class="cls_image_period_indicator" style="background-color: #aaaaaa"></div>
+                <div id="div_image_icut_period_night_name" style="width: 96px; float: left; margin-left: 4px" class="cls_item_font_light cls_item_mini_font">Color</div>
+              </div>
+            </div>
+          </div>
+          <div id="div_iamge_daynight_option" style="width: 600px; height: 42px; margin: 10px 0 0 0; float: left">
+            <input type="button" id="button_image_daynight_restore" class="cls_subpage_content_button" value="Restore default" />
+            <input type="button" id="button_image_daynight_refresh" class="cls_subpage_content_button" value="Refresh" />
+            <input type="button" id="button_image_daynight_save" class="cls_subpage_content_button" value="Save" />
+          </div>
+        </div>
+      </div>
+      <div id="div_note_reboot_dialog" style="display: none">
+        <div id="div_note_reboot_content" class="cls_item_mini_font cls_item_font_light" style="width: 313px; height: 70px; margin: 40px 0 0 24px; float: left"></div>
+        <div id="div_note_reboot_options" style="width: 340px; height: 32px; margin: 10px 0 0 10px; float: left">
+          <input type="button" class="cls_subpage_content_button" id="button_reboot_confirm" value="Confirm" />
+          <input type="button" class="cls_subpage_content_button" id="button_reboot_cancel" value="Cancel" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

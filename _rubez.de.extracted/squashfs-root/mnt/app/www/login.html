@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" http-equiv="pragma" content="no-cache">
+  <title></title>
+  <link rel="stylesheet" media="all" href="subpages/css/subcommon.css">
+  <link rel="stylesheet" media="all" href="ui/css/login.css">
+  <link rel="stylesheet" media="all" href="script/jqueryui/jquery-ui.min.css">
+  <script src="script/jquery-3.5.1.min.js"></script>
+  <script src="script/jssha.js"></script>
+  <script src="script/base64.js"></script>
+  <script src="script/combobox.js"></script>
+  <script src="script/translator.js"></script>
+  <script src="script/bvipccgisdk.js"></script>
+  <script src="../script/inputrestriction.js"></script>
+  <script src="script/login.js"></script>
+  <script src="script/jqueryui/jquery-ui.min.js"></script>
+  <script src="script/advVailpwd.js"></script>
+  <script src="script/crypto.js"></script>
+</head>
+
+<body>
+  <div id="div_login_bar">
+    <div id="div_login_panel">
+
+      <div id="div_logo">
+        <img src="ui/images/logo.png" width="100" />
+      </div>
+
+
+      <div id="div_login_operations">
+        <div id="div_user_name">
+          <div id="div_user_name_panel">
+            <img class="cls_input_icon" style="width: 22px;height:22px" src="ui/images/user.png">
+            <input type="text" id="input_user_name_text" class="cls_special_input" maxlength="32" style="padding: 1px;">
+          </div>
+          <div id="div_user_name_warning" style="width: 32px; height: 32px;float: left;margin: 22px 0 0 2px;display: none;">
+            <img width="22" height="22" src="ui/images/warning.png">
+          </div>
+        </div>
+        <div id="div_password">
+          <div id="div_password_panel">
+            <img class="cls_input_icon" style="width: 22px;height:22px" src="ui/images/password.png">
+            <input type="password" id="input_password_text" class="cls_special_input" maxlength="30">
+            <div id="div_login_eye" style="float: left;margin-left: 3px;">
+              <img class="cls_input_icon" id="login_eye_hide" onclick="fun_login_eye_showorhide(0)" style="margin-top: 13px;" src="ui/images/beyehide.png">
+              <img class="cls_input_icon" id="login_eye_show" onclick="fun_login_eye_showorhide(1)" style="margin-top: 13px;" src="ui/images/eyeshow.png" hidden>
+            </div>
+          </div>
+          <div id="div_password_warning" style="width: 32px; height: 32px;float: left;margin: 22px 0 0 2px;display: none;">
+            <img width="22" height="22" src="ui/images/warning.png">
+          </div>
+        </div>
+        <div id="div_language">
+          <div id="div_language_panel">
+            <img class="cls_input_icon" style="width: 22px;height:22px" src="ui/images/language.png">
+            <input type="text" id="input_language_text" class="cls_special_input" readonly="readonly" style="width: 158px;">
+            <img src="ui/images/down.png" class="cls_input_icon" style="width: 22px;height:22px;margin-top: 6px;" src="ui/images/language.png">
+          </div>
+          <div id="div_language_items"></div>
+        </div>
+        <div id="div_login_options">
+          <input type="button" id="button_login_ipcweb" value="Login" class="cls_special_button">
+        </div>
+        <div id="div_error_tips_area"></div>
+      </div>
+      <div id="div_retrieval_password" style="display: none;">
+
+        <!--  -->
+        <div id="div_retrieval_newpassword" class="cls_retrieval_dialog_item">
+          <div id="div_retrieval_password_name" class="cls_retrieval_dialog_item_name">New password</div>
+          <div id="div_retrieval_password_value" class="cls_retrieval_dialog_item_value">
+            <div style="width: 265px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+              <input type="password" id="input_retrieval_password_text" maxlength="15" class="cls_subpage_content_input" style="float: left;border: none;">
+              <div id="div_reset_newpass_eye" style="float: left;">
+                <img class="cls_input_icon" id="reset_newpass_eye_hide" onclick="fun_reset_newpass_eye_showorhide(0)" style="margin-top: 6px;" src="ui/images/weyehide.png">
+                <img class="cls_input_icon" id="reset_newpass_eye_show" onclick="fun_reset_newpass_eye_showorhide(1)" style="margin-top: 6px;" src="ui/images/eyeshow.png" hidden>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- newpassword ================tips -->
+        <div id="div_retrieval_newpassword_tip" class="cls_retrieval_dialog_item" style="height: auto;line-height: 20px;display: none;">
+          <div id="div_retrieval_newpassword_tip_info" class="cls_retrieval_dialog_item_name" style="width: 267px;color: red;margin-left: 155px;height: auto;"></div>
+        </div>
+
+        <div id="div_retrieval_confirm" class="cls_retrieval_dialog_item">
+          <div id="div_retrieval_confirm_name" class="cls_retrieval_dialog_item_name" style="margin-top: 3px;">Confirm Password</div>
+          <div id="div_retrieval_confirm_value" class="cls_retrieval_dialog_item_value" style="margin-top: 3px;">
+            <div style="width: 265px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+              <input type="password" id="input_retrieval_confirm_text" maxlength="15" class="cls_subpage_content_input" style="float: left;border: none;">
+              <div id="div_reset_confirmpass_eye" style="float: left;">
+                <img class="cls_input_icon" id="reset_confirmpass_eye_hide" onclick="fun_reset_confirmpass_eye_showorhide(0)" style="margin-top: 6px;" src="ui/images/weyehide.png">
+                <img class="cls_input_icon" id="reset_confirmpass_eye_show" onclick="fun_reset_confirmpass_eye_showorhide(1)" style="margin-top: 6px;" src="ui/images/eyeshow.png" hidden>
+              </div>
+            </div>
+          </div>
+          <!-- <div style="float: left;">
+						<input type="button" id="button_save" class="cls_subpage_content_button" value="Reset" style="width: 128px;">
+					</div> -->
+        </div>
+
+        <!-- 账户重复密码提示 -->
+        <div id="div_retrieval_copy" class="cls_retrieval_dialog_item" style="height: 20px;line-height: 20px;display: none;">
+          <div id="div_retrieval_copy_info" class="cls_retrieval_dialog_item_name" style="width: 287px;color: red;margin-left: 155px;text-align: center;"></div>
+        </div>
+
+
+        <!-- ++++++inputrule_content++++++ -->
+        <div style="float: left;margin-top: 25px;" id="inputrule_reset_content">
+          <p style="margin-left: 10px;" id="inputrule_reset_name"></p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li id="repeat_reset_pwd_tips">密码不应重复此用户帐户的前 24 个密码</li>
+          </ul>
+        </div>
+        
+        <!-- reset button -->
+        <div style="position: absolute;bottom: 40px;width: 576px;text-align: center;">
+          <input type="button" id="button_save" class="cls_subpage_content_button" value="Reset" style="width: 128px;">
+        </div>
+      </div>
+      <!-- +++++++++++++++++++++ji huo  mima++++++++++++++++++++++++++++++++++++++++++++ -->
+      
+      <!-- jihuo mima  end -->
+    </div>
+  </div>
+  <div id="div_declare_bar">
+    <p style="text-align: center;vertical-align: middle;font-family: Arial;font-size: 12px;color: white;">©2025, RVI All Rights Reserved.</p>
+    
+  </div>
+</body>
+
+</html>

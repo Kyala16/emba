@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" http-equiv="pragma" content="no-cache">
+    <title></title>
+    <link rel="stylesheet" media="all" href="css/subcommon.css">
+    <link rel="stylesheet" media="all" href="css/rtsp.css">
+    <script src="../script/jquery-3.5.1.min.js"></script>
+    <script src="../script/bvipccgisdk.js"></script>
+    <script src="../script/ipaddredit.js"></script>
+    <script src="../script/translator.js"></script>
+  	<script src="../script/inputrestriction.js"></script>
+    <script src="script/rtsp.js"></script>
+</head>
+
+<body>
+    <div id="div_rtsp_main">
+        <div id="div_rtsp_titlebar" style="width: 100%;height: 36px;float: left;">
+            <div id="div_title_rtsp" class="cls_tablebar_item cls_tablebar_item_selected" style="border-bottom: 4px solid #1baafb;color:white;">
+                <div id="div_title_rtsp_text" class="cls_tablebar_item_text">RTSP</div>
+            </div>
+        </div>
+        <div id="div_rtsp_content">
+            <div id="div_rtsp_information" class="cls_rtsp_foundation_block">
+                <div id="div_rtsp_information_title" class="cls_subpage_content_title cls_rtsp_title">
+                    <div id="div_rtsp_information_title_text" class="cls_rtsp_title_text">RTSP Information</div>
+                </div>
+                <div id="div_rtsp_auth" class="cls_rtsp_item" style="margin-top: 5px;height:25px;">
+                    <div id="div_rtsp_auth_enable_item" style="height: 24px;float: left;margin-right: 20px;">
+                        <input id="check_enable_rtsp_auth" type="checkbox" class="cls_schedule_radio" style="margin-left: 0;">
+                        <div style="float: left;height: 24px;">
+                            <label id="div_rtsp_auth_name" for="check_enable_rtsp_auth" class="cls_item_mini_font cls_item_font_light">Authentication</label>
+                        </div>
+                    </div>
+                    <div id="div_rtsp_metdata_enable_item" style="height: 24px;float: left;display: none;">
+                        <input id="check_enable_rtsp_metdata" type="checkbox" class="cls_schedule_radio" style="margin-left: 0;">
+                        <div style="float: left;height: 24px;">
+                            <label id="div_rtsp_metdata_name" for="check_enable_rtsp_metdata" class="cls_item_mini_font cls_item_font_light">Metdata transmission</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="div_rtsp_main_stream" class="cls_rtsp_item" style="height: 22px;line-height: 22px;">
+                    <div id="div_rtsp_mainstream_name" class="cls_rtsp_item_name" style="height: 22px;line-height: 22px;">Main Stream</div>
+                    <div id="div_rtsp_mainstream_value" class="cls_rtsp_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                        <div id="div_rtsp_mainstream_value_text" class="cls_item_font_grey"></div>
+                    </div>
+                </div>
+                <div id="div_rtsp_sub_stream" class="cls_rtsp_item" style="height: 22px;line-height: 22px;">
+                    <div id="div_rtsp_substream_name" class="cls_rtsp_item_name" style="height: 22px;line-height: 22px;">Sub Stream</div>
+                    <div id="div_rtsp_substream_value" class="cls_rtsp_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                        <div id="div_rtsp_substream_value_text" class="cls_item_font_grey"></div>
+                    </div>
+                </div>
+                <div id="div_rtsp_thir_stream" class="cls_rtsp_item" style="height: 22px;line-height: 22px;display: none;">
+                    <div id="div_rtsp_thirstream_name" class="cls_rtsp_item_name" style="height: 22px;line-height: 22px;">Third stream</div>
+                    <div id="div_rtsp_thirstream_value" class="cls_rtsp_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                        <div id="div_rtsp_thirstream_value_text" class="cls_item_font_grey"></div>
+                    </div>
+                </div>
+                <div id="div_rtsp_fourth_stream" class="cls_rtsp_item" style="height: 22px;line-height: 22px;display: none;">
+                    <div id="div_rtsp_fourthstream_name" class="cls_rtsp_item_name" style="height: 22px;line-height: 22px;">Fourth stream</div>
+                    <div id="div_rtsp_fourthstream_value" class="cls_rtsp_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                        <div id="div_rtsp_fourthstream_value_text" class="cls_item_font_grey"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="div_rtsp_broadcast" class="cls_rtsp_foundation_block" style="margin-top: 5px;">
+                <div id="div_rtsp_broadcast_title" class="cls_subpage_content_title cls_rtsp_title">
+                    <div id="div_rtsp_broadcast_title_text" class="cls_rtsp_title_text">RTSP Broadcast</div>
+                </div>
+                <div id="div_rtsp_broadcast_enable" class="cls_rtsp_item" style="margin-top: 5px;height: 24px;">
+                    <div id="div_rtsp_broadcast_enable_item" style="width: 480px;height: 24px;float: left;">
+                        <input id="check_enable_rtsp_broadcast" type="checkbox" class="cls_schedule_radio" style="margin-left: 0;">
+                        <div style="float: left;height: 24px;">
+                            <label id="div_rtsp_broadcast_enable_name" for="check_enable_rtsp_broadcast" class="cls_item_mini_font cls_item_font_light">Broadcast</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="div_rtsp_broadcast_address" class="cls_rtsp_item">
+                    <div id="div_rtsp_broadcast_address_name" class="cls_rtsp_item_name" style="height: 22px;line-height: 22px;">Multicast Address</div>
+                    <div id="div_rtsp_broadcast_address_value" class="cls_rtsp_item_value">
+                        <div id="ipaddr_rtsp_edit" class="cls_ipaddr_setting_input"></div>
+                    </div>
+                    <div id="div_rtsp_broadcast_address_declare" class="cls_rtsp_item_declare cls_item_font_grey" style="height: 22px;line-height: 22px;">[224.0.0.1~239.255.255.254]</div>
+                </div>
+                <div id="div_rtsp_broadcast_port" class="cls_rtsp_item">
+                    <div id="div_rtsp_broadcast_port_name" class="cls_rtsp_item_name">Port</div>
+                    <div id="div_rtsp_broadcast_port_value" class="cls_rtsp_item_value">
+                        <input type="text" id="input_rtsp_broadcast_port" style="width: 168px;" class="cls_subpage_content_input">
+                    </div>
+                    <div id="div_rtsp_broadcast_port_declare" class="cls_rtsp_item_declare cls_item_font_grey">[10000..50000]</div>
+                </div>
+                <div id="div_rtsp_broadcast_ttl" class="cls_rtsp_item">
+                    <div id="div_rtsp_broadcast_ttl_name" class="cls_rtsp_item_name">TTL</div>
+                    <div id="div_rtsp_broadcast_ttl_value" class="cls_rtsp_item_value">
+                        <input type="text" id="input_rtsp_broadcast_ttl" style="width: 168px;" class="cls_subpage_content_input">
+                    </div>
+                    <div id="div_rtsp_broadcast_ttl_declare" class="cls_rtsp_item_declare cls_item_font_grey">[64..255]</div>
+                </div>
+            </div>
+            <div id="div_rtsp_options">
+                <input type="button" id="button_rtsp_reset" class="cls_subpage_content_button" value="Reset">
+                <input type="button" id="button_rtsp_refresh" class="cls_subpage_content_button" value="Refresh">
+                <input type="button" id="button_rtsp_save" class="cls_subpage_content_button" value="Save">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

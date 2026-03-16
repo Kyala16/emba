@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="pragma" content="no-cache">
+    <title></title>
+    <link rel="stylesheet" media="all" href="../script/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" media="all" href="css/subcommon.css">
+    <link rel="stylesheet" media="all" href="css/wireless.css">
+    <script src="../script/jquery-1.12.1.min.js"></script>
+    <script src="../script/jqueryui/jquery-ui.min.js"></script>
+    <script src="../script/bvipccgisdk.js"></script>
+    <script src="../script/timeredit.js"></script>
+    <script src="../script/normalschedule.js"></script>
+    <script src="../script/jquery.cookie.js"></script>
+    <script src="../script/translator.js"></script>
+    <script src="../script/inputrestriction.js"></script>
+    <script src="script/wireless.js"></script>
+</head>
+<body>
+<div id="div_wireless_main">
+    <div id="div_wireless_titlebar">
+        <div id="div_title_status" class="cls_tablebar_item cls_tablebar_item_selected" style="width: 170px;">
+            <div id="div_title_status_text" class="cls_tablebar_item_text">Dialing status</div>
+        </div>
+        <div id="div_title_param" class="cls_tablebar_item" style="width: 170px;">
+            <div id="div_title_param_text" class="cls_tablebar_item_text">Dialing parameters</div>
+        </div>
+        <div id="div_title_schedule" class="cls_tablebar_item" style="width: 170px;">
+            <div id="div_title_schedule_text" class="cls_tablebar_item_text">Dialing plan</div>
+        </div>
+    </div>
+    <div id="div_wireless_status" class="cls_wireless_content">
+        <div id="div_wireless_item_operator" class="cls_wireless_item" style="height: 22px;line-height: 22px;">
+            <div id="div_wireless_item_operator_name" class="cls_wireless_item_name" style="height: 22px;line-height: 22px;">Operator</div>
+            <div id="div_wireless_item_operator_value" class="cls_wireless_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                <div id="div_wireless_item_operator_value_text" class="cls_item_font_grey"></div>
+            </div>
+        </div>
+        <div id="div_wireless_item_strength" class="cls_wireless_item" style="height: 22px;line-height: 22px;">
+            <div id="div_wireless_item_strength_name" class="cls_wireless_item_name" style="height: 22px;line-height: 22px;">Signal strength</div>
+            <div id="div_wireless_item_strength_value" class="cls_wireless_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                <div id="div_wireless_item_strength_value_text" class="cls_item_font_grey"></div>
+            </div>
+        </div>
+        <div id="div_wireless_item_status" class="cls_wireless_item" style="height: 22px;line-height: 22px;">
+            <div id="div_wireless_item_status_name" class="cls_wireless_item_name" style="height: 22px;line-height: 22px;">Dialing status</div>
+            <div id="div_wireless_item_status_value" class="cls_wireless_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                <div id="div_wireless_item_status_value_text" class="cls_item_font_grey"></div>
+            </div>
+        </div>
+        <div id="div_wireless_item_ip" class="cls_wireless_item" style="height: 22px;line-height: 22px;">
+            <div id="div_wireless_item_ip_name" class="cls_wireless_item_name" style="height: 22px;line-height: 22px;">IP address</div>
+            <div id="div_wireless_item_ip_value" class="cls_wireless_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                <div id="div_wireless_item_ip_value_text" class="cls_item_font_grey"></div>
+            </div>
+        </div>
+        <div id="div_wireless_item_mask" class="cls_wireless_item" style="height: 22px;line-height: 22px;">
+            <div id="div_wireless_item_mask_name" class="cls_wireless_item_name" style="height: 22px;line-height: 22px;">Mask address</div>
+            <div id="div_wireless_item_mask_value" class="cls_wireless_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                <div id="div_wireless_item_mask_value_text" class="cls_item_font_grey"></div>
+            </div>
+        </div>
+        <div id="div_wireless_item_gateway" class="cls_wireless_item" style="height: 22px;line-height: 22px;">
+            <div id="div_wireless_item_gateway_name" class="cls_wireless_item_name" style="height: 22px;line-height: 22px;">Gateway address</div>
+            <div id="div_wireless_item_gateway_value" class="cls_wireless_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                <div id="div_wireless_item_gateway_value_text" class="cls_item_font_grey"></div>
+            </div>
+        </div>
+        <div id="div_wireless_item_dns" class="cls_wireless_item" style="height: 22px;line-height: 22px;">
+            <div id="div_wireless_item_dns_name" class="cls_wireless_item_name" style="height: 22px;line-height: 22px;">DNS address</div>
+            <div id="div_wireless_item_dns_value" class="cls_wireless_item_value" style="height: 22px;line-height: 22px;width: 300px;">
+                <div id="div_wireless_item_dns_value_text" class="cls_item_font_grey"></div>
+            </div>
+        </div>
+        <div id="div_status_options" class="cls_wireless_option">
+            <input type="button" id="button_wireless_status_refresh" class="cls_subpage_content_button" value="Refresh">
+        </div>
+    </div>
+    <div id="div_wireless_param" class="cls_wireless_content" style="display: none;">
+        <div id="div_wireless_item_dialingway" class="cls_wireless_item">
+            <div id="div_wireless_item_dialingway_name" class="cls_wireless_item_name" style="height: 22px;line-height: 22px;">Dialing method</div>
+            <div id="div_wireless_item_dialingway_value" class="cls_wireless_item_value">
+                <select id="select_wireless_item_dialingway" class="cls_subpage_content_select" style="width: 230px;">
+                    <option value="0">Auto</option>
+                    <option value="1">Manual</option>
+                </select>
+            </div>
+        </div>
+        <div id="div_wireless_item_telphone" class="cls_wireless_item">
+            <div id="div_wireless_item_telphone_name" class="cls_wireless_item_name">Dialing number</div>
+            <div id="div_wireless_item_telphone_value" class="cls_wireless_item_value">
+                <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                    <input type="text" id="input_wireless_telphone" maxlength="32" class="cls_subpage_content_input" style="float: left;border: none;">
+                </div>
+            </div>
+        </div>
+        <div id="div_wireless_item_username" class="cls_wireless_item">
+            <div id="div_wireless_item_username_name" class="cls_wireless_item_name">Username</div>
+            <div id="div_wireless_item_username_value" class="cls_wireless_item_value">
+                <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                    <input type="text" id="input_wireless_username" maxlength="32" class="cls_subpage_content_input" style="float: left;border: none;">
+                </div>
+            </div>
+        </div>
+        <div id="div_wireless_item_password" class="cls_wireless_item">
+            <div id="div_wireless_item_password_name" class="cls_wireless_item_name">Password</div>
+            <div id="div_wireless_item_password_value" class="cls_wireless_item_value">
+                <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                    <input type="password" id="input_wireless_password" maxlength="15" class="cls_subpage_content_input" style="float: left;border: none;">
+                    <div id="div_password_eye" style="float: left;margin-left: 6px;">
+                        <img class="cls_input_icon" id="password_eye_hide" onclick="fun_password_eye_showorhide(0)" style="margin-top: 6px;" src="../ui/images/weyehide.png">
+                        <img class="cls_input_icon" id="password_eye_show" onclick="fun_password_eye_showorhide(1)" style="margin-top: 6px;" src="../ui/images/eyeshow.png" hidden>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div_wireless_item_apn" class="cls_wireless_item">
+            <div id="div_wireless_item_apn_name" class="cls_wireless_item_name">APN</div>
+            <div id="div_wireless_item_apn_value" class="cls_wireless_item_value">
+                <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                    <input type="text" id="input_wireless_apn" maxlength="32" class="cls_subpage_content_input" style="float: left;border: none;">
+                </div>
+            </div>
+        </div>
+        <div id="div_param_options" class="cls_wireless_option">
+            <input type="button" id="button_wireless_param_restore" class="cls_subpage_content_button" value="Restore">
+            <input type="button" id="button_wireless_param_refresh" class="cls_subpage_content_button" value="Refresh">
+            <input type="button" id="button_wireless_param_save" class="cls_subpage_content_button" value="Save">
+        </div>
+    </div>
+    <div id="div_wireless_schedule" class="cls_wireless_content" style="display: none;">
+        <div id="div_wireless_schedule_alldays" class="cls_schedule_item">
+            <div id="div_schedule_alldays_enable">
+                <input type="radio" id="radio_schedule_alldays" name="wireless_schedule" class="cls_schedule_radio" style="margin-left: 0;" checked>
+                <div style="float: left;width: auto;">
+                    <label for="radio_schedule_alldays" id="label_schedule_allday" class="cls_item_mini_font cls_item_font_light">7*24 Hours</label>
+                </div>
+            </div>
+        </div>
+        <div id="div_wireless_schedule_custom" class="cls_schedule_item">
+            <div id="div_schedule_enable">
+                <input type="radio" id="radio_schedule_enable" name="wireless_schedule" class="cls_schedule_radio" style="margin-left: 0;">
+                <div style="float: left;width: auto;">
+                    <label for="radio_schedule_enable" id="label_schedule_manual" class="cls_item_mini_font cls_item_font_light">Schedule</label>
+                </div>
+            </div>
+        </div>
+        <div id="div_schedule_manual" style="display: none;">
+            <div id="div_week_day">
+                <div style="width: 124px;height: 32px;margin: 0;float: left">
+                    <div id="div_sunday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px;text-align: right;">Sunday</div>
+                </div>
+                <div style="width: 124px;height: 32px;margin: 0;float: left">
+                    <div id="div_monday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px;text-align: right;">Monday</div>
+                </div>
+                <div style="width: 124px;height: 32px;margin: 0;float: left">
+                    <div id="div_tuesday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px;text-align: right;">Tuesday</div>
+                </div>
+                <div style="width: 124px;height: 32px;margin: 0;float: left">
+                    <div id="div_wednesday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px;text-align: right;">Wednesday</div>
+                </div>
+                <div style="width: 124px;height: 32px;margin: 0;float: left">
+                    <div id="div_thursday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px;text-align: right;">Thursday</div>
+                </div>
+                <div style="width: 124px;height: 32px;margin: 0;float: left">
+                    <div id="div_friday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px;text-align: right;">Friday</div>
+                </div>
+                <div style="width: 124px;height: 32px;margin: 0;float: left">
+                    <div id="div_saturday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px;text-align: right;">Saturday</div>
+                </div>
+            </div>
+            <div id="div_schedule_show">
+                <div id="div_schedule_ruler">
+                    <img src="../ui/images/schedule.png">
+                </div>
+                <div id="div_schedule_panel"></div>
+            </div>
+            <div id="div_schedule_operations">
+                <div style="width: 90px;height: 32px;">
+                    <input type="button" class="cls_subpage_content_button" id="button_schedule_sunday_setup" style="width: 90px;height: 26px;margin-top: 4px;" value="Setup">
+                </div>
+                <div style="width: 90px;height: 32px;">
+                    <input type="button" class="cls_subpage_content_button" id="button_schedule_monday_setup" style="width: 90px;height: 26px;margin-top: 4px;" value="Setup">
+                </div>
+                <div style="width: 90px;height: 32px;">
+                    <input type="button" class="cls_subpage_content_button" id="button_schedule_tuesday_setup" style="width: 90px;height: 26px;margin-top: 4px;" value="Setup">
+                </div>
+                <div style="width: 90px;height: 32px;">
+                    <input type="button" class="cls_subpage_content_button" id="button_schedule_wednesday_setup" style="width: 90px;height: 26px;margin-top: 4px;" value="Setup">
+                </div>
+                <div style="width: 90px;height: 32px;">
+                    <input type="button" class="cls_subpage_content_button" id="button_schedule_thursday_setup" style="width: 90px;height: 26px;margin-top: 4px;" value="Setup">
+                </div>
+                <div style="width: 90px;height: 32px;">
+                    <input type="button" class="cls_subpage_content_button" id="button_schedule_friday_setup" style="width: 90px;height: 26px;margin-top: 4px;" value="Setup">
+                </div>
+                <div style="width: 90px;height: 32px;">
+                    <input type="button" class="cls_subpage_content_button" id="button_schedule_saturday_setup" style="width: 90px;height: 26px;margin-top: 4px;" value="Setup">
+                </div>
+            </div>
+        </div>
+        <div id="div_wireless_schedule_disable" class="cls_schedule_item">
+            <div id="div_schedule_disable">
+                <input type="radio" id="radio_schedule_disable" name="wireless_schedule" class="cls_schedule_radio" style="margin-left: 0;">
+                <div style="float: left;width: auto;">
+                    <label for="radio_schedule_disable" id="label_schedule_disable" class="cls_item_mini_font cls_item_font_light">Disable</label>
+                </div>
+            </div>
+        </div>
+        <div id="div_schedule_save"  class="cls_wireless_option">
+            <input class="cls_subpage_content_button" type="button" id="button_wireless_schedule_restore" value="Restore">
+            <input class="cls_subpage_content_button" type="button" id="button_wireless_schedule_refresh" value="Refresh">
+            <input class="cls_subpage_content_button" type="button" id="button_wireless_schedule_save" value="Save">
+        </div>
+        <div id="div_wireless_schedule_setdialog" style="display: none">
+            <div id="div_setup_panel">
+                <div id="div_setup_weekday_select" class="cls_schedule_dialog_item">
+                    <div id="div_weekday_all" class="cls_schedule_dialog_check" style="width: 120px;">
+                        <input type="checkbox" id="check_weekday_alldays" class="cls_schedule_dialog_check_item cls_item_hcenter" style="float: left;">
+                        <label for="check_weekday_alldays" id="label_all" class="cls_schedule_dialog_check_item_name cls_item_mini_font cls_item_hcenter">All</label>
+                    </div>
+                    <div id="div_weekday_sunday" class="cls_schedule_dialog_check">
+                        <input type="checkbox" id="check_weekday_sunday" class="cls_schedule_dialog_check_item wireless_checkbox_change cls_item_hcenter" style="float: left;">
+                        <label for="check_weekday_sunday" id="label_sunday" class="cls_schedule_dialog_check_item_name cls_item_mini_font cls_item_hcenter">Sunday</label>
+                    </div>
+                    <div id="div_weekday_monday" class="cls_schedule_dialog_check">
+                        <input type="checkbox" id="check_weekday_monday" class="cls_schedule_dialog_check_item wireless_checkbox_change cls_item_hcenter" style="float: left;">
+                        <label for="check_weekday_monday" id="label_monday" class="cls_schedule_dialog_check_item_name cls_item_mini_font cls_item_hcenter">Monday</label>
+                    </div>
+                    <div id="div_weekday_tuesday" class="cls_schedule_dialog_check">
+                        <input type="checkbox" id="check_weekday_tuesday" class="cls_schedule_dialog_check_item wireless_checkbox_change cls_item_hcenter" style="float: left;">
+                        <label for="check_weekday_tuesday" id="label_tuesday" class="cls_schedule_dialog_check_item_name cls_item_mini_font cls_item_hcenter">Tuesday</label>
+                    </div>
+                    <div id="div_weekday_wednesday" class="cls_schedule_dialog_check">
+                        <input type="checkbox" id="check_weekday_wednesday" class="cls_schedule_dialog_check_item wireless_checkbox_change cls_item_hcenter" style="float: left;">
+                        <label for="check_weekday_wednesday" id="label_wednesday" class="cls_schedule_dialog_check_item_name cls_item_mini_font cls_item_hcenter">Wednesday</label>
+                    </div>
+                    <div id="div_weekday_thursday" class="cls_schedule_dialog_check">
+                        <input type="checkbox" id="check_weekday_thursday" class="cls_schedule_dialog_check_item wireless_checkbox_change cls_item_hcenter" style="float: left;">
+                        <label for="check_weekday_thursday" id="label_thursday" class="cls_schedule_dialog_check_item_name cls_item_mini_font cls_item_hcenter">Thursday</label>
+                    </div>
+                    <div id="div_weekday_friday" class="cls_schedule_dialog_check">
+                        <input type="checkbox" id="check_weekday_friday" class="cls_schedule_dialog_check_item wireless_checkbox_change cls_item_hcenter" style="float: left;">
+                        <label for="check_weekday_friday" id="label_friday" class="cls_schedule_dialog_check_item_name cls_item_mini_font cls_item_hcenter">Friday</label>
+                    </div>
+                    <div id="div_weekday_saturday" class="cls_schedule_dialog_check">
+                        <input type="checkbox" id="check_weekday_saturday" class="cls_schedule_dialog_check_item wireless_checkbox_change cls_item_hcenter" style="float: left;">
+                        <label for="check_weekday_saturday" id="label_saturday" class="cls_schedule_dialog_check_item_name cls_item_mini_font cls_item_hcenter">Saturday</label>
+                    </div>
+                </div>
+                <div id="div_schedule_timer_sections" style="width: 600px;float: left; margin: 0 0 0 20px;">
+                    <div id="div_setup_time_section_one" class="cls_schedule_dialog_item">
+                        <div id="div_section_one_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                            <label id="label_section1">Period 1:</label>
+                        </div>
+                        <div id="div_section_one_duration" style="float: left;">
+                            <div id="timeredit_one_start" class="cls_schedule_dialog_timer"></div>
+                            <div id="div_timer_split_one" style="width: 22px;height: 22px;float: left;margin-top: 4px;">--</div>
+                            <div id="timeredit_one_end" class="cls_schedule_dialog_timer"></div>
+                        </div>
+                    </div>
+                    <div id="div_setup_time_section_two" class="cls_schedule_dialog_item">
+                        <div id="div_section_two_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                            <label id="label_section2">Period 2:</label>
+                        </div>
+                        <div id="div_section_two_duration" style="float: left;">
+                            <div id="timeredit_two_start" class="cls_schedule_dialog_timer"></div>
+                            <div id="div_timer_split_two" style="width: 22px;height: 22px;float: left;margin-top: 4px;">--</div>
+                            <div id="timeredit_two_end" class="cls_schedule_dialog_timer"></div>
+                        </div>
+                    </div>
+                    <div id="div_setup_time_section_three" class="cls_schedule_dialog_item">
+                        <div id="div_section_three_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                            <label id="label_section3">Period 3:</label>
+                        </div>
+                        <div id="div_section_three_duration" style="float: left;">
+                            <div id="timeredit_three_start" class="cls_schedule_dialog_timer"></div>
+                            <div id="div_timer_split_three" style="width: 22px;height: 22px;float: left;margin-top: 4px;">--</div>
+                            <div id="timeredit_three_end" class="cls_schedule_dialog_timer"></div>
+                        </div>
+                    </div>
+                    <div id="div_setup_time_section_four" class="cls_schedule_dialog_item">
+                        <div id="div_section_four_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                            <label id="label_section4">Period 4:</label>
+                        </div>
+                        <div id="div_section_four_duration" style="float: left;">
+                            <div id="timeredit_four_start" class="cls_schedule_dialog_timer"></div>
+                            <div id="div_timer_split_four" style="width: 22px;height: 22px;float: left;margin-top: 4px;">--</div>
+                            <div id="timeredit_four_end" class="cls_schedule_dialog_timer"></div>
+                        </div>
+                    </div>
+                    <div id="div_setup_time_section_five" class="cls_schedule_dialog_item">
+                        <div id="div_section_five_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                            <label id="label_section5">Period 5:</label>
+                        </div>
+                        <div id="div_section_five_duration" style="float: left;">
+                            <div id="timeredit_five_start" class="cls_schedule_dialog_timer"></div>
+                            <div id="div_timer_split_five" style="width: 22px;height: 22px;float: left;margin-top: 4px;">--</div>
+                            <div id="timeredit_five_end" class="cls_schedule_dialog_timer"></div>
+                        </div>
+                    </div>
+                    <div id="div_setup_time_section_six" class="cls_schedule_dialog_item">
+                        <div id="div_section_six_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                            <label id="label_section6">Period 6:</label>
+                        </div>
+                        <div id="div_section_six_duration" style="float: left;">
+                            <div id="timeredit_six_start" class="cls_schedule_dialog_timer"></div>
+                            <div id="div_timer_split_six" style="width: 22px;height: 22px;float: left;margin-top: 4px;">--</div>
+                            <div id="timeredit_six_end" class="cls_schedule_dialog_timer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="div_schedule_time_section_options" class="cls_schedule_dialog_item">
+                    <div id="div_time_section_options" style="width: 380px;height: 32px;margin: 10px 0 0 20px;">
+                        <input type="button" id="button_schedule_timesection_save" class="cls_subpage_content_button" value="Save">
+                        <input type="button" id="button_schedule_timesection_cancel" class="cls_subpage_content_button" value="Cancel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

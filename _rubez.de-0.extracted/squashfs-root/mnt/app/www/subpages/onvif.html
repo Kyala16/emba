@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" media="all" href="css/subcommon.css">
+  <link rel="stylesheet" media="all" href="css/telnet.css">
+  <script src="../script/jquery-3.5.1.min.js"></script>
+  <script src="../script/bvipccgisdk.js"></script>
+  <script src="../script/translator.js"></script>
+  <script src="../script/inputrestriction.js"></script>
+  <script src="script/onvif.js"></script>
+</head>
+
+<body>
+  <div id="div_telnet_main">
+    <div id="div_telnet_tablebar" style="width: 100%;height: 36px;float: left;">
+      <div id="div_table_telnet" class="cls_tablebar_item cls_tablebar_item_selected" style="border-bottom: 4px solid #1baafb;color:white;">
+        <div id="div_table_telnet_text" class="cls_tablebar_item_text">Onvif</div>
+      </div>
+    </div>
+    <div id="div_telnet_content">
+      <div id="div_telnet_enable" class="cls_telnet_item">
+        <div id="div_security_tips_text" style="width: 100%;height: 24px;line-height: 24px;float: left;color:red;font-size:12px;font-family: Arial;"></div>
+        <div id="div_telnet_enable_item" style="width: 480px;height: 24px;float: left;">
+          <input id="check_enable_onvif" type="checkbox" class="cls_schedule_radio" style="margin-left: 0;">
+          <div style="float: left;height: 24px;">
+            <label id="div_telnet_enable_name" for="check_enable_onvif" class="cls_item_mini_font cls_item_font_light">Enable</label>
+          </div>
+        </div>
+      </div>
+      <div id="div_mfs_options" class="cls_telnet_item" style="margin:10px 0 0 12px;">
+        <input type="button" id="button_telnet_restore" class="cls_subpage_content_button" value="Reset Default" onclick="fun_telnet_restore()">
+        <input type="button" id="button_telnet_refresh" class="cls_subpage_content_button" value="Refresh" onclick="fun_telnet_refresh()">
+        <input type="button" id="button_telnet_save" class="cls_subpage_content_button" value="Save" onclick="fun_telnet_save()">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

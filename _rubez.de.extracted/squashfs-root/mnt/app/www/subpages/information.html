@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="pragma" content="no-cache">
+    <title></title>
+    <link rel="stylesheet" media="all" href="css/subcommon.css">
+    <link rel="stylesheet" media="all" href="css/information.css">
+    <script src="../script/jquery-3.5.1.min.js"></script>
+    <script src="../script/ajaxfileupload.js"></script>
+    <script src="../script/bvipccgisdk.js"></script>
+    <script src="../script/translator.js"></script>
+    <script src="script/information.js"></script>
+</head>
+<body>
+<div id="div_system_info_main">
+    <div id="div_information_tablebar" style="width: 100%;height: 36px;float: left;">
+        <div id="div_table_information" class="cls_tablebar_item cls_tablebar_item_selected" style="width:190px;border-bottom: 4px solid #1baafb;color:white;">
+            <div id="div_table_information_text" class="cls_tablebar_item_text">System Information</div>
+        </div>
+    </div>
+    <div id="div_system_information">
+        <div id="div_system_overview">
+            <div id="div_system_overview_title"  class="cls_systeminfo_title">
+                <div id="div_system_overview_title_text" class="cls_item_mini_font cls_systeminfo_title_text">System Overview</div>
+            </div>
+            <div id="div_system_overview_items">
+                <div id="div_system_overview_item_firmware" class="cls_systeminfo_item" style="margin-top: 5px;">
+                    <div id="div_system_overview_item_firmware_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">Firmware Version:</div>
+                    <div id="div_system_overview_item_firmware_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_overview_item_hardware" class="cls_systeminfo_item">
+                    <div id="div_system_overview_item_hardware_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">Hardware Version:</div>
+                    <div id="div_system_overview_item_hardware_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_overview_item_onvif" class="cls_systeminfo_item">
+                    <div id="div_system_overview_item_onvif_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">ONVIF Version:</div>
+                    <div id="div_system_overview_item_onvif_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V2.6</div>
+                </div>
+                <div id="div_system_overview_item_mac" class="cls_systeminfo_item">
+                    <div id="div_system_overview_item_mac_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">MAC Address:</div>
+                    <div id="div_system_overview_item_mac_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_overview_item_sn" class="cls_systeminfo_item">
+                    <div id="div_system_overview_item_sn_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">Serial Number:</div>
+                    <div id="div_system_overview_item_sn_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">8888888888888888888</div>
+                </div>
+                <div id="div_system_overview_item_ip" class="cls_systeminfo_item">
+                    <div id="div_system_overview_item_ip_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">IP Address:</div>
+                    <div id="div_system_overview_item_ip_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_overview_item_datetime" class="cls_systeminfo_item">
+                    <div id="div_system_overview_item_datetime_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">Date & Time:</div>
+                    <div id="div_system_overview_item_datetime_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_overview_item_uptime" class="cls_systeminfo_item">
+                    <div id="div_system_overview_item_uptime_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">Uptime:</div>
+                    <div id="div_system_overview_item_uptime_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_overview_item_timemode" class="cls_systeminfo_item">
+                    <div id="div_system_overview_item_timemode_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">Time Mode:</div>
+                    <div id="div_system_overview_item_timemode_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_overview_item_cpuload" class="cls_systeminfo_item">
+                    <div id="div_system_overview_item_cpuload_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">CPU Load:</div>
+                    <div id="div_system_overview_item_cpuload_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">20%</div>
+                </div>
+            </div>
+        </div>
+        <div id="div_system_status">
+            <div id="div_system_status_title" class="cls_systeminfo_title">
+                <div id="div_system_status_title_text" class="cls_item_mini_font cls_systeminfo_title_text">System Status</div>
+            </div>
+            <div id="div_system_status_items">
+                <div id="div_system_status_item_video" class="cls_systeminfo_item" style="margin-top: 5px;">
+                    <div id="div_system_status_item_video_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">Video:</div>
+                    <div id="div_system_status_item_video_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_status_item_audio" class="cls_systeminfo_item">
+                    <div id="div_system_status_item_audio_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">Audio:</div>
+                    <div id="div_system_status_item_audio_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_status_item_ftp" class="cls_systeminfo_item">
+                    <div id="div_system_status_item_ftp_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">FTP:</div>
+                    <div id="div_system_status_item_ftp_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_status_item_upnp" class="cls_systeminfo_item">
+                    <div id="div_system_status_item_upnp_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">UPnP:</div>
+                    <div id="div_system_status_item_upnp_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_status_item_rtsp" class="cls_systeminfo_item">
+                    <div id="div_system_status_item_rtsp_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">RTSP:</div>
+                    <div id="div_system_status_item_rtsp_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_status_item_recording" class="cls_systeminfo_item">
+                    <div id="div_system_status_item_recording_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">Recording:</div>
+                    <div id="div_system_status_item_recording_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_status_item_snapshot" class="cls_systeminfo_item">
+                    <div id="div_system_status_item_snapshot_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">Snapshot:</div>
+                    <div id="div_system_status_item_snapshot_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_status_item_tcp" class="cls_systeminfo_item">
+                    <div id="div_system_status_item_tcp_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">TCP:</div>
+                    <div id="div_system_status_item_tcp_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_status_item_ddns" class="cls_systeminfo_item">
+                    <div id="div_system_status_item_ddns_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">DDNS:</div>
+                    <div id="div_system_status_item_ddns_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">V3543.3215432</div>
+                </div>
+                <div id="div_system_status_item_onvif" class="cls_systeminfo_item">
+                    <div id="div_system_status_item_onvif_name" class="cls_systeminfo_item_name cls_item_mini_font cls_item_font_light">ONVIF:</div>
+                    <div id="div_system_status_item_onvif_value" class="cls_systeminfo_item_value cls_item_mini_font cls_item_font_grey">2.2365.12</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

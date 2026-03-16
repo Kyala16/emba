@@ -1,0 +1,86 @@
+#!/bin/sh
+# udhcpc script edited by Tim Riker <Tim@Rikers.org>
+
+RESOLV_CONF="/tmp/resolv.conf"
+DHCP_OPT_CONF="/tmp/dhcpopt.conf"
+
+[ -n "$1" ] || { echo "Error: should be called from udhcpc"; exit 1; }
+
+NETMASK=""
+[ -n "$subnet" ] && NETMASK="netmask $subnet"
+BROADCAST="broadcast +"
+[ -n "$broadcast" ] && BROADCAST="broadcast $broadcast"
+
+case "$1" in
+	deconfig)
+		echo "Setting IP address 0.0.0.0 on $interface"
+		ifconfig $interface 0.0.0.0
+		;;
+
+	renew|bound)
+		echo "Setting IP address $ip on $interface"
+		ifconfig $interface $ip $NETMASK $BROADCAST
+
+		if [ -n "$router" ] ; then
+			echo "Deleting routers"
+			while route del default gw 0.0.0.0 dev $interface ; do
+				:
+			done
+
+			metric=0
+			for i in $router ; do
+				echo "Adding router $i"
+				route add default gw $i dev $interface metric $((metric++))
+			done
+		fi
+
+		echo "Recreating $RESOLV_CONF"
+		echo -n > $RESOLV_CONF-$$
+		[ -n "$domain" ] && echo "search $domain" >> $RESOLV_CONF-$$
+		for i in $dns ; do
+			echo " Adding DNS server $i"
+			echo "nameserver $i" >> $RESOLV_CONF-$$
+		done
+		mv $RESOLV_CONF-$$ $RESOLV_CONF
+		
+		### dhcp option process added in 2019/10/26
+		if [ -e $DHCP_OPT_CONF ]; then
+			echo "process dhcp config"
+		else
+			echo "[DHCP_OPT]" > $DHCP_OPT_CONF
+		fi
+		### process option 66
+		if [ -n "$tftp" ]; then
+			echo "========================================================="
+			echo "DHCP option 66 message captrue success!!!, value [$tftp]"
+			echo "========================================================="
+			old=`cat $DHCP_OPT_CONF | grep "option66"`
+			new="option66 = $tftp"
+			if [ -n "$old" ]; then
+				sed -i "s/$old/$new/g" $DHCP_OPT_CONF
+			else
+				echo "$new" >> $DHCP_OPT_CONF
+			fi
+		else
+			echo "have't option66 message..."
+		fi
+	
+		### process option 67
+		if [ -n "$bootfile" ]; then
+			echo "============================================================"
+			echo "DHCP option 67 message captrue success!!!, value [$bootfile]"
+			echo "============================================================"
+			old=`cat $DHCP_OPT_CONF | grep "option67"`
+			new="option67 = $bootfile"
+			if [ -n "$old" ]; then
+				sed -i "s/$old/$new/g" $DHCP_OPT_CONF
+			else
+				echo "$new" >> $DHCP_OPT_CONF
+			fi
+		else
+			echo "have't option 67 message..."
+		fi
+		;;
+esac
+
+exit 0

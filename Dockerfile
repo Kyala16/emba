@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     binutils kmod \
     \
     # === Общие ===
-    libimage-exiftool-perl uuid-runtime git \
+    libimage-exiftool-perl uuid-runtime git libssl-dev\
     \
     # === Для сборки binwalk из исходников ===
     python3-setuptools \
@@ -46,6 +46,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN git clone --depth 1 --branch v2.3.3 https://github.com/ReFirmLabs/binwalk.git /tmp/binwalk && \
     cd /tmp/binwalk && \
     python3 setup.py install && \
+    
+    #=== ПАТЧ: Отключаем проверку require_root в extractor.py ===
+    # Находим путь к установленному модулю и патчим его \
+    EXTRACTOR_PATH=$(python3 -c "import binwalk.modules.extractor; print(binwalk.modules.extractor.__file__)") && \
+    echo "Patching: $EXTRACTOR_PATH" && \
+    
+    # Создаем резервную копию и делаем замену через sed \
+    cp "$EXTRACTOR_PATH" "$EXTRACTOR_PATH.bak" && \
+    sed -i '/raise ModuleException("Binwalk extraction uses many third party utilities/c\                    pass' "$EXTRACTOR_PATH" && \
+    
+    # Проверяем, что патч применился \
+    grep -A2 -B2 "if.*user_info" "$EXTRACTOR_PATH" | grep -q "pass" && echo "✓ Binwalk patched successfully" || (echo "✗ Patch failed" && exit 1) && \
+    
     rm -rf /tmp/binwalk
 
 # =============================================================================
@@ -53,16 +66,15 @@ RUN git clone --depth 1 --branch v2.3.3 https://github.com/ReFirmLabs/binwalk.gi
 # =============================================================================
 RUN pip3 install \
     # === S08: Package parsers ===
-    requirements-parser \
-    \
+    requirements-parser==0.5.0 \
     # === S09: Extractors ===
-    unblob jefferson ubi_reader yara-python \
-    \
+    unblob==23.12.16 jefferson==0.4.5 ubi_reader==0.8.9 yara-python==4.3.1 \
     # === F15: CycloneDX SBOM ===
-    cyclonedx-python-lib cyclonedx-bom \
-    \
+    cyclonedx-python-lib==3.1.0  \
+    cyclonedx-bom==3.11.0 \
     # === Общие ===
-    requests lxml jsonschema Jinja2 pyyaml packaging pefile pyelftools python-magic \
+    requests==2.31.0 lxml==5.1.0 jsonschema==4.21.1 \
+    Jinja2==3.1.3 pyyaml==6.0.1 packaging==23.2 pefile==2023.2.7 pyelftools==0.30 python-magic==0.4.27 \
     && rm -rf /root/.cache/pip
 
 # =============================================================================

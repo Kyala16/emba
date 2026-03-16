@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="pragma" content="no-cache">
+    <title></title>
+    <link rel="stylesheet" media="all" href="css/subcommon.css">
+    <link rel="stylesheet" media="all" href="css/wifi.css">
+    <link rel="stylesheet" media="all" href="../script/jqueryui/jquery-ui.min.css">
+    <script src="../script/jquery-3.5.1.min.js"></script>
+    <script src="../script/jqueryui/jquery-ui.min.js"></script>
+    <script src="../script/ipaddredit.js"></script>
+    <script src="../script/bvipccgisdk.js"></script>
+    <script src="../script/translator.js"></script>
+    <script src="../script/inputrestriction.js"></script>
+<script src="script/wifi.js"></script>
+</head>
+<body>
+<div id="div_wifi_main">
+    <div id="div_wifi_tablebar" style="width: 100%;height: 36px;float: left;">
+        <div id="div_table_wifi" class="cls_tablebar_item cls_tablebar_item_selected" style="border-bottom: 4px solid #1baafb;color:white;">
+            <div id="div_table_wifi_text" class="cls_tablebar_item_text">WIFI</div>
+        </div>
+    </div>
+    <div id="div_note_wifi_support">
+        <p id="pnote_wifi_support" class="cls_item_mini_font" style="color: red;">Note: This device does not support this feature.</p>
+    </div>
+    <div id="div_wifi_operations">
+        <div id="div_wifi_operation_bar">
+            <div id="div_wifi_enable">
+                <input type="checkbox" id="check_enable_wifi" class="cls_schedule_radio">
+                <div style="float: left;height: 24px;">
+                    <label id="label_wifi_enable" for="check_enable_wifi" class="cls_item_mini_font cls_item_font_light">Enable</label>
+                </div>
+            </div>
+            <div id="div_wifi_opt_buttons">
+                <input type="button" value="Add SSID" id="button_add_wifi_ssid" class="cls_subpage_content_button cls_item_mini_font">
+                <input type="button" value="Search SSID" id="button_search_wifi_ssid" class="cls_subpage_content_button cls_item_mini_font">
+            </div>
+        </div>
+    </div>
+    <div id="div_wifi_list">
+        <div id="div_wifi_list_header">
+            <table style="border: 1px solid black;width: 100%;height: 24px;">
+                <tbody>
+                    <tr>
+                        <th id="list_column_number" class="cls_wifi_list_item" style="border-right: 1px solid black;">NO.</th>
+                        <th id="list_column_ssid" class="cls_wifi_list_item" style="border-right: 1px solid black;">SSID</th>
+                        <th id="list_column_auth" class="cls_wifi_list_item" style="border-right: 1px solid black;">Authentication</th>
+                        <th id="list_column_enctypt" class="cls_wifi_list_item" style="border-right: 1px solid black;">Encryption</th>
+                        <th id="list_column_signal" class="cls_wifi_list_item" >Signal</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="div_wifi_list_content" class="cls_scrollbar">
+            <table>
+                <tbody id="table_wifi_list">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="div_wifi_status">
+        <div id="div_wifi_connect_status">
+            <div id="div_current_wifi_ssid" class="cls_wifi_status_item" style="margin-top: 5px;">
+                <div id="div_current_wifi_ssid_name" class="cls_wifi_status_item_name cls_item_mini_font cls_item_font_light">Current Network</div>
+                <div id="div_current_wifi_ssid_value" class="cls_wifi_status_item_value cls_item_mini_font cls_item_font_grey"></div>
+                <div id="cir_current_wifi_connect_status" class="cls_wifi_status_item_value cls_item_mini_font cls_item_font_grey" style="width: 128px;text-align: center;"></div>
+            </div>
+            <div id="div_currnet_wifi_ipaddr" class="cls_wifi_status_item" style="height: 30px;line-height: 30px;">
+                <div id="div_current_wifi_ipaddr_name" class="cls_wifi_status_item_name cls_item_mini_font cls_item_font_light" style="height: 30px;">IP Address</div>
+                <div id="div_current_wifi_ipaddr_value" class="cls_wifi_status_item_value cls_item_mini_font cls_item_font_grey" style="height: 30px;"></div>
+                <input type="button" value="Modify" id="button_modify_ipaddr" class="cls_subpage_content_button">
+            </div>
+            <div id="div_current_wifi_submask" class="cls_wifi_status_item">
+                <div id="div_current_wifi_submask_name" class="cls_wifi_status_item_name cls_item_mini_font cls_item_font_light">Subnet Mask</div>
+                <div id="div_current_wifi_submask_value" class="cls_wifi_status_item_value cls_item_mini_font cls_item_font_grey"></div>
+            </div>
+            <div id="div_current_wifi_gateway" class="cls_wifi_status_item">
+                <div id="div_current_wifi_gateway_name" class="cls_wifi_status_item_name cls_item_mini_font cls_item_font_light">Default Gateway</div>
+                <div id="div_current_wifi_gateway_value" class="cls_wifi_status_item_value cls_item_mini_font cls_item_font_grey"></div>
+            </div>
+        </div>
+        <div id="div_wifi_page_refresh">
+            <input type="button" id="button_refresh_wifi_status" class="cls_subpage_content_button" value="Refresh">
+            <input type="button" id="button_save_wifi" class="cls_subpage_content_button" value="Save">
+        </div>
+    </div>
+    <div id="div_connect_wifi" style="display: none;">
+        <div id="div_connect_wifi_content">
+            <div id="div_connect_wifi_ssid" class="cls_connect_item">
+                <div id="div_connect_wifi_ssid_name" class="cls_connect_item_name cls_item_name_text">SSID:</div>
+                <div id="div_connect_wifi_ssid_value" class="cls_connect_item_value">
+                    <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input id="input_connect_wifi_text" type="text" class="cls_subpage_content_input" maxlength="32" style="float: left;border: none;width: 225px;">
+                    </div>
+                </div>
+            </div>
+            <div id="div_connect_wifi_encryption" class="cls_connect_item">
+                <div id="div_connect_wifi_encryption_name" class="cls_connect_item_name cls_item_name_text" style="height: 22px;line-height: 22px;">Authentication/Encryption:</div>
+                <div id="div_connect_wifi_encryption_value" class="cls_connect_item_value">
+                    <select id="select_wifi_encryption" class="cls_subpage_content_select">
+                        <option value="0">OPEN/NONE</option>
+                        <option value="1">WPAPSK/AES</option>
+                        <option value="2">WPAPSK/TKIP</option>
+                        <option value="3">WPA2PSK/TIKP</option>
+                        <option value="4">WPA2PSK/AES</option>
+                        <option value="5">SHARED/WEP</option>
+                        <option value="6">OPEN/WEP</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_connect_wifi_password" class="cls_connect_item" style="width: 460px;">
+                <div id="div_connect_wifi_password_name" class="cls_connect_item_name cls_item_name_text">Password:</div>
+                <div id="div_connect_wifi_password_value" class="cls_connect_item_value">
+                    <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input id="input_connect_wifi_pwd" type="password" class="clsdhcp_subpage_content_input" maxlength="32" style="float: left;border: none;width: 200px;">
+                        <div id="div_password_eye" style="float: left;margin-left: 6px;">
+                            <img class="cls_input_icon" id="password_eye_hide" onclick="fun_password_eye_showorhide(0)" style="margin-top: 6px;" src="../ui/images/weyehide.png">
+                            <img class="cls_input_icon" id="password_eye_show" onclick="fun_password_eye_showorhide(1)" style="margin-top: 6px;" src="../ui/images/eyeshow.png" hidden>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div_connect_wifi_options">
+            <input id="button_connect" type="button" class="cls_subpage_content_button" value="Connect">
+            <input id="button_cancel" type="button" class="cls_subpage_content_button" value="Cancel">
+        </div>
+    </div>
+    <div id="div_modify_ipaddress" style="display: none;">
+        <div id="div_wifi_modify_content">
+            <div id="div_wifi_modify_mode">
+                <div id="div_wifi_modify_mode_name" class="cls_wifi_modify_item_name">Mode:</div>
+                <div id="div_wifi_modify_mode_dhcp" class="cls_wifi_modify_item_value" style="height: 22px;">
+                    <input type="radio" id="radio_wifi_mode_dhcp" name="wifi_mode" class="cls_schedule_dialog_check_item cls_item_hcenter" style="float: left;margin-left: 0;">
+                    <label id="label_wifi_mode_dhcp" for="radio_wifi_mode_dhcp" class="cls_schedule_dialog_check_item_name cls_item_mini_font cls_item_font_light cls_item_hcenter">DHCP</label>
+                </div>
+            </div>
+            <div style="margin-top: 0;">
+                <div class="cls_wifi_modify_item_name"></div>
+                <div class="cls_wifi_modify_item_value" style="height: 22px;">
+                    <input type="radio" id="radio_wifi_mode_static" name="wifi_mode" class="cls_schedule_dialog_check_item cls_item_hcenter" style="float: left;margin-left: 0;">
+                    <label id="label_wifi_mode_static" for="radio_wifi_mode_static" class="cls_schedule_dialog_check_item_name cls_item_mini_font cls_item_font_light cls_item_hcenter">Static</label>
+                </div>
+            </div>
+            <div id="div_wifi_modify_ipaddr" class="cls_wifi_modify_item">
+                <div id="div_wifi_modify_ipaddr_name" class="cls_wifi_modify_item_name">IP Address:</div>
+                <div id="div_wifi_modify_ipaddr_value" class="cls_wifi_modify_item_value">
+                    <div id="ipedit_wifi_ipaddress" class="cls_network_setting_input"></div>
+                </div>
+            </div>
+            <div id="div_wifi_modify_submask" class="cls_wifi_modify_item">
+                <div id="div_wifi_modify_submask_name" class="cls_wifi_modify_item_name">Sub Mask:</div>
+                <div id="div_wifi_modify_submask_value" class="cls_wifi_modify_item_value">
+                    <div id="ipedit_wifi_submask" class="cls_network_setting_input"></div>
+                </div>
+            </div>
+            <div id="div_wifi_modify_gateway" class="cls_wifi_modify_item">
+                <div id="div_wifi_modify_gateway_name" class="cls_wifi_modify_item_name">Gateway:</div>
+                <div id="div_wifi_modify_gateway_value" class="cls_wifi_modify_item_value">
+                    <div id="ipedit_wifi_gateway" class="cls_network_setting_input"></div>
+                </div>
+            </div>
+            <div id="div_wifi_modify_dnsfirst" class="cls_wifi_modify_item">
+                <div id="div_wifi_modify_firstdns_name" class="cls_wifi_modify_item_name">Primary DNS:</div>
+                <div id="div_wifi_modify_firstdns_value" class="cls_wifi_modify_item_value">
+                    <div id="ipedit_wifi_firstdns" class="cls_network_setting_input"></div>
+                </div>
+            </div>
+            <div id="div_wifi_modify_dnssecond" class="cls_wifi_modify_item">
+                <div id="div_wifi_modify_seconddns_name" class="cls_wifi_modify_item_name">Secondary DNS:</div>
+                <div id="div_wifi_modify_seconddns_value" class="cls_wifi_modify_item_value">
+                    <div id="ipedit_wifi_seconddns" class="cls_network_setting_input"></div>
+                </div>
+            </div>
+        </div>
+        <div id="div_wifi_modify_options">
+            <input type="button" id="button_wifi_modify_save"   value="Save" class="cls_subpage_content_button">
+            <input type="button" id="button_wifi_modify_cancel" value="Cancel" class="cls_subpage_content_button">
+        </div>
+    </div>
+</div>
+</body>
+</html>

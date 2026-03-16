@@ -1,0 +1,220 @@
+#div_schedule_main{
+    width:1088px;
+    height:630px;
+    margin: 0;
+}
+#div_schedule_tablebar{
+    width: 100%;
+    height: 36px;
+    float: left;
+    background-color: #2c2c2c;
+    font-family: Arial;
+    font-size: 14px;
+}
+.cls_schedule_content{
+    width:1000px;
+    height:auto;
+    margin: 8px 0 0 12px;
+    float: left;
+}
+.cls_schedule_item{
+    width: 588px;
+    height: 28px;
+    float: left;
+}
+.cls_schedule_item_name{
+    width: 115px;
+    height: 22px;
+    line-height: 22px;
+    float: left;
+    font-family: Arial;
+    font-size: 12px;
+    color: white;
+}
+.cls_schedule_item_value{
+    width:238px;
+    height: 22px;
+    float: left;
+}
+.cls_schedule_item_declare{
+    width: 120px;
+    height: 24px;
+    float: left;
+    margin: 4px 0 0 0;
+    font-family: Arial;
+    font-size: 12px;
+}
+#div_schedule_options{
+    width:100%;
+    height: 42px;
+    margin:10px 0 0 12px;
+    float: left;
+}
+.cls_schedule_radio{
+    /*margin: 1px 0 0 2px;*/
+    float: left;
+}
+#div_week_day{
+    width: 126px;
+    height:224px;
+    margin: 32px 0 0 0;
+    float: left;
+}
+#div_schedule_show{
+    width:734px;
+    height: 256px;
+    float: left;
+}
+#div_schedule_ruler{
+    width: 734px;
+    height:32px;
+    float: left;
+    margin: 0;
+}
+#div_schedule_panel{
+    width: 720px;
+    height:224px;
+    border:1px solid transparent;
+    margin: 0 0 0 6px;
+    float: left;
+}
+#div_schedule_operations{
+    width: 100px;
+    height: 224px;
+    float: left;
+    margin: 32px 0 0 2px ;
+}
+#div_schedule_manual{
+    width:100%;
+    height:256px;
+    float: left;
+}
+
+/*==================setup dialog=================*/
+#div_setup_panel{
+    width:822px;
+    height:278px;
+    margin: 12px 0 0 32px;
+}
+.cls_schedule_dialog_item{
+    width: 100%;
+    height:32px;
+    float: left;
+}
+.cls_schedule_dialog_check{
+    width:100px;
+    height:28px;
+    float: left;
+}
+.cls_schedule_dialog_check_item{
+    width: 12px;
+    height:12px;
+    float: left;
+}
+.cls_schedule_dialog_check_item_name{
+    width:auto;
+    height: 22px;
+    line-height: 22px;
+    float: left;
+}
+.cls_item_hcenter {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+}
+.cls_schedule_dialog_timer{
+    width:92px;
+    height: 26px;
+    margin: 0 16px 0 4px;
+    color: white;
+    font-family: Arial;
+    font-size: 12px;
+    float: left;
+}
+.cls_schedule_dialog_duration_name{
+    width:88px;
+    height:28px;
+    line-height: 28px;
+    float: left;
+}
+.ui-timer-widget{
+    color: white;
+}
+.ui-timer-widget:disabled{
+    color: #7f7f7f;
+}
+.cls_item_name_selected{
+    color: red;
+}
+
+/*=====================normal schedule dialog====================*/
+#div_normal_schedule_enable{
+    width:680px;
+    height:32px;
+    margin: 12px 0 0 75px;
+    float: left;
+}
+.cls_normal_schedule_item{
+    width:180px;
+    height: 28px;
+    float: left;
+}
+.cls_normal_schedule_check{
+    width: 24px;
+    height:24px;
+    margin:2px 0 0 2px;
+    float: left;
+}
+.cls_normal_schedule_check_item{
+    /*margin: 2px 0 0 6px;*/
+}
+.cls_normal_schedule_check_name{
+    width:140px;
+    height:24px;
+    margin: 8px 0 0 0;
+    font-size: 12px;
+    font-family: Arial;
+    color: white;
+    float: left;
+}
+#div_normal_schedule_show{
+    width: 100%;
+    height: 272px;
+    float: left;
+}
+#div_normal_week_day{
+    width:128px;
+    height: 224px;
+    margin: 32px 0 0 0;
+    float: left;
+}
+#div_normal_schedule_paint{
+    width:734px;
+    height:256px;
+    float: left;
+}
+#div_normal_schedule_ruler{
+    width:734px;
+    height:32px;
+    float: left;
+}
+#div_normal_schedule_panel{
+    width: 720px;
+    height:224px;
+    border:1px solid transparent;
+    margin: 0 0 0 6px;
+    float: left;
+}
+#div_normal_schedule_operations{
+    width:90px;
+    height: 224px;
+    margin: 32px 0 0 2px;
+    float: left;
+}
+#div_normal_schedule_setup{
+    width:822px;
+    height:278px;
+    margin: 12px 0 0 80px;
+    float: left;
+}

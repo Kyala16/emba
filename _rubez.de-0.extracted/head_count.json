@@ -1,0 +1,46 @@
+{
+    "headcount_alarm":{
+        "proc": "init_rules",
+        "width": 1920,
+        "height": 1080,
+        "fps": 10,
+        "customizedOptions": {
+            "area_list": [
+                {
+                    "area_type": "polygon",
+                    "area_id": 1,
+                    "alertor_ids": [
+                        1
+                    ],
+                    "points": [
+                        {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        {
+                            "x": 1.0,
+                            "y": 0.0
+                        },
+                        {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        {
+                            "x": 0.0,
+                            "y": 1.0
+                        }
+                    ]
+                }
+            ],
+            "alertor_configs": [
+                {
+                    "alertor_id": 1,
+                    "alertor_type": [
+                        "head_count"
+                    ],
+                    "duration": 1
+                }
+            ]
+        }
+    }
+}

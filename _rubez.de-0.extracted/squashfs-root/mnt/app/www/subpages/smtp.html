@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="pragma" content="no-cache">
+    <title></title>
+    <link rel="stylesheet" media="all" href="css/subcommon.css">
+    <link rel="stylesheet" media="all" href="css/smtp.css">
+    <script src="../script/jquery-3.5.1.min.js"></script>
+    <script src="../script/bvipccgisdk.js"></script>
+    <script src="../script/translator.js"></script>
+    <script src="../script/inputrestriction.js"></script>
+    <script src="script/smtp.js"></script>
+</head>
+<body>
+<div id="div_smtp_main">
+    <div id="div_smtp_titlebar" style="width: 100%;height: 36px;float: left;">
+        <div id="div_title_smtp" class="cls_tablebar_item cls_tablebar_item_selected" style="border-bottom: 4px solid #1baafb;color:white;">
+            <div id="div_title_smtp_text" class="cls_tablebar_item_text">SMTP</div>
+        </div>
+    </div>
+    <div id="div_smtp_content">
+        <div id="div_smtp_popmail">
+            <div id="button_preset_gmail" class="cls_smtp_dib_button" style="margin-left: 0;">
+                <img src="images/gmail.png" class="cls_smtp_preset_image">
+            </div>
+            <div id="button_preset_msmail" class="cls_smtp_dib_button" style="display: none;">
+                <img src="images/outlook.png" class="cls_smtp_preset_image">
+            </div>
+            <div id="button_preset_yahoomail" class="cls_smtp_dib_button">
+                <img src="images/yahoo.png" class="cls_smtp_preset_image">
+            </div>
+            <div id="button_preset_other" class="cls_smtp_dib_button">
+                <img src="images/omail.png" class="cls_smtp_preset_image">
+            </div>
+        </div>
+        <div id="div_smtp_server" class="cls_smtp_parameter_block" style="height: 200px">
+            <div id="div_smtp_server_host" class="cls_smtp_item" style="margin-top: 5px;">
+                <div id="div_smtp_server_host_name" class="cls_item_font_light cls_item_mini_font cls_smtp_item_name">SMTP Server:</div>
+                <div id="div_smtp_server_host_value" class="cls_smtp_item_value">
+                    <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_smtp_server_address" class="cls_subpage_content_input" style="float: left;border: none;">
+                    </div>
+                </div>
+            </div>
+            <div id="div_smtp_server_auth" class="cls_smtp_item">
+                <div id="div_smtp_server_auth_name" class="cls_item_font_light cls_item_mini_font cls_smtp_item_name">Authentication:</div>
+                <div id="div_smtp_server_auth_value" class="cls_smtp_item_value">
+                    <select id="select_smtp_ssl_enable" class="cls_subpage_content_select">
+                        <option value="0">NONE</option>
+                        <option value="1">SSL/TLS</option>
+                        <option value="2">STARTTLS</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_smtp_server_port" class="cls_smtp_item">
+                <div id="div_smtp_server_port_name" class="cls_item_font_light cls_item_mini_font cls_smtp_item_name">Port:</div>
+                <div id="div_smtp_server_prot_value"  class="cls_smtp_item_value">
+                    <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_smtp_server_port" class="cls_subpage_content_input" style="float: left;border: none;">
+                    </div>
+                </div>
+            </div>
+            <div id="div_smtp_client_username" class="cls_smtp_item">
+                <div id="div_smtp_client_username_name" class="cls_item_font_light cls_item_mini_font cls_smtp_item_name">User Name:</div>
+                <div id="div_smtp_client_username_value" class="cls_smtp_item_value">
+                    <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_smtp_client_username" class="cls_subpage_content_input" style="float: left;border: none;">
+                    </div>
+                </div>
+            </div>
+            <div id="div_smtp_client_password" class="cls_smtp_item">
+                <div id="div_smtp_client_password_name" class="cls_item_font_light cls_item_mini_font cls_smtp_item_name">Password:</div>
+                <div id="div_smtp_client_password_value" class="cls_smtp_item_value">
+                    <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="password" id="input_smtp_client_password" class="cls_subpage_content_input" style="float: left;border: none;">
+                        <div id="div_password_eye" style="float: left;margin-left: 6px;">
+                            <img class="cls_input_icon" id="password_eye_hide" onclick="fun_password_eye_showorhide(0)" style="margin-top: 6px;" src="../ui/images/weyehide.png">
+                            <img class="cls_input_icon" id="password_eye_show" onclick="fun_password_eye_showorhide(1)" style="margin-top: 6px;" src="../ui/images/eyeshow.png" hidden>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div_smtp_client_info" class="cls_smtp_parameter_block" style="height: 100px">
+            <div id="div_smtp_client_sender" class="cls_smtp_item">
+                <div id="div_smtp_client_sender_name" class="cls_item_font_light cls_item_mini_font cls_smtp_item_name">Sender:</div>
+                <div id="div_smtp_client_sender_value" class="cls_smtp_item_value">
+                    <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_smtp_client_sender" class="cls_subpage_content_input" style="float: left;border: none;">
+                    </div>
+                </div>
+            </div>
+            <div id="div_smtp_send_title" class="cls_smtp_item" style="margin-top: 3px;">
+                <div id="div_smtp_send_title_name" class="cls_item_font_light cls_item_mini_font cls_smtp_item_name"></div>
+                <div id="div_smtp_send_title_value" class="cls_smtp_item_value">
+                    <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_smtp_send_title" class="cls_subpage_content_input" style="float: left;border: none;">
+                    </div>
+                </div>
+            </div>
+            <div id="div_smtp_receiver_one" class="cls_smtp_item">
+                <div id="div_smtp_reciever_one_name" class="cls_item_font_light cls_item_mini_font cls_smtp_item_name" style="margin-top: 3px;">Receiver Email 1:</div>
+                <div id="div_smtp_reciever_one_value" class="cls_smtp_item_value" style="margin-top: 3px;">
+                    <div style="width: 230px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_smtp_recipient_one" maxlength="63" class="cls_subpage_content_input" style="float: left;border: none;">
+                    </div>
+                </div>
+                <input type="button" id="button_smtp_test" class="cls_subpage_content_button" value="Test" style="float: left">
+            </div>
+        </div>
+        <div id="div_smtp_sender_option" style="margin: 10px 0 0 12px">
+            <input type="button" id="button_smtp_restore" class="cls_subpage_content_button" value="Restore Default">
+            <input type="button" id="button_smtp_refresh" class="cls_subpage_content_button" value="Refresh">
+            <input type="button" id="button_smtp_save" class="cls_subpage_content_button" value="Save">
+        </div>
+    </div>
+</div>
+</body>
+</html>

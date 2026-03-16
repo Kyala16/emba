@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<allpages>
+    <common>
+        <enablec>Вкл.</enablec>
+        <liveplay>Просмотр</liveplay>
+        <playback>Архив</playback>
+        <configure>Настройка</configure>
+        <exit>Выход</exit>
+        <activate>Активация</activate>
+        <pwdstrength>Надежность</pwdstrength>
+        <pwdinfo>Пароль должен содержать от 5 до 15 символов и может состоять из заглавных, строчных букв, цифр, знаков препинания.</pwdinfo>
+        <weak>Слабый</weak>
+        <strong>Хороший</strong>
+        <username>Пользователь</username>
+        <password>Пароль</password>
+        <language>Язык</language>
+        <login>Войти</login>
+        <refresh>Обновить</refresh>
+        <reset>Отмена</reset>
+        <restore>Сброс</restore>
+        <clear>Очистить</clear>
+        <unbinding>Развязать</unbinding>
+        <unbindingtip>Отключить это устройство от пользователя APP</unbindingtip>
+        <removeall>Удалить все</removeall>
+        <action>Действие</action>
+        <save>Сохранить</save>
+        <cancel>Отмена</cancel>
+        <add>Добавить</add>
+        <modify>Изменить</modify>
+        <delete>Удалить</delete>
+        <create>Создать</create>
+        <install>Установить</install>
+        <yes>Да</yes>
+        <not>Нет</not>
+        <confirm>OK</confirm>
+        <mainstream>Основной поток</mainstream>
+        <substream>Дополнительный поток</substream>
+        <enable>Вкл.</enable>
+        <disable>Выкл.</disable>
+        <enabled>Вкл.</enabled>
+        <disabled>Выкл.</disabled>
+        <opens>Вкл.</opens>
+        <closes>Выкл.</closes>
+        <smart>Smart-режим</smart>
+        <infrared>ИК-режим</infrared>
+        <white>Белая подсветка</white>
+        <turnoff>Выкл.</turnoff>
+        <default>По умолчанию</default>
+        <port>Порт</port>
+        <none>Нет</none>
+        <status>Статус</status>
+        <browse>Выбор...</browse>
+        <auto>Авто</auto>
+        <hour>Ч.</hour>
+        <minute>Мин.</minute>
+        <second>Сек.</second>
+        <msecond>мс.</msecond>
+        <ipaddress>IP адрес</ipaddress>
+        <submask>Маска подсети</submask>
+        <gateway>Шлюз</gateway>
+        <schedule>Расписание</schedule>
+        <selall>Выбрать все</selall>
+        <setup>Установ.</setup>
+        <period>Период</period>
+        <number>№.</number>
+        <auth>Аутентификация</auth>
+        <connected>Онлайн</connected>
+        <disconnected>Не подключено</disconnected>
+        <maximum>Макс.</maximum>
+        <character>Символ</character>
+        <high>Высокий</high>
+        <low>Низкий</low>
+        <middle>Средний</middle>
+        <largest>Большой</largest>
+        <smaller>Маленький</smaller>
+        <mintime>Интервал включения мин. время</mintime>
+        <devname>Имя устройства</devname>
+        <weekdays>
+            <sunday>Воскресенье</sunday>
+            <monday>Понедельник</monday>
+            <tuesday>Вторник</tuesday>
+            <wednesday>Среда</wednesday>
+            <thursday>Четверг</thursday>
+            <friday>Пятница</friday>
+            <saturday>Суббота</saturday>
+        </weekdays>
+        <monthnames>
+            <january>Январь</january>
+            <february>Февраль</february>
+            <march>Март</march>
+            <april>Апрель</april>
+            <may>Май</may>
+            <june>Июнь</june>
+            <july>Июль</july>
+            <august>Август</august>
+            <september>Сентябрь</september>
+            <october>Октябрь</october>
+            <november>Ноябрь</november>
+            <december>Декабрь</december>
+        </monthnames>
+        <actions>
+            <alarmout>Тревожный выход</alarmout>
+            <evtblink>Стробоскопический свет</evtblink>
+            <record>Запись</record>
+            <ftp>FTP</ftp>
+            <sendemail>Отправить email</sendemail>
+            <snapshot>Снимок</snapshot>
+            <audioout>Аудио выход</audioout>
+            <notifyserver>Сервер событий</notifyserver>
+            <motionemulation>Эмуляция движения</motionemulation>
+        </actions>
+        <fgtpwd>Забыли пароль?</fgtpwd>
+        <findpwd>Восстановить пароль</findpwd>
+        <rstpwd>Сбросить пароль</rstpwd>
+        <newpas>Новый пароль</newpas>
+        <expiretime>Время действия</expiretime>
+        <authcode>Код авторизации</authcode>
+        <devicecode>Код устройства</devicecode>
+        <getpwdtips>Отправьте случайный код устройства своему продавцу, а затем установите новый пароль после получения кода авторизации. Если срок действия превышен, пожалуйста, получите случайный код еще раз.</getpwdtips>
+        <questionlable1>Вопрос 1</questionlable1>
+        <questionlable2>Вопрос 2</questionlable2>
+        <questionlable3>Вопрос 3</questionlable3>
+        <answerlabel>Ответ</answerlabel>
+        <question1>В каком городе вы родились?</question1>
+        <question2>Как называется начальная школа, в которой вы учитесь?</question2>
+        <question3>Какая ваша первая работа?</question3>
+        <question4>Какой у вас самый важный день?</question4>
+        <question5>Как звали вашего первого питомца?</question5>
+        <question6>Какой город вы хотели бы поселить больше всего?</question6>
+        <question7>Как называется ваш любимый автомобиль?</question7>
+        <question8>Какая ваша любимая песня?</question8>
+        <question9>Какое ваше лучшее блюдо?</question9>
+        <question10>Какой вид спорта у вас самый лучший?</question10>
+        <question11>Как зовут вашего любимого певца?</question11>
+        <question12>Как зовут вашего любимого учителя?</question12>
+        <question13>Как зовут вашего лучшего друга?</question13>
+        <question14>Как зовут твоего отца?</question14>
+        <question15>Как зовут твою мать?</question15>
+    </common>
+    <preview>
+        <wiper>Стеклоочиститель</wiper>
+        <ratio>Соотношение сторон</ratio>
+        <channel>Поток</channel>
+        <audio>Вкл/Выкл аудио</audio>
+        <intercom>Вкл/Выкл интерком</intercom>
+        <snapshot>Снимок</snapshot>
+        <consecutivesnapshot>Мульти-снимок</consecutivesnapshot>
+        <record>Старт/Стоп запись</record>
+        <ezoom>Цифровой зум</ezoom>
+        <fullscreen>Полноэкранный режим</fullscreen>
+        <ptzcontrol>Управление PTZ</ptzcontrol>
+        <zoomadd>Зум+</zoomadd>
+        <zoomsub>Зум-</zoomsub>
+        <autofocus>Автофокус</autofocus>
+        <focusadd>Фокус+</focusadd>
+        <focussub>Фокус-</focussub>
+        <irisadd>Диафрагма+</irisadd>
+        <irissub>Диафрагма-</irissub>
+        <ptzspeed>Скорость PTZ</ptzspeed>
+        <preset>Пресет</preset>
+        <cruise>Обход</cruise>
+        <calltag>вызвать</calltag>
+        <edittag>редактировать</edittag>
+        <deletetag>удалить</deletetag>
+        <stoptag>стоп</stoptag>
+        <addpoint>добавить пресет</addpoint>
+        <deletepoint>удалить пресет</deletepoint>
+        <mvdown>двигать вниз</mvdown>
+        <startscan>Старт сканирование</startscan>
+        <stopscan>Стоп сканирование</stopscan>
+        <startpattern>Старт oбход</startpattern>
+        <stoppattern>Стоп oбход</stoppattern>
+        <linearscan>Линейное сканирование</linearscan>
+        <pattern>Обход</pattern>
+        <staytime>время остановки</staytime>
+        <imageset>Изображение</imageset>
+        <stream>Тип видео потока</stream>
+        <quality>Качество</quality>
+        <balance>Баланс качества</balance>
+        <bandwidth>Скорость</bandwidth>
+        <mobile>Мобильный</mobile>
+        <display>Настройка</display>
+        <saturation>Насыщенность</saturation>
+        <brightness>Яркость</brightness>
+        <sharpness>Резкость</sharpness>
+        <contrast>Контрастность</contrast>
+        <fisheye>Fish-eye</fisheye>
+        <install>Метод установки</install>
+        <ceiling>Потолок</ceiling>
+        <desktop>Настольная</desktop>
+        <wall>Стена</wall>
+        <displaymode>Настройка </displaymode>
+        <normal>Оригинал</normal>
+        <ratio43>4:3</ratio43>
+        <ratio169>16:9</ratio169>
+        <stretch>Растянуть</stretch>
+        <noalarm>Нет тревог</noalarm>
+        <ioalarm>Тревожный вход</ioalarm>
+        <motionalarm>Тревога по детектору движения</motionalarm>
+        <piralarm>Тревога по PIR детектору</piralarm>
+        <newocx>Обнаружено обновление плагина. Пожалуйста, скачайте и установите новую версию.</newocx>
+        <unset>Сброс</unset>
+        <inset>Установка</inset>
+        <fisheyepara>Настройка  параметров</fisheyepara>
+        <centerx>Горизонтальная  координата  центральной  точки</centerx>
+        <centery>Вертикальная  координата  центральной  точки</centery>
+        <innerrad>Центр  резки  диаметра</innerrad>
+        <outerrad>Внешняя  граница  диаметра</outerrad>
+        <reflineangle>Угол-0  (линия  развертки)</reflineangle>
+        <etypecrossline>Пересечение линии</etypecrossline>
+        <etypeinstrusion>Вторжение</etypeinstrusion>
+        <etypeloitering>Блуждающий</etypeloitering>
+        <bodydetect>Детектор людей</bodydetect>
+        <facedetect>Детекция лиц</facedetect>
+        <withoutmask>Без маски</withoutmask>
+        <wearmask>Носить маску</wearmask>
+        <vehicledct>Детектор машин</vehicledct>
+        <smokefire>Обнаружение дыма и пожаров</smokefire>
+        <falldct>Обнаружение падения</falldct>
+        <petdetect>Детектор животных</petdetect>
+        <facerecogfail>Лицо не распознано</facerecogfail>
+        <facerecogblist>Черный список</facerecogblist>
+        <facerecogwlist>Белый список лиц</facerecogwlist>
+        <leftmoved>Объектов осталось/пропало</leftmoved>
+    </preview>
+    <playback>
+        <noauth>Текущий пользователь не может запускать воспроизведение. Пожалуйста войдите как администратор.</noauth>
+        <stopplay>Стоп</stopplay>
+        <slowplay>Замедленное воспроизведение</slowplay>
+        <startplay>Воспроизвести</startplay>
+        <pauseplay>Пауза</pauseplay>
+        <fastplay>Ускоренное воспроизведение</fastplay>
+        <frameplay>Покадровое воспроизведение</frameplay>
+        <speakeron>Звук вкл</speakeron>
+        <speakeroff>Звук выкл</speakeroff>
+        <videoclip>Обрезать видео</videoclip>
+        <fullscreen>Полноэкранный режим</fullscreen>
+        <downloadrec>Скачать</downloadrec>
+        <startsearch>Поиск</startsearch>
+        <alarmrec>Запись по тревоге</alarmrec>
+        <continuousrec>По расписанию</continuousrec>
+        <manualrec>Ручная запись</manualrec>
+        <recfilename>Имя файла</recfilename>
+        <rectype>Настройка записи</rectype>
+        <recfilesize>Размер</recfilesize>
+        <searchdate>Дата</searchdate>
+        <startdownload>Скачать</startdownload>
+        <stopdownload>Остановить скачивание</stopdownload>
+        <otheralarmrec>Другие напоминания</otheralarmrec>
+    </playback>
+    <configuration>
+        <videoctr>Настройки видео</videoctr>
+        <basesetting>Основные настройки</basesetting>
+        <system>Система</system>
+        <network>Сеть</network>
+        <avsetting>Видео и аудио</avsetting>
+        <storage>Настройка записи</storage>
+        <event>События</event>
+        <security>Безопасность</security>
+        <general>Основное</general>
+        <maintain>Обслуживание</maintain>
+        <upgrade>Обновление</upgrade>
+        <information>Информация</information>
+        <log>Лог</log>
+        <tcpip>TCP/IP</tcpip>
+        <wifi>WIFI</wifi>
+        <pppoe>PPPoE</pppoe>
+        <smtp>SMTP</smtp>
+        <upnp>UPnP</upnp>
+        <ddns>DDNS</ddns>
+        <rtsp>RTSP</rtsp>
+        <rtmp>RTMP</rtmp>
+        <voip>VoIP</voip>
+        <audio>Аудио</audio>
+        <video>Видео</video>
+        <osd>OSD</osd>
+        <imagesetting>Изображение</imagesetting>
+        <privacymask>Приватность</privacymask>
+        <roi>ROI</roi>
+        <localsetting>Запись браузером IE</localsetting>
+        <disk>Диск</disk>
+        <ftp>FTP</ftp>
+        <evtserver>Сервер событий</evtserver>
+        <motion>Детектор движения</motion>
+        <ioalarm>Тревожный Вх/Вых</ioalarm>
+        <pir>PIR детектор</pir>
+        <abnormality>Неисправность</abnormality>
+        <user>Пользователи</user>
+        <ipfilter>IP фильтр</ipfilter>
+    </configuration>
+    <subpages>
+        <guide>
+            <time>Время</time>
+            <users>Пользователи</users>
+            <tcpip>TCP/IP</tcpip>
+            <audio>Аудио</audio>
+            <video>Видео</video>
+            <system>Система</system>
+            <maintain>Служебные</maintain>
+            <p2pcode>Облачный сервис (P2P)</p2pcode>
+            <p2pid>P2P ID</p2pid>
+            <p2pstatus>P2P Статус</p2pstatus>
+            <online>Онлайн</online>
+            <offline>Оффлайн</offline>
+            <online_nobind>Онлайн не привязан</online_nobind>
+            <product>IP камера</product>
+            <productdeclare>Параметры по умолчанию являются оптимальной настройкой устройства для большинства приложений. Вы можете изменить настройки на основе Ваших потребностей.</productdeclare>
+        </guide>
+        <general>
+            <datetime>Дата и время</datetime>
+            <regular>Основное</regular>
+            <date>Дата</date>
+            <time>Время</time>
+            <datetimefmt>Дата и формат отображения времени</datetimefmt>
+            <datefmt>Формат даты</datefmt>
+            <timefmt>Формат времени</timefmt>
+            <timeset>Настройка времени устройства</timeset>
+            <timezone>Временная зона</timezone>
+            <dstenable>Переход на летнее время</dstenable>
+            <dstbias>Летнее время</dstbias>
+            <dststart>Начало</dststart>
+            <dstend>Конец</dstend>
+            <syncserver>Синхронизация с NTP сервером</syncserver>
+            <syncpc>Синхр. с ПК</syncpc>
+            <manualset>Ручная настройка</manualset>
+            <ntpserver>NTP сервер</ntpserver>
+            <ntpperiod>Обновление</ntpperiod>
+            <dateymd>ГГГГ-ММ-ДД</dateymd>
+            <datedmy>ДД-MM-ГГГГ</datedmy>
+            <datemDy>MM-ДД-ГГГГ</datemDy>
+            <timetwentyfour>24Ч</timetwentyfour>
+            <timetwelve>12Ч</timetwelve>
+            <timezoneitem>
+                <zone0>GMT-14</zone0>
+                <zone1>GMT-13</zone1>
+                <zone2>GMT-12(Eniwetok)</zone2>
+                <zone3>GMT-11(Midway Island, Samoa)</zone3>
+                <zone4>GMT-10(Hawaii, the Aleutian Islands)</zone4>
+                <zone5>GMT-09(Alaska)</zone5>
+                <zone6>GMT-08(Los Angeles, San Francisco, Vancouver)</zone6>
+                <zone7>GMT-07(Calgary, Denver, Salt Lake City)</zone7>
+                <zone8>GMT-06(Chicago, Dallas, New Orleans)</zone8>
+                <zone9>GMT-06(Mexico City)</zone9>
+                <zone10>GMT-05(Cuba)</zone10>
+                <zone11>GMT-05(New York, Toronto, Washington, DC)</zone11>
+                <zone12>GMT-04:30(Bolivarian Republic of Venezuela)</zone12>
+                <zone13>GMT-04 (Paraguay)</zone13>
+                <zone14>GMT-04(Paraguay,Chile)</zone14>
+                <zone15>GMT-04(Charlottetown, Manaus)</zone15>
+                <zone16>GMT-03:30(Newfoundland)</zone16>
+                <zone17>GMT-03(Sao Paulo, Brazil)</zone17>
+                <zone18>GMT-02(Noronha, Mid-Atlantic)</zone18>
+                <zone19>GMT-01(Azores, Cape Verde)</zone19>
+                <zone20>GMT(Dublin, Lisbon, London, Reykjavik)</zone20>
+                <zone21>GMT+01(Amsterdam, Berlin, Rome, Stockholm, Warsaw)</zone21>
+                <zone22>GMT+02(Athens, Helsinki, Istanbul, Riga)</zone22>
+                <zone23>GMT+02(Egypt)</zone23>
+                <zone24>GMT+02(Israel)</zone24>
+                <zone25>GMT+02(Johannesburg)</zone25>
+                <zone26>GMT+02(Lebanon)</zone26>
+                <zone27>GMT+02(Syria)</zone27>
+                <zone28>GMT+03(Москва, Riyadh)</zone28>
+                <zone29>GMT+03(Iraq)</zone29>
+                <zone30>GMT+03:30(Iran)</zone30>
+                <zone31>GMT+04(Abu Dhabi Emirate, Baku)</zone31>
+                <zone32>GMT+04:30(Kabul)</zone32>
+                <zone33>GMT+05(Екатеринбург, Karachi, Tashkent)</zone33>
+                <zone34>GMT+05:30(Mumbai, Calcutta, New Delhi)</zone34>
+                <zone35>GMT+05:45(Kathmandu)</zone35>
+                <zone36>GMT+06(Novosibirsk, Omsk)</zone36>
+                <zone37>GMT+06:30(Yangon)</zone37>
+                <zone38>GMT+07(Bangkok, Hanoi, Jakarta)</zone38>
+                <zone39>GMT+08(Beijing, Hong Kong, Shanghai)</zone39>
+                <zone40>GMT+08(Perth)</zone40>
+                <zone41>GMT+09(Osaka, Sapporo, Tokyo, Seoul)</zone41>
+                <zone42>GMT+09:30(Darwin)</zone42>
+                <zone43>GMT+09:30(Adelaide)</zone43>
+                <zone44>GMT+10(Hobart, Canberra, Melbourne, Sydney)</zone44>
+                <zone45>GMT+11(Solomon Islands)</zone45>
+                <zone46>GMT+11:30(Norfolk)</zone46>
+                <zone47>GMT+12(Auckland, Wellington)</zone47>
+                <zone48>GMT+12(Fiji)</zone48>
+                <zone49>GMT+12(Kamchatka Peninsula)</zone49>
+                <zone50>GMT+12(Marshall Islands)</zone50>
+                <zone51>GMT+12:45(Chatham)</zone51>
+                <zone52>GMT+13 (Tongatapu, Nuku'alofa)</zone52>
+            </timezoneitem>
+            <devinfo>Информация о устройстве</devinfo>
+            <qrcode>Облачный сервис (P2P)</qrcode>
+            <firmware>Версия прошивки:</firmware>
+            <hardware>Аппаратная версия:</hardware>
+            <onvif>Версия ONVIF:</onvif>
+            <mac>MAC адрес:</mac>
+            <sn>Серийный номер:</sn>
+            <firstweek>1й</firstweek>
+            <secondweek>2й</secondweek>
+            <thirdweek>3й</thirdweek>
+            <fourthweek>4й</fourthweek>
+            <lastweek>Прошлая неделя</lastweek>
+            <notep2pcode>Для изменения требуется перезагрузка</notep2pcode>
+            <aflenschk>Инициализация объектива</aflenschk>
+        </general>
+        <maintain>
+            <maintaintitle>Задачи</maintaintitle>
+            <autoreboot>Авто перезагрузка</autoreboot>
+            <everyday>Каждый день</everyday>
+            <reboot>Перезагрузка</reboot>
+            <cfgdeclare>Экспорт текущей конфигурации или импорт ранее сохраненной конфигурации.</cfgdeclare>
+            <import>Импорт</import>
+            <export>Экспорт</export>
+            <devmaintain>Выполнение команд</devmaintain>
+            <notedefault>Сбросить все параметры кроме IP адреса.</notedefault>
+            <factoryset>Полный сброс к заводским уст.</factoryset>
+            <rebooterr>Не удается перезагрузить!</rebooterr>
+            <rebootsuc>Перезагрузка успешна!</rebootsuc>
+            <restoreerr>Сбой при восстановлении!</restoreerr>
+            <restoresuc>Восстановление успешно!</restoresuc>
+            <notereboot>Перезагрузить устройство.</notereboot>
+            <noterestore>Сбросить все параметры на заводские настройки.</noterestore>
+        </maintain>
+        <upgrade>
+            <upgradetitle>Прошить</upgradetitle>
+            <devconfirm1>Текущая модель</devconfirm1>
+            <devconfirm2>Убедитесь,что прошивка для данной модели!</devconfirm2>
+            <selectfile>Файл прошивки</selectfile>
+            <upgradenote1>1. Не отключайте устройство во время обновления. Устройство перезагрузится автоматически, процесс занимает от 1 до 10 минут.</upgradenote1>
+            <upgradenote2>2. Для применения обновленных параметров,сбросьте настройки камеры к заводским установкам, очистите кэш браузера .</upgradenote2>
+            <startupgrade>Запуск</startupgrade>
+            <upgradeprogress>Процесс обновления</upgradeprogress>
+            <waitupgrade>Подождите окончания процесса...</waitupgrade>
+            <upgradefailed>Сбой обновления!</upgradefailed>
+            <fileerror>Неверный файл прошивки !</fileerror>
+            <hardnotmatch>Аппаратная несовместимость!</hardnotmatch>
+            <upgradesuccess>Успешно обновлено!</upgradesuccess>
+            <uploaderror>Ошибка загрузки</uploaderror>
+        </upgrade>
+        <ptzconfig>
+            <config3d>3D-позиционирование</config3d>
+            <showzoom>Показать значение увеличения</showzoom>
+            <rsconfigt>RS485</rsconfigt>
+            <ptzconfigt>PTZ</ptzconfigt>
+            <addressmask>Адрес</addressmask>
+            <baudrate>Бодрейт</baudrate>
+            <databits>Бит данных</databits>
+            <stopbits>Стоп-бит</stopbits>
+            <verifys>Четность</verifys>
+            <datacontrol>Контроль данных</datacontrol>
+            <send>Данные для отправки</send>
+            <text>Текст</text>
+            <hexadecimal>шестнадцатеричный</hexadecimal>
+            <sendtips>Шестнадцатеричный должен быть разделен пробелами</sendtips>
+            <oddcheck>Нечетный</oddcheck>
+            <evencheck>Четный</evencheck>
+        </ptzconfig>
+        <information>
+            <sysinfo>Информация о системе</sysinfo>
+            <sysoverview>Текущие версии</sysoverview>
+            <sysstatus>Статус системы</sysstatus>
+            <firmver>Версия прошивки:</firmver>
+            <hardver>Аппаратная версия:</hardver>
+            <onvifver>Версия ONVIF:</onvifver>
+            <mac>MAC адрес:</mac>
+            <sn>Серийный номер:</sn>
+            <ipaddr>IP адрес:</ipaddr>
+            <datetime>Дата и время:</datetime>
+            <uptime>Время в онлайн:</uptime>
+            <timemode>Режим часов:</timemode>
+            <cpu>Загрузка CPU:</cpu>
+            <video>Видео:</video>
+            <audio>Аудио:</audio>
+            <ftp>FTP:</ftp>
+            <upnp>UPnP:</upnp>
+            <rtsp>RTSP:</rtsp>
+            <recording>Запись:</recording>
+            <snapshot>Снимок:</snapshot>
+            <tcp>TCP:</tcp>
+            <ddns>DDNS:</ddns>
+            <onvif>ONVIF:</onvif>
+            <timesyncntp>Синхронизация с NTP сервером</timesyncntp>
+            <timemanual>Ручная настройка</timemanual>
+        </information>
+        <log>
+            <syslog>События системы</syslog>
+            <bsslog>Бизнес-журнал</bsslog>
+            <download>Скачать</download>
+        </log>
+        <tcpip>
+            <networksta>Статус сети</networksta>
+            <tcpip>TCP/IP</tcpip>
+            <wiredsta>Текущие параметры</wiredsta>
+            <wifista>Состояние WIFI сети</wifista>
+            <ipv4addr>IPV4 IP адрес:</ipv4addr>
+            <ipv4mask>IPV4 маска подсети:</ipv4mask>
+            <ipv4gateway>IPV4 шлюз:</ipv4gateway>
+            <ipv6addr>IPV6 IP адрес:</ipv6addr>
+            <ipv6gateway>IPV6 шлюз:</ipv6gateway>
+            <domain>Домен:</domain>
+            <primarydns>Основной DNS:</primarydns>
+            <secondarydns>Альтерн. DNS:</secondarydns>
+            <ntpserver>NTP сервер:</ntpserver>
+            <wificonnect>Статус соединения:</wificonnect>
+            <wifiipaddr>Текущий IP адрес:</wifiipaddr>
+            <ipv4set>IPV4 сетевые настройки</ipv4set>
+            <ipv6set>IPV6 сетевые настройки</ipv6set>
+            <mode>Режим</mode>
+            <static>Статический</static>
+            <dhcp>DHCP</dhcp>
+            <ipaddr>IP адрес:</ipaddr>
+            <submask>Маска подсети:</submask>
+            <gateway>Шлюз:</gateway>
+            <mtu>MTU:</mtu>
+            <networktype>Скорость и дуплекс:</networktype>
+            <tenmilhalf>10M Half-dup</tenmilhalf>
+            <tenmilfull>10M Full-dup</tenmilfull>
+            <hunmilhalf>100M Half-dup</hunmilhalf>
+            <hummilfull>100M Full-dup</hummilfull>
+            <tcpiptips>Запомните внесенные изменения, иначе Вы можете потерять доступ. Если IP-адрес был изменен, войдите с новым IP адресом..</tcpiptips>
+            <dhcpmode>Режим DHCP</dhcpmode>
+            <manualatips>Внимание! Переключение в ручной режим только для опытных пользователей!</manualatips>
+            <hosename>Hostname</hosename>
+            <indentifie>Dhcp-class-indentifier</indentifie>
+            <classid>Dhcp-user-class-id</classid>
+        </tcpip>
+        <port>
+            <serverport>Порт</serverport>
+            <httpport>HTTP порт</httpport>
+            <httpsport>HTTPS порт</httpsport>
+            <rtspport>RTSP порт</rtspport>
+            <tcpport>TCP порт</tcpport>
+            <flashport>RTMP порт</flashport>
+            <httptips>Запомните внесенные изменения, иначе Вы можете потерять доступ. Убедитесь, что указанный порт свободен. .</httptips>
+            <httpstips>Пожалуйста, подтвердите, чтобы изменить? Если порт HTTPS камеры изменен, пожалуйста, войдите снова. .</httpstips>
+            <portsetting>Настройка порта</portsetting>
+            <protosetting>Настройка протокола</protosetting>
+        </port>
+        <wifi>
+            <addssid>Добавить SSID</addssid>
+            <searchssid>Поиск SSID</searchssid>
+            <ssid>SSID</ssid>
+            <encrypt>Шифрование</encrypt>
+            <signal>Сигнал</signal>
+            <curnetwork>Текущая сеть</curnetwork>
+            <defaultgateway>Шлюз по умолчанию</defaultgateway>
+            <authandenc>Аутентификация/Шифрование</authandenc>
+            <contowifi>Подключиться к WIFI</contowifi>
+            <connect>Соединить</connect>
+        </wifi>
+        <pppoe>
+            <pppoetitle>PPPoE</pppoetitle>
+            <enablepppoe>Вкл.</enablepppoe>
+            <connectsta>Статус соединения</connectsta>
+        </pppoe>
+        <smtp>
+            <smtptitle>SMTP</smtptitle>
+            <smtpserver>SMTP сервер</smtpserver>
+            <sender>Отправитель</sender>
+            <receiver>Email получателя</receiver>
+            <test>Тест</test>
+            <subject>Тема</subject>
+        </smtp>
+        <upnp>
+            <upnptitle>UPnP</upnptitle>
+            <interport>Внутренний порт</interport>
+            <exterport>Внешний порт</exterport>
+            <protocol>Протокол</protocol>
+            <mapsuccess>Мэппинг успешен</mapsuccess>
+            <mapfail>Сбой мэппинга</mapfail>
+        </upnp>
+        <ddns>
+            <ddnstitle>DDNS</ddnstitle>
+            <servertype>Тип сервера</servertype>
+            <serverdomain>Имя хоста</serverdomain>
+            <updateinterval>Интервал обновления</updateinterval>
+            <autodns>Авто DNS</autodns>
+            <hostname>Имя хоста</hostname>
+            <autoddns>Авто DDNS</autoddns>
+            <manualddns>Ручной DDNS</manualddns>
+        </ddns>
+        <rtsp>
+            <rtsptitle>RTSP</rtsptitle>
+            <rtspinfo>RTSP поток</rtspinfo>
+            <rtspbroadcast>Многоадресная рассылка — SSM</rtspbroadcast>
+            <enablemulticast>Вкл.</enablemulticast>
+            <multicastaddress>Адрес группы</multicastaddress>
+            <ttl>TTL</ttl>
+            <metdata>Передача метаданных</metdata>
+        </rtsp>
+        <rtmp>
+            <rtmptitle>RTMP</rtmptitle>
+            <youtubeen>Совместимость с YouTube</youtubeen>
+            <pushtype>Выбрать тип</pushtype>
+            <pushurl>Введите URL</pushurl>
+        </rtmp>
+        <voip>
+            <voiptitle>VoIP</voiptitle>
+            <serveraddr>Адрес сервера</serveraddr>
+            <callid>ID вызова</callid>
+            <streamtype>Тип потока</streamtype>
+            <duration>Макс. время вызова</duration>
+        </voip>
+        <snmp>
+            <rcommunity>Права чтения</rcommunity>
+            <wcommunity>Права записи</wcommunity>
+            <trapaddr>Адрес SNMP</trapaddr>
+            <trapport>Порт SNMP</trapport>
+            <rtapname>Trap имя</rtapname>
+            <rusername>Читать имя пользователя</rusername>
+            <wusername>Записать имя пользователя</wusername>
+            <securityl>Уровень доступа</securityl>
+            <authalgorithm>Алгоритм аутентификации</authalgorithm>
+            <authpwd>Пароль аутентификации</authpwd>
+            <privatealgorithm>Алгоритм приватного ключа</privatealgorithm>
+            <privatepwd>Пароль приватного ключа</privatepwd>
+            <snmpextend>SNMP прочие настройки</snmpextend>
+            <snmpport>SNMP порт</snmpport>
+        </snmp>
+        <ieee>
+            <protocal>Протокол</protocal>
+            <eapolver>EAPOL версия</eapolver>
+            <clientid>Идентификатор сертификата клиента</clientid>
+            <file>Сертификат</file>
+            <idtips>（(Например, user@example.org )</idtips>
+            <passwordtips>Шифровать пароль для ключа клиента (например, whatever)</passwordtips>
+            <tip1>* Все сертификаты должны поступать с сервера RADIUS. (Например / freeradius / 3.0 / certs /)</tip1>
+            <tip2>* Файлом сертификата может быть ca.pem / client.crt / client.pem</tip2>
+            <tip3>1) Сертификат CA (.crt):</tip3>
+            <tip4>- ca.pem > > ca.crt</tip4>
+            <tip5>- Вам нужно вручную изменить расширение.</tip5>
+            <tip6>- Сертификат не должен шифроваться.</tip6>
+            <tip7>2) Сертификат клиента (.crt):</tip7>
+            <tip8>- client.crt</tip8>
+            <tip9>3) Приватный ключ клиента (.pem):</tip9>
+            <tip10>- client.pem</tip10>
+            <tip11>В настройках IEEE 802.1x ключ должен быть зашифрован с помощью указанного выше пароля.</tip11>
+        </ieee>
+        <gb>
+            <sipserveid>Номер SIP-сервера</sipserveid>
+            <sipdomain>SIP домен</sipdomain>
+            <sipserveip>IP-адрес SIP-сервера</sipserveip>
+            <sipserveprot>Порт SIP-сервера</sipserveprot>
+            <devcode>номер оборудования</devcode>
+            <rejectpass>подписаться пароль</rejectpass>
+            <localserveport>Порт локального SIP-сервера</localserveport>
+            <rejectexpires>Срок действия регистрации</rejectexpires>
+            <heartinterval>Цикл сердцебиения</heartinterval>
+            <heartmaxtime>Максимальное количество тайм-аутов сердцебиения</heartmaxtime>
+            <protocol>Протокол</protocol>
+            <streamtype>Тип потока</streamtype>
+            <mainstream>Основной поток</mainstream>
+            <substream>Дополнительный поток</substream>
+            <asilecode>Номер канала</asilecode>
+            <alarmlevel>Уровень тревоги</alarmlevel>
+            <ailsemessgae>Информация о канале</ailsemessgae>
+            <alarmmessage>Сообщить в полицию</alarmmessage>
+            <speechoutput>голосовой вывод</speechoutput>
+        </gb>
+        <bonjour>
+            <servername>Имя устройства</servername>
+        </bonjour>
+        <qos>
+            <streamdscp>Поток DSCP</streamdscp>
+        </qos>
+        <https>
+            <createcertificate>Создать сертификат</createcertificate>
+            <requestcreated>Запрос создан</requestcreated>
+            <install>Установить подписанный сертификат</install>
+            <certificationpath>Путь сертификата</certificationpath>
+            <passpath>Путь ключа сертификата</passpath>
+            <certificateinstalled>Сертификат установлен</certificateinstalled>
+            <attributes>Атрибуты</attributes>
+            <example>Пример</example>
+            <day>День</day>
+            <range>Сфера</range>
+            <country>Страна</country>
+            <domainname>IP/DNS</domainname>
+            <expirationdate>Срок действия</expirationdate>
+            <province>Провинция</province>
+            <position>Pасположение</position>
+            <organization>Oрганизация</organization>
+            <organizationalunit>Организационная единица</organizationalunit>
+            <email>Почта</email>
+            <downloadcrt>Скачать сертификат</downloadcrt>
+            <downloadkey>Скачать ключ</downloadkey>
+            <infotext>Конфигурация вступает в силу! Устройство перезагружается, пожалуйста, не покидайте страницу и не закрывайте браузер ...</infotext>
+            <httpstips>Необходимо перезагрузить устройство</httpstips>
+            <notefilefmt>Текущий файл недоступен! </notefilefmt>
+        </https>
+        <wireless>
+            <mobile>4G</mobile>
+            <status>Состояние</status>
+            <params>Параметры</params>
+            <schedule>Расписание</schedule>
+            <operator>Оператор</operator>
+            <strength>Сигнал</strength>
+            <ip>IP-адрес</ip>
+            <mask>Маска</mask>
+            <gateway>Шлюз</gateway>
+            <dns>DNS-адрес</dns>
+            <networking>В сети</networking>
+            <nonet>Нет сети</nonet>
+            <dialingway>Набор</dialingway>
+            <auto>Авто</auto>
+            <manual>Вручную</manual>
+            <dialphone>Номер</dialphone>
+        </wireless>
+        <vpn>
+            <name>имя</name>
+        </vpn>
+        <audio>
+            <audiotitle>Аудио</audiotitle>
+            <enableaudio>Вкл.</enableaudio>
+            <codec>Кодек</codec>
+            <sample>Частота дискретизации</sample>
+            <audioin>Входной синал</audioin>
+            <inputvol>Громкость входа</inputvol>
+            <outputvol>Громкость выхода</outputvol>
+            <micin>Микрофон</micin>
+            <linein>Линейный</linein>
+            <bitrates>Битрейт</bitrates>
+        </audio>
+        <video>
+            <thirdstream>Третий поток</thirdstream>
+            <videotitle>Видео</videotitle>
+            <codec>Кодек</codec>
+            <resolution>Разрешение</resolution>
+            <profile>Профиль</profile>
+            <frameratio>Частота кадров</frameratio>
+            <bitratetype>Тип битрейта</bitratetype>
+            <bitraterange>Битрейт диапазон</bitraterange>
+            <bitrate>Битрейт</bitrate>
+            <quality>Качество кодирования</quality>
+            <keyframe>Частота опорных кадров</keyframe>
+            <noteframe>Чтобы использовать частоту 30 кадров в секунду, измените стандарт видео в настройках изображения на 60 Гц.</noteframe>
+            <notequality>Чем больше число, тем качественнее изображение.</notequality>
+            <notekeyframe>Чем короче интервал, тем качественнее видео</notekeyframe>
+            <withaudio>Аудио</withaudio>
+            <best>Лучшее</best>
+            <better>Очень хорошее</better>
+            <good>Хорошее</good>
+            <normal>Нормальное</normal>
+            <worse>Плохое</worse>
+            <worst>Наихудшее</worst>
+            <videowm>Режим работы</videowm>
+            <smartenc>Smart-кодек</smartenc>
+        </video>
+        <osd>
+            <osdtitle>OSD</osdtitle>
+            <devinfo>Отображать имя устройства</devinfo>
+            <devtime>Отображать дату</devtime>
+            <devcustom>Свой текст</devcustom>
+            <devpicture>Логотип</devpicture>
+            <upload>Загрузить</upload>
+            <picturenote>Внимание: формат изображения - JPG. Изображение должно быть не более чем 250x150 пикселей.</picturenote>
+        </osd>
+        <imagesettings>
+            <always>всегда включен</always>
+            <flash>вспышка</flash>
+            <mediumflash>средняя вспышка</mediumflash>
+            <slowflash>медленная вспышка</slowflash>
+            <speed>Скорость стробоскопа</speed>
+            <irlevel>Яркость ИК-подсветк</irlevel>
+            <maxlevel>Максимальная яркость</maxlevel>
+            <imagetitle>Настройки изображения</imagetitle>
+            <saturation>Насыщенность</saturation>
+            <brightness>Яркость</brightness>
+            <sharpness>Резкость</sharpness>
+            <contrast>Контраст</contrast>
+            <blc>BLC</blc>
+            <wdr>WDR</wdr>
+            <daynight>Режим День/Ночь</daynight>
+            <icut>ИК-фильтр</icut>
+            <wb>Баланс белого</wb>
+            <shutter>выдержка</shutter>
+            <mirror>Зеркалирование</mirror>
+            <metering>Экспонометр</metering>
+            <iris>Автодиафрагма</iris>
+            <standard>Стандарт видео</standard>
+            <defog>Антитуман</defog>
+            <nr>Регулировка NR</nr>
+            <ldc>LDC</ldc>
+            <color>День</color>
+            <bw>Ночь</bw>
+            <timing>Цветн.режим по времени</timing>
+            <intersync>По матрице(программно)</intersync>
+            <bwtocolor>ЧБ--&gt;Цвет.</bwtocolor>
+            <colortobw>Цвет--&gt;ЧБ.</colortobw>
+            <colortogreydelay>Задержка перехода в день</colortogreydelay>
+            <greytocolordelay>Задержка перехода в ночь</greytocolordelay>
+            <RealtimeBrightness>Яркость в реальном времени</RealtimeBrightness>
+            <indoor>Помещение</indoor>
+            <outdoor>Улица</outdoor>
+            <fluorescent>Лампы дневного света</fluorescent>
+            <manual>Ручной</manual>
+            <rgain>Красный</rgain>
+            <ggain>Зелёный</ggain>
+            <bgain>Голубой</bgain>
+            <vertical>Вертикаль</vertical>
+            <horizontal>Горизонталь</horizontal>
+            <verandhor>Переворот</verandhor>
+            <global>Общий</global>
+            <middle>Средний</middle>
+            <corridor>Режим коридора</corridor>
+            <imgprofile>Режим</imgprofile>
+            <custom>Свой</custom>
+            <normal>Стандарт</normal>
+            <bright>Яркий</bright>
+            <colorful>Насыщенный</colorful>
+            <pastel>Мягкие цвета</pastel>
+            <dymodetips>В этот период устройство будет работать в цветовом режиме.</dymodetips>
+            <imagesetnote>Примечание: изменение изображения вступает в силу немедленно.</imagesetnote>
+            <infrared>ИК подсветка</infrared>
+            <smartir>Smart IR</smartir>
+            <smartled>Smart LED</smartled>
+            <imgbase>Изображение</imgbase>
+            <blclevel>Регулирование BLC</blclevel>
+            <hlclevel>Регулировка HLC</hlclevel>
+            <wdrlevel>Настройка WDR</wdrlevel>
+            <lightsene>Чуткость</lightsene>
+            <gain>Усиление</gain>
+            <imgtemplate>Текущий шаблон</imgtemplate>
+            <imgmodel>Режим</imgmodel>
+            <imgadjust>Настройка</imgadjust>
+            <expsettings>Экспозиция</expsettings>
+            <expmode>Режим экспозиции</expmode>
+            <imgenhancement>Улучшение</imgenhancement>
+            <imgadvance>Дополнительно</imgadvance>
+            <daynightmod>День/Ночь</daynightmod>
+            <daynightmodfull>LED</daynightmodfull>
+            <daymode>День</daymode>
+            <nightmode>Ночь</nightmode>
+            <imgconf>Режим работы</imgconf>
+            <periodset>Указать период</periodset>
+            <imgnormal>Стандартный</imgnormal>
+            <supplementled>ИК-подсветка</supplementled>
+            <supplementledfull>LED-подсветка</supplementledfull>
+            <supplementled2>Управение подсветкой</supplementled2>
+            <blacklight>Smart подсветка</blacklight>
+            <blacklightfull>Белый свет в режиме</blacklightfull>
+            <ledlevel>Уровень яркости</ledlevel>
+            <smartevt>Интерактивный режим</smartevt>
+            <imgfixed>Фиксированная</imgfixed>
+            <hlc>HLC</hlc>
+            <hsblc>HSBLC</hsblc>
+            <ledonlevel>Порог включения светодиода</ledonlevel>
+            <ledofflevel>Порог выключения светодиода</ledofflevel>
+        </imagesettings>
+        <privacymask>
+            <privacytitle>Маскирование</privacytitle>
+            <enableprivacy>Вкл.</enableprivacy>
+        </privacymask>
+        <roi>
+            <roititle>ROI</roititle>
+            <enableroi>Вкл.</enableroi>
+            <roilevel>ROI Уровень</roilevel>
+            <lower>Низкий</lower>
+            <middle>Средний</middle>
+            <higher>Высокий</higher>
+            <nonroifps>Non-ROI FPS</nonroifps>
+        </roi>
+        <local>
+            <localtitle>Локальные настройки</localtitle>
+            <liverecord>Запись</liverecord>
+            <livesnapshot>Снимок</livesnapshot>
+            <picturetype>Формат снимка</picturetype>
+        </local>
+        <disk>
+            <disktitle>Диск</disktitle>
+            <formatted>Отформатирован</formatted>
+            <format>Форматирование</format>
+            <usage>Состояние</usage>
+            <nodisk>Не установлено</nodisk>
+            <installed>установлены</installed>
+            <abnormal>Неисправность</abnormal>
+            <full>Полный</full>
+            <normal>Норма</normal>
+            <formatting>Форматирование накопителя...</formatting>
+            <usedsize>занято</usedsize>
+            <unusedsize>свободно</unusedsize>
+            <formatips>Предупреждение: форматирование удалит все данные на этом накопителе! Чтобы отформатировать, нажмите кнопку OK, чтобы выйти, нажмите Отмена.</formatips>
+        </disk>
+        <ftp>
+            <ftptitle>FTP</ftptitle>
+            <serveraddr>Адрес сервера</serveraddr>
+            <remotepath>Удаленный путь</remotepath>
+            <breakpoint>Возобновить загрузку после восстановления соединения</breakpoint>
+            <testftp>Тест FTP</testftp>
+        </ftp>
+        <nfs>
+            <hostaddr>Адрес сервера</hostaddr>
+            <rootpath>Удаленный путь</rootpath>
+            <staumount>Отключен</staumount>
+            <stamounted>Подключено</stamounted>
+        </nfs>
+        <schedule>
+            <record>Запись</record>
+            <snapshot>Снимок</snapshot>
+            <ftpupload>Загрузка на FTP</ftpupload>
+            <prerecord>Предзапись</prerecord>
+            <stream>Поток</stream>
+            <overwrite>Перезапись</overwrite>
+            <recordpkg>Длина файла</recordpkg>
+            <quality>Качество</quality>
+            <framerate>Число кадров</framerate>
+            <interval>Интервал</interval>
+            <mjpeg>MJPEG-HTTP</mjpeg>
+            <snapshoturl>URL снимка</snapshoturl>
+            <notefps>Чем больше число, тем лучше качество изображения.</notefps>
+            <destination>Назначение</destination>
+            <recordparams>Настройки записи</recordparams>
+        </schedule>
+        <evtserver>
+            <evtservertitle>Сервер событий</evtservertitle>
+            <serveraddr>Адрес сервера</serveraddr>
+            <alias>Название</alias>
+            <url>Почтовый URL</url>
+            <type>Тип</type>
+            <typeprivate>Приватный</typeprivate>
+            <typehttp>HTTP</typehttp>
+            <test>Tест</test>
+            <dataformat>Формат данных</dataformat>
+            <confidential>Конфиденциальность сервера</confidential>
+            <subtheme>Подписка на тему</subtheme>
+            <clientid>Идентификатор клиента</clientid>
+        </evtserver>
+        <motion>
+            <zone>Настройки обнаружения</zone>
+            <enablemotion>Вкл.</enablemotion>
+            <sensitivity>Чувствительность</sensitivity>
+            <threshold>Порог</threshold>
+            <allrect>Вся область</allrect>
+            <allmotions>Все цели движутся</allmotions>
+            <smartmotions>Умное движение</smartmotions>
+            <smarttips>Обнаружен</smarttips>
+            <smarthuman>Человеческая форма</smarthuman>
+            <smartvehicle>Автомобильная форма</smartvehicle>
+        </motion>
+        <ioalarm>
+            <ioalarmtitle>Трев.Вх/Вых</ioalarmtitle>
+            <triggerlevel>Уровень включения:</triggerlevel>
+            <outputlevel>Уровень трев. вых.:</outputlevel>
+            <alarmdn>Переключатель дня и ночи</alarmdn>
+            <currentin>Текущий вход:</currentin>
+            <currentout>Текущий выход:</currentout>
+            <alarmsetting>Настройки срабатывания будильника</alarmsetting>
+            <linkout>Связь</linkout>
+            <fixoutput>Фиксированный вывод</fixoutput>
+            <timeroutput>Время вывода</timeroutput>
+            <iointerface>Интерфейс сигнализации</iointerface>
+            <hardwareinfo>Информация об аппаратном интерфейсе</hardwareinfo>
+            <hardwarestate>Статус встроенного аппаратного интерфейса</hardwarestate>
+            <hardwaretest>Протестировать аппаратные интерфейсы</hardwaretest>
+            <alarminputnumber>Количество тревожных входов:</alarminputnumber>
+            <alarmoutputnumber>Количество тревожных выходов:</alarmoutputnumber>
+            <inputlevel>Ввод:</inputlevel>
+            <output>Вывод:</output>
+            <outputlevelset>Параметры выходного уровня</outputlevelset>
+            <triggerlevelset>Настройка уровня срабатывания сигнализации IO</triggerlevelset>
+        </ioalarm>
+        <pir></pir>
+        <abnormality>
+            <networkdisconnect>Разрыв сети</networkdisconnect>
+            <startup>Включение устройства</startup>
+        </abnormality>
+        <user>
+            <usertitle>Управление пользователями</usertitle>
+            <group>Группы</group>
+            <administrator>Администратор</administrator>
+            <operator>Оператор</operator>
+            <viewer>Наблюдатель</viewer>
+            <confirmpwd>Подтвердите пароль</confirmpwd>
+            <authlist>Права пользователя</authlist>
+            <preview>Просмотр</preview>
+            <playback>Архив</playback>
+            <intercom>Интерком</intercom>
+            <maintain>Служебные</maintain>
+            <storage>Настр.записи</storage>
+            <ptzcontrol>PTZ</ptzcontrol>
+            <upgrade>Обновление</upgrade>
+            <system>Система</system>
+            <network>Сеть</network>
+            <audio>Аудио</audio>
+            <video>Видео</video>
+            <event>События</event>
+            <record>Запись</record>
+            <usermgr>Упр. пользователями</usermgr>
+            <smartav>Видеоаналитика</smartav>
+        </user>
+        <ipfilter>
+            <ipfiltertitle>IP фильтр</ipfiltertitle>
+            <ipfiltermode>Тип фильтра IP адресов</ipfiltermode>
+            <startip>Начальный IP</startip>
+            <endip>Конечный IP</endip>
+            <alias>Название</alias>
+            <allows>Белый спикок</allows>
+            <forbidden>Черный список</forbidden>
+        </ipfilter>
+        <avanalysis>
+            <leftmoved>Объектов осталось/пропало</leftmoved>
+            <resetcounters>Сброс счетчиков</resetcounters>
+            <autoreset>Автоматический сброс</autoreset>
+            <manualreset>Ручной сброс</manualreset>
+            <resettip>нажмите, чтобы сбросить счетчик</resettip>
+            <onceaday>Раз в день</onceaday>
+            <vehicledct>Детектор машин</vehicledct>
+            <falldct>Обнаружение падения</falldct>
+            <smokefire>Обнаружение дыма и пожаров</smokefire>
+            <linenum>Количество отрезков</linenum>
+            <petdetect>Детектор животных</petdetect>
+            <facedetection>Обнаружение лиц</facedetection>
+            <enablefd>Вкл.</enablefd>
+            <showframe>Отображать рамку</showframe>
+            <showfaceid>Отображать ID лица</showfaceid>
+            <faceconfidence>Лицо уверенность</faceconfidence>
+            <maskconfidence>Маска достоверности</maskconfidence>
+            <maskblink>Отметить лицо без маски</maskblink>
+            <facefilter>Игнорировать</facefilter>
+            <maxrect>Больше, чем зона</maxrect>
+            <minrect>Меньше, чем зона</minrect>
+            <snapshotmode>Режим снимка</snapshotmode>
+            <fullframe>Полный кадр</fullframe>
+            <faceframe>Лицо</faceframe>
+            <picturecompress>Качество снимка</picturecompress>
+            <uploadinterval>Время обновления</uploadinterval>
+            <keepsize>Сохранять оригинальные пропорции лица</keepsize>
+            <strechface>Размер фрейма</strechface>
+            <workmode>Режим работы</workmode>
+            <optiinterval>Временной интервал</optiinterval>
+            <optiarea>Заданная область</optiarea>
+            <keeptime>Минимальное время пребывания</keeptime>
+            <delaytime>Время задержки съемки</delaytime>
+            <authorize>Активация авторизации</authorize>
+            <authstatus>Статус авторизации</authstatus>
+            <unauthorized>Не авторизован</unauthorized>
+            <authorized>Авторизован</authorized>
+            <authfailed>Авторизация не удалась, попробуйте еще раз</authfailed>
+            <authkey>Код авторизации</authkey>
+            <authnote>Примечание: Получите и используйте правильный код авторизации. Пожалуйста, подтвердите, что устройство подключено к Интернету до авторизации.</authnote>
+            <suctorboot>Авторизация успешна, устройство перезапускается, пожалуйста, обновите страницу позже!</suctorboot>
+            <withoutmask>Без маски</withoutmask>
+            <wearmask>Носить маску</wearmask>
+            <allface>Все лица</allface>
+            <videoanalysis>Видео аналитика</videoanalysis>
+            <peoplecount>Подсчёт посетителей</peoplecount>
+            <etypeloitering>Блуждающий</etypeloitering>
+            <humandct>Детектор людей</humandct>
+            <crosslinedct>Пересечение линий</crosslinedct>
+            <intrusiondct>Обнаружение вторжения</intrusiondct>
+            <confidenceval>Порог</confidenceval>
+            <targetmask>Показывать рамку</targetmask>
+            <scenemode>Настройка сцены</scenemode>
+            <indoorhuman>В помещении</indoorhuman>
+            <outdoorhuman>На улице</outdoorhuman>
+            <humanandcar>Автомобиль на улице</humanandcar>
+            <sensitivity>Чувствительность</sensitivity>
+            <linedirection>Направление</linedirection>
+            <crsindoor>В помещении</crsindoor>
+            <crsoutdoor>На улице</crsoutdoor>
+            <targetblink>Мигание линий при пересечении</targetblink>
+            <intsenter>На вход</intsenter>
+            <intsleft>На выход</intsleft>
+            <intsboth>В обе стороны</intsboth>
+            <showid>показать идентификатор</showid>
+            <reporttoftp>Отчет на FTP</reporttoftp>
+            <quotaforftp>Квота отчет на FTP</quotaforftp>
+            <reportsend>Отчет на FTP</reportsend>
+            <sendtime>Время отправки отчета</sendtime>
+            <attemptstimes> Количество попыток </attemptstimes>
+            <reportfile>Файл</reportfile>
+            <reportsendtime> Время отправки отчета </reportsendtime>
+            <uploadsta>Статус загрузки</uploadsta>
+            <sendsuccess>Успешно</sendsuccess>
+            <sendfailed>Неудачно</sendfailed>
+            <sendready>Неотправленные</sendready>
+            <exporttopc>Экспорт на ПК</exporttopc>
+            <sendtoftp>Отправить на FTP</sendtoftp>
+            <send>Экспорт на FTP</send>
+            <todate>До</todate>
+            <needseldate>Выберите диапазон для поиска</needseldate>
+            <minstay>Минимальное время</minstay>
+            <plate>plateplateplateplateplate</plate>
+            <nonmotor>nonmotornonmotornonmotornonmotor</nonmotor>
+            <vehicleshowid>vehicleshowidvehicleshowidvehicleshowidvehicleshowid</vehicleshowid>
+            <enabledoubleline>Включить две линии</enabledoubleline>
+        </avanalysis>
+    </subpages>
+    <tipsinfo>
+        <unauth>Для использования этой функции требуется лицензия.</unauth>
+        <errlogin>Ошибка!</errlogin>
+        <errpwd>Неверное имя пользователя или пароль, повторите ввод.</errpwd>
+        <errset>Не удалось установить!</errset>
+        <errnotsupport>Примечание: устройство не поддерживает эту функцию.</errnotsupport>
+        <errrequest>Не верный запрос!</errrequest>
+        <errauthority>Нет разрешения!</errauthority>
+        <errmastinie>Для просмотра видео установите плагин для браузера IE</errmastinie>
+        <errmastinqt>Чтобы просмотреть видео, установите модуль QT</errmastinqt>
+        <maxrect>Максимально можно установить 4 области.</maxrect>
+        <errinput>Неверный ввод!</errinput>
+        <infosave>Настройки приняты!</infosave>
+        <createsave>Успешно создано!</createsave>
+        <installsuc>Установка прошла успешно!</installsuc>
+        <installfail>Установка не удалась!</installfail>
+        <uploadsuc>Загружено успешно!</uploadsuc>
+        <uploadfai>Сбой загрузки!</uploadfai>
+        <resetsuc>Сброс произведен!</resetsuc>
+        <resetfai>Ошибка при сбросе!</resetfai>
+        <activatesuc>Активация прошла успешно！！</activatesuc>
+        <activatefai>Активация не проходит！！</activatefai>
+        <connectsuc>Соединение успешно!</connectsuc>
+        <connectfai>Ошибка соединения!</connectfai>
+        <restoresuc>Настройки по умолчанию - выполнено!</restoresuc>
+        <restorefai>Настройки по умолчанию - сбой!</restorefai>
+        <testsuc>Тест успешен!</testsuc>
+        <testfai>Ошибка теста!</testfai>
+        <addsuc>Добавлено успешно!</addsuc>
+        <addfai>Ошибка добавления!</addfai>
+        <modifysuc>Изменение успешно!</modifysuc>
+        <modifyfai>Ошибка при изменении!</modifyfai>
+        <deletesuc>Удаление успешно!</deletesuc>
+        <deletefai>Ошибка при удалении!</deletefai>
+        <erradmin>Администратор не может быть удален!</erradmin>
+        <pwdnomatch>Пароли не совпадают!</pwdnomatch>
+        <pwdmaxlength>Максимальная длинна пароля 15 символов.</pwdmaxlength>
+        <errexist>Элемент уже существует!</errexist>
+        <formatsuc>Форматирование успешно!</formatsuc>
+        <formatfai>Ошибка форматирования!</formatfai>
+        <downocx>Нажмите, чтобы загрузить и установить ActiveX плагин для просмотра видео в IE.</downocx>
+        <supportinie>Эта функция поддерживается только в Internet Explorer!</supportinie>
+        <supportinqt>Пожалуйста, подтвердите, что плагин браузера установлен, иначе эта функция не поддерживается!</supportinqt>
+        <configuploadsuc>Файл конфигурации успешно импортирован, дождитесь перезагрузки устройства. </configuploadsuc>
+        <configuploadfai>Не удалось импортировать файл конфигурации, проверьте файл и повторите попытку.</configuploadfai>
+        <streamnotsupport>Текущий браузер не поддерживает просмотр видео кодека H. 265, используйте Internet Explorer.</streamnotsupport>
+        <userexist>Пользователь уже имеется!</userexist>
+        <rectlarge>Выбранный диапазон обнаружения слишком велик!</rectlarge>
+        <reboottips>Изменение настройки приведет к перезагрузке устройства. Вы хотите продолжить?</reboottips>
+        <logintimes>Не правильное имя пользователя или пароль устройство будет заблокированно через {times} попыток.</logintimes>
+        <loginwait>Устройство заболокированно вы сможете повторить попытку через {time} минут.</loginwait>
+        <noflash>Видео не может быть воспроизведено, потому что не включен Adobe Flash</noflash>
+        <enableflash>Пожалуйста, нажмите здесь, чтобы загрузить или включить Adobe Flash Player.</enableflash>
+        <waitmessage>Перезапуск...</waitmessage>
+        <manualreboot>Перезагрузка займет 1-3 минуты. Перезагрузить?</manualreboot>
+        <manualrestore>Установить заводские настройки?</manualrestore>
+        <manualdefault>Будут сброшены все параметры, кроме IP-адреса и HTTP-портов. Продолжить?</manualdefault>
+        <notesupport>Примечание: это устройство не поддерживает эту функцию.</notesupport>
+        <noterecord>Для того, чтобы скачать записи из USB/SD накопителя, используйте программу IPCManager. Вкладка Архив имеет ограниченный функционал (только просмотр).</noterecord>
+        <notesecurity>Внимание! При использовании данной функции, устройство будет менее защищено от атак из сети.</notesecurity>
+        <noteonvif>Обратите внимание: если отключить эту функцию, будет отключена авторизация по паролю для RTSP.</noteonvif>
+        <check>Проверка безопасности</check>
+        <noteurl>Имя пользователя и пароль, указанные в приведенных выше URL-адресах, являются заводскими настройками по умолчанию. Пожалуйста, используйте текущее имя пользователя и пароль камеры в соответствующих местах.</noteurl>
+        <notevreboot>Изменения вступят в силу после перезагрузки. Перезагрузить сейчас?</notevreboot>
+        <noinstllqt>В настоящее время плагин браузера не установлен. Установка плагина браузера может улучшить опыт использования. Если вам нужно установить, нажмите кнопку « Загрузить » в правом верхнем углу, чтобы загрузить и установить. Откажитесь от установки, пожалуйста, закройте это окно напрямую.</noinstllqt>
+        <oldversion1>Обнаружено, что текущий плагин браузера нуждается в обновлении, нажмите</oldversion1>
+        <oldversion2>Или нажмите кнопку « Загрузить » в правом верхнем углу, чтобы загрузить и установить, откажитесь от обновления, пожалуйста, закройте окно напрямую.</oldversion2>
+        <recordsave>Видеофайлы хранятся в</recordsave>
+        <snapsave>Файл захвата хранится в</snapsave>
+        <savelengthrecord>Путь сохранения видео слишком длинный, пожалуйста, выберите заново</savelengthrecord>
+        <savelengthsnap>Путь сохранения захвата слишком длинный, пожалуйста, выберите заново</savelengthsnap>
+        <question1>Проблемы выбора не должны быть одинаковыми</question1>
+        <question2>Не допускается одинаковый ответ.</question2>
+        <question3>Ответ слишком длинный.</question3>
+        <inputrule>Требования к паролю:</inputrule>
+        <inputTips>Длина пароля должна быть не менее 25 символов.**Пароль должен содержать прописные и строчные буквы, цифры и специальные символы.**Пароль не должен содержать последовательные символы с клавиатуры.**Пароль не должен содержать имя пользователя.**Пароль не должен содержать повторяющиеся длинные последовательности.**Пароль соответствует требованиям.</inputTips>
+        <manageuserTipList>Длина пароля должна быть не менее 25 символов!**строчные буквы – [a..z]**заглавные буквы – [A..Z]**цифры – [0..9]**специальные символы – [$, #, %, ...]**Нельзя использовать последовательные символы с клавиатуры (например, «qwertyuiopasdfghjkl123456+»).**Пароль не должен повторять последние 24 пароля этого пользователя.</manageuserTipList>
+    </tipsinfo>
+</allpages>

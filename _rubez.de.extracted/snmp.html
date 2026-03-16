@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" media="all" href="css/subcommon.css">
+    <link rel="stylesheet" media="all" href="css/snmp.css">
+    <script src="/script/jquery-3.5.1.min.js"></script>
+    <script src="/script/ipaddredit.js"></script>
+    <script src="/script/bvipccgisdk.js"></script>
+    <script src="/script/translator.js"></script>
+    <script src="../script/inputrestriction.js"></script>
+    <script src="script/snmp.js"></script>
+</head>
+<body>
+<div id="div_snmp_main">
+    <div id="div_snmp_titlebar" style="width: 100%;height: 36px;float: left;">
+        <div id="div_title_snmp" class="cls_tablebar_item cls_tablebar_item_selected" style="border-bottom: 4px solid #1baafb;color:white;">
+            <div id="div_title_snmp_text" class="cls_tablebar_item_text">SNMP</div>
+        </div>
+    </div>
+    <div id="div_snmp_content">
+        <div id="div_snmp_information" class="cls_snmp_foundation_block">
+            <div id="div_snmp_information_title" class="cls_subpage_content_title cls_snmp_title">
+                <div id="div_snmp_information_title_text" class="cls_snmp_title_text">SNMP V1/V2</div>
+            </div>
+            <div id="div_snmp_v1" class="cls_snmp_item" style="height: 24px;margin-top: 5px;">
+                <div id="div_version_first_enable_item" style="width: 480px;height: 24px;float: left;">
+                    <input id="check_enable_version_first" type="checkbox" class="cls_schedule_radio" style="margin-left: 0;">
+                    <div style="float: left;height: 24px;">
+                        <label id="div_snmp_version_first_name" for="check_enable_version_first" class="cls_item_mini_font cls_item_font_light">SNMPv1</label>
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_version_second" class="cls_snmp_item" style="height: 24px;">
+                <div id="div_version_second_enable_item" style="width: 480px;height: 24px;float: left;">
+                    <input id="check_enable_version_second" type="checkbox" class="cls_schedule_radio" style="margin-left: 0;">
+                    <div style="float: left;height: 24px;">
+                        <label id="div_snmp_version_second_name" for="check_enable_version_second" class="cls_item_mini_font cls_item_font_light">SNMPv2c</label>
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_read_comname" class="cls_snmp_item">
+                <div id="div_snmp_read_comname_name" class="cls_snmp_item_name">Read SNMP Community</div>
+                <div id="div_snmp_read_comname_value" class="cls_snmp_item_value">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_snmp_read_comname" style="float: left;border: none;" maxlength="16" class="cls_subpage_content_input">
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_write_comname" class="cls_snmp_item">
+                <div id="div_snmp_write_comname_name" class="cls_snmp_item_name">Write SNMP Community</div>
+                <div id="div_snmp_write_comname_value" class="cls_snmp_item_value">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_snmp_write_comname" style="float: left;border: none;" maxlength="16" class="cls_subpage_content_input">
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_trap_addr" class="cls_snmp_item">
+                <div id="div_snmp_trap_addr_name" class="cls_snmp_item_name" style="height: 22px;line-height: 22px;">Trap Address</div>
+                <div id="div_snmp_trap_addr_value" class="cls_snmp_item_value">
+                    <div id="ipaddr_snmp_trap_addr" class="cls_ipaddr_setting_input"></div>
+                </div>
+            </div>
+            <div id="div_snmp_trap_port" class="cls_snmp_item">
+                <div id="div_snmp_trap_port_name" class="cls_snmp_item_name">Trap Port</div>
+                <div id="div_snmp_trap_port_value" class="cls_snmp_item_value">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_snmp_trap_port" style="float: left;border: none;" maxlength="5" class="cls_subpage_content_input" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_trap_team" class="cls_snmp_item">
+                <div id="div_snmp_trap_team_name" class="cls_snmp_item_name">Trap Community</div>
+                <div id="div_snmp_trap_team_value" class="cls_snmp_item_value">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_snmp_trap_team" style="float: left;border: none;" maxlength="16" class="cls_subpage_content_input">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div_snmp_version_third" class="cls_snmp_foundation_block">
+            <div id="div_snmp_version_third_title" class="cls_subpage_content_title cls_snmp_title">
+                <div id="div_snmp_version_third_title_text"  class="cls_snmp_title_text">SNMP V3</div>
+            </div>
+            <div id="div_snmp_version_third_enable" class="cls_snmp_item" style="height: 24px;margin-top: 5px;">
+                <div id="div_version_third_enable_item" style="width: 480px;height: 24px;float: left;">
+                    <input id="check_enable_version_third" type="checkbox" class="cls_schedule_radio" style="margin-left: 0;">
+                    <div style="float: left;height: 24px;">
+                        <label id="div_snmp_version_third_enable_name" for="check_enable_version_third" class="cls_item_mini_font cls_item_font_light">SNMPv3</label>
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_read_username" class="cls_snmp_item">
+                <div id="div_snmp_read_username_name" class="cls_snmp_item_name">Read Username</div>
+                <div id="div_snmp_read_username_value" class="cls_snmp_item_value">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_snmp_read_username" style="float: left;border: none;" maxlength="16" class="cls_subpage_content_input">
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_rsecurity_level" class="cls_snmp_item">
+                <div id="div_snmp_rsecurity_level_name" class="cls_snmp_item_name" style="height: 22px;line-height: 22px;">Security Level</div>
+                <div id="div_snmp_rsecurity_level_value" class="cls_snmp_item_value">
+                    <select id="select_snmp_rsecurity_level" class="cls_subpage_content_select" style="width: 170px;">
+                        <option value="0">no auth,no priv</option>
+                        <option value="1">auth,no priv</option>
+                        <option value="2">auth,priv</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_snmp_rauth_algorithm" class="cls_snmp_item">
+                <div id="div_snmp_rauth_algorithm_name" class="cls_snmp_item_name" style="height: 22px;line-height: 22px;">Authentication Algorithm</div>
+                <div id="div_snmp_rauth_algorithm_value" class="cls_snmp_item_value">
+                    <select id="select_snmp_rauth_algorithm" class="cls_subpage_content_select" style="width: 170px;">
+                        <option value="0">MD5</option>
+                        <option value="1">SHA</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_snmp_rauth_password" class="cls_snmp_item">
+                <div id="div_snmp_rauth_password_name" class="cls_snmp_item_name">Authentication Password</div>
+                <div id="div_snmp_rauth_password_value" class="cls_snmp_item_value" style="width: 170px;float: left;">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="password" id="input_snmp_rauth_password" style="float: left;border: none;" maxlength="16" class="cls_subpage_content_input">
+                        <div id="div_rauth_password_eye" style="float: left;margin-left: 6px;">
+                            <img class="cls_input_icon" id="rauth_password_eye_hide" onclick="fun_rauth_password_eye_showorhide(0)" style="margin-top: 6px;" src="../ui/images/weyehide.png">
+                            <img class="cls_input_icon" id="rauth_password_eye_show" onclick="fun_rauth_password_eye_showorhide(1)" style="margin-top: 6px;" src="../ui/images/eyeshow.png" hidden>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_rprivkey_algorithm" class="cls_snmp_item">
+                <div id="div_snmp_rprivkey_algorithm_name" class="cls_snmp_item_name" style="height: 22px;line-height: 22px;">Private-key Algorithm</div>
+                <div id="div_snmp_rprivkey_algorithm_value" class="cls_snmp_item_value">
+                    <select id="select_snmp_rprivkey_algorithm" class="cls_subpage_content_select" style="width: 170px;">
+                        <option value="0">DES</option>
+                        <option value="1">AES</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_snmp_rprivkey_password" class="cls_snmp_item">
+                <div id="div_snmp_rprivkey_password_name" class="cls_snmp_item_name">Private-key Password</div>
+                <div id="div_snmp_rprivkey_password_value" class="cls_snmp_item_value" style="width: 170px;float: left;">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="password" id="input_snmp_rprivkey_password" style="float: left;border: none;" maxlength="16" class="cls_subpage_content_input">
+                        <div id="div_rprivkey_password_eye" style="float: left;margin-left: 6px;">
+                            <img class="cls_input_icon" id="rprivkey_password_eye_hide" onclick="fun_rprivkey_password_eye_showorhide(0)" style="margin-top: 6px;" src="../ui/images/weyehide.png">
+                            <img class="cls_input_icon" id="rprivkey_password_eye_show" onclick="fun_rprivkey_password_eye_showorhide(1)" style="margin-top: 6px;" src="../ui/images/eyeshow.png" hidden>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_write_username" class="cls_snmp_item">
+                <div id="div_snmp_write_username_name" class="cls_snmp_item_name">Write Username</div>
+                <div id="div_snmp_write_username_value" class="cls_snmp_item_value">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_snmp_write_username" style="float: left;border: none;" maxlength="16" class="cls_subpage_content_input">
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_wsecurity_level" class="cls_snmp_item">
+                <div id="div_snmp_wsecurity_level_name" class="cls_snmp_item_name" style="height: 22px;line-height: 22px;">Security Level</div>
+                <div id="div_snmp_wsecurity_level_value" class="cls_snmp_item_value">
+                    <select id="select_snmp_wsecurity_level" class="cls_subpage_content_select" style="width: 170px;">
+                        <option value="0">no auth,no priv</option>
+                        <option value="1">auth,no priv</option>
+                        <option value="2">auth,priv</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_snmp_wauth_algorithm" class="cls_snmp_item">
+                <div id="div_snmp_wauth_algorithm_name" class="cls_snmp_item_name" style="height: 22px;line-height: 22px;">Authentication Algorithm</div>
+                <div id="div_snmp_wauth_algorithm_value" class="cls_snmp_item_value">
+                    <select id="select_snmp_wauth_algorithm" class="cls_subpage_content_select" style="width: 170px;">
+                        <option value="0">MD5</option>
+                        <option value="1">SHA</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_snmp_wauth_password" class="cls_snmp_item">
+                <div id="div_snmp_wauth_password_name" class="cls_snmp_item_name">Authentication Password</div>
+                <div id="div_snmp_wauth_password_value" class="cls_snmp_item_value" style="width: 170px;float: left;">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="password" id="input_snmp_wauth_password" style="float: left;border: none;" maxlength="16" class="cls_subpage_content_input">
+                        <div id="div_wauth_password_eye" style="float: left;margin-left: 6px;">
+                            <img class="cls_input_icon" id="wauth_password_eye_hide" onclick="fun_wauth_password_eye_showorhide(0)" style="margin-top: 6px;" src="../ui/images/weyehide.png">
+                            <img class="cls_input_icon" id="wauth_password_eye_show" onclick="fun_wauth_password_eye_showorhide(1)" style="margin-top: 6px;" src="../ui/images/eyeshow.png" hidden>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="div_snmp_wprivkey_algorithm" class="cls_snmp_item">
+                <div id="div_snmp_wprivkey_algorithm_name" class="cls_snmp_item_name" style="height: 22px;line-height: 22px;">Private-key Algorithm</div>
+                <div id="div_snmp_wprivkey_algorithm_value" class="cls_snmp_item_value">
+                    <select id="select_snmp_wprivkey_algorithm" class="cls_subpage_content_select" style="width: 170px;">
+                        <option value="0">DES</option>
+                        <option value="1">AES</option>
+                    </select>
+                </div>
+            </div>
+            <div id="div_snmp_wprivkey_password" class="cls_snmp_item">
+                <div id="div_snmp_wprivkey_password_name" class="cls_snmp_item_name">Private-key Password</div>
+                <div id="div_snmp_wprivkey_password_value" class="cls_snmp_item_value" style="width: 170px;float: left;">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="password" id="input_snmp_wprivkey_password" style="float: left;border: none;" maxlength="16" class="cls_subpage_content_input">
+                        <div id="div_wprivkey_password_eye" style="float: left;margin-left: 6px;">
+                            <img class="cls_input_icon" id="wprivkey_password_eye_hide" onclick="fun_wprivkey_password_eye_showorhide(0)" style="margin-top: 6px;" src="../ui/images/weyehide.png">
+                            <img class="cls_input_icon" id="wprivkey_password_eye_show" onclick="fun_wprivkey_password_eye_showorhide(1)" style="margin-top: 6px;" src="../ui/images/eyeshow.png" hidden>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div_snmp_extend" class="cls_snmp_foundation_block">
+            <div id="div_snmp_snmp_extend_title" class="cls_subpage_content_title cls_snmp_title">
+                <div id="div_snmp_snmp_extend_title_text"  class="cls_snmp_title_text">SNMP Other Settings</div>
+            </div>
+            <div id="div_snmp_port" class="cls_snmp_item" style="margin-top: 5px;">
+                <div id="div_snmp_port_name" class="cls_snmp_item_name">SNMP Port</div>
+                <div id="div_snmp_port_value" class="cls_snmp_item_value">
+                    <div style="width: 168px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                        <input type="text" id="input_snmp_port" style="float: left;border: none;" maxlength="5" class="cls_subpage_content_input" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div_snmp_options">
+            <input type="button" id="button_snmp_reset" class="cls_subpage_content_button" value="Reset">
+            <input type="button" id="button_snmp_refresh" class="cls_subpage_content_button" value="Refresh">
+            <input type="button" id="button_snmp_save" class="cls_subpage_content_button" value="Save">
+        </div>
+    </div>
+</div>
+</body>
+</html>

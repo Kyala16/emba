@@ -1,0 +1,99 @@
+#/bin/bash
+MI_DRV_PATH=/home/drv/mi
+SNS_DRV_PATH=/home/bvtech/sensor
+SENSOR=gc2063
+MHAL_ARGS=
+ENC_MAXW=2304
+ENC_MAXH=1312
+CHMAP=1
+
+case $2 in
+    gc2093)
+        SENSOR=GC2093_MIPI
+        ;; 
+    gc2098)
+        SENSOR=GC2098_MIPI
+        ;; 
+    gc2063)
+        SENSOR=GC2063_MIPI
+        ;;
+    gc4023)
+        SENSOR=GC4023_MIPI
+        ;;
+    gc4653)
+        SENSOR=GC4653_MIPI
+        ;;       
+    gc5603)
+        SENSOR=GC5603_MIPI
+        ;;       
+    gc5613)
+        SENSOR=GC5613_MIPI
+        ;;
+    gc6603)
+        SENSOR=GC6603_MIPI
+        ;;
+    gc8613)
+        SENSOR=GC8613_MIPI
+        ;;       
+    sc5235)
+        SENSOR=SC5235_MIPI
+        ;; 			
+    imx307)
+        SENSOR=IMX307_MIPI
+		;;
+    imx335)
+        SENSOR=IMX335_MIPI
+        ;; 
+    imx415)
+        SENSOR=IMX415_MIPI
+        ;; 
+    imx462)
+        SENSOR=IMX462_MIPI
+        ;; 
+    imx675)
+        SENSOR=IMX675_MIPI
+        ;; 
+    imx678)
+        SENSOR=IMX678_MIPI
+        ;; 
+    imx662)
+        SENSOR=IMX662_MIPI
+        ;; 
+    sc200ai)
+        SENSOR=SC200AI_MIPI
+        ;;    
+    sc450ai)
+        SENSOR=SC450AI_MIPI
+        ;;    
+    os05a10)
+        SENSOR=OS05A20_MIPI
+        ;;
+    mis4001)
+        SENSOR=MIS4001_MIPI     
+        ;;
+    cv4002)
+        SENSOR=CV4002_MIPI     
+        ;;
+    cv2003)
+        SENSOR=CV2003_MIPI     
+        ;;
+    cv2002)
+        SENSOR=CV2002_MIPI     
+        ;;
+    *)
+        echo "xxxx Invalid sensor type $1 xxxx"
+esac
+
+if [ "$4" == "2" ]; then
+CHMAP=5
+fi
+
+#insmod ${MI_DRV_PATH}/mi_all.ko
+
+insmod ${SNS_DRV_PATH}/${SENSOR}.ko chmap=${CHMAP} ${MHAL_ARGS}
+
+
+
+
+
+

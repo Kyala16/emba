@@ -1,0 +1,1166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<allpages>
+    <common>
+        <enablec>Enable</enablec>
+        <liveplay>Live view</liveplay>
+        <playback>Playback</playback>
+        <configure>Configuration</configure>
+        <exit>Exit</exit>
+        <activate>Activation</activate>
+        <pwdstrength>Password strength</pwdstrength>
+        <pwdinfo>The password supports 5-15 characters and can only contain uppercase and lowercase letters, numbers, and non-null characters.</pwdinfo>
+        <weak>Weak</weak>
+        <strong>Strong</strong>
+        <username>User name</username>
+        <password>Password</password>
+        <language>Language</language>
+        <login>Login</login>
+        <refresh>Refresh</refresh>
+        <reset>Reset</reset>
+        <restore>Restore Default</restore>
+        <clear>Clear</clear>
+        <unbinding>Unbind</unbinding>
+        <unbindingtip>Unbind this device from the APP user</unbindingtip>
+        <removeall>Remove all</removeall>
+        <action>Action</action>
+        <save>Save</save>
+        <cancel>Cancel</cancel>
+        <add>Add</add>
+        <modify>Modify</modify>
+        <delete>Delete</delete>
+        <create>Create</create>
+        <install>Installation</install>
+        <yes>Yes</yes>
+        <not>No</not>
+        <confirm>Confirm</confirm>
+        <mainstream>Main stream</mainstream>
+        <substream>Sub stream</substream>
+        <enable>Enable</enable>
+        <disable>Disable</disable>
+        <enabled>Enabled</enabled>
+        <disabled>Disabled</disabled>
+        <opens>Open</opens>
+        <closes>Close</closes>
+        <smart>Smart switching</smart>
+        <infrared>Infrared light mode</infrared>
+        <white>White light mode</white>
+        <turnoff>Turn off the lights</turnoff>
+        <default>Default</default>
+        <port>Port</port>
+        <none>None</none>
+        <status>Status</status>
+        <browse>Browse...</browse>
+        <auto>Auto</auto>
+        <hour>Hours</hour>
+        <minute>Minutes</minute>
+        <second>Seconds</second>
+        <msecond>MS</msecond>
+        <ipaddress>IP address</ipaddress>
+        <submask>Subnet mask</submask>
+        <gateway>Gateway</gateway>
+        <schedule>Schedule</schedule>
+        <selall>Select all</selall>
+        <setup>Setup</setup>
+        <period>Period</period>
+        <number>No.</number>
+        <auth>Authentication</auth>
+        <connected>Connected</connected>
+        <disconnected>Not connected</disconnected>
+        <maximum>Max</maximum>
+        <character>Characters</character>
+        <high>High</high>
+        <low>Low</low>
+        <middle>Middle</middle>
+        <largest>Big</largest>
+        <smaller>Small</smaller>
+        <mintime>Trigger interval Min. time</mintime>
+        <devname>Device name</devname>
+        <weekdays>
+            <sunday>Sunday</sunday>
+            <monday>Monday</monday>
+            <tuesday>Tuesday</tuesday>
+            <wednesday>Wednesday</wednesday>
+            <thursday>Thursday</thursday>
+            <friday>Friday</friday>
+            <saturday>Saturday</saturday>
+        </weekdays>
+        <monthnames>
+            <january>January</january>
+            <february>February</february>
+            <march>March</march>
+            <april>April</april>
+            <may>May</may>
+            <june>June</june>
+            <july>July</july>
+            <august>August</august>
+            <september>September</september>
+            <october>October</october>
+            <november>November</november>
+            <december>December</december>
+        </monthnames>
+        <actions>
+            <alarmout>Alarm output</alarmout>
+            <evtblink>Strobe light</evtblink>
+            <record>Record</record>
+            <ftp>FTP</ftp>
+            <sendemail>Send email</sendemail>
+            <snapshot>Snapshot</snapshot>
+            <audioout>Audio out</audioout>
+            <notifyserver>Notify the event server</notifyserver>
+            <ledflash>LED Flashing</ledflash>
+            <motionemulation>Motion emulation</motionemulation>
+        </actions>
+        <fgtpwd>Forgot Password?</fgtpwd>
+        <findpwd>Find Your Password</findpwd>
+        <rstpwd>Reset Password</rstpwd>
+        <newpas>New password</newpas>
+        <oldpas>Old password</oldpas>
+        <expiretime>Effective time</expiretime>
+        <authcode>Authorization code</authcode>
+        <devicecode>Random device code</devicecode>
+        <getpwdtips>Please send the device's random code to your seller, and then set a new password after obtaining the authorization code. If it expires, please re-acquire the device's random code.</getpwdtips>
+        <questionlable1>Question 1</questionlable1>
+        <questionlable2>Question 2</questionlable2>
+        <questionlable3>Question 3</questionlable3>
+        <answerlabel>answer</answerlabel>
+        <question1>What city is your birthplace?</question1>
+        <question2>What is the full name of the elementary school you attend?</question2>
+        <question3>What was your first job?</question3>
+        <question4>What is your most important anniversary? </question4>
+        <question5>What was the name of your first pet?</question5>
+        <question6>Which domestic city do you most want to settle in?</question6>
+        <question7>What is your favorite car brand name?</question7>
+        <question8>What is your favorite song?</question8>
+        <question9>What is your favorite dish?</question9>
+        <question10>What is your strongest sport?</question10>
+        <question11>What is the name of your favorite singer?</question11>
+        <question12>What is the name of your favorite teacher?</question12>
+        <question13>What is the name of your closest friend?</question13>
+        <question14>What is your father's name?</question14>
+        <question15>What is your mother's name?</question15>
+    </common>
+    <preview>
+        <wiper>Wiper control</wiper>
+        <ratio>Aspect ratio</ratio>
+        <channel>Channel</channel>
+        <audio>Open/Close audio</audio>
+        <intercom>Open/Close intercom</intercom>
+        <snapshot>Snapshot</snapshot>
+        <consecutivesnapshot>Triple catch</consecutivesnapshot>
+        <record>Start/Stop record</record>
+        <ezoom>Zoom/Normal</ezoom>
+        <fullscreen>Full screen</fullscreen>
+        <ptzcontrol>PTZ control</ptzcontrol>
+        <zoomadd>Zoom+</zoomadd>
+        <zoomsub>Zoom-</zoomsub>
+        <autofocus>Auto focus</autofocus>
+        <focusadd>Focus+</focusadd>
+        <focussub>Focus-</focussub>
+        <irisadd>IRIS+</irisadd>
+        <irissub>IRIS-</irissub>
+		<ptzspeed>PTZ speed</ptzspeed>
+		<preset>Preset</preset>
+		<cruise>Cruise</cruise>
+		<calltag>Call</calltag>
+		<edittag>Edit</edittag>
+		<deletetag>Delete</deletetag>
+		<stoptag>Stop</stoptag>
+		<addpoint>Add preset</addpoint>
+		<deletepoint>Delete preset</deletepoint>
+		<mvdown>Move down</mvdown>
+		<startscan>Start scan</startscan>
+		<stopscan>Stop scan</stopscan>
+		<startpattern>Start pattern</startpattern>
+		<stoppattern>Stop pattern</stoppattern>
+		<linearscan>Linear scan</linearscan>
+		<pattern>Pattern</pattern>
+		<staytime>Stay time</staytime>
+		<imageset>Image</imageset>
+		<stream>Video stream type</stream>
+        <quality>Quality first</quality>
+        <balance>Bandwidth quality balance</balance>
+        <bandwidth>Bandwidth first</bandwidth>
+        <mobile>Mobile</mobile>
+        <display>Display settings</display>
+        <saturation>Saturation</saturation>
+        <brightness>Brightness</brightness>
+        <sharpness>Sharpness</sharpness>
+        <contrast>Contrast</contrast>
+        <fisheye>Fish-eye</fisheye>
+        <install>Install method</install>
+        <ceiling>Ceiling</ceiling>
+        <desktop>Desktop</desktop>
+        <wall>Wall</wall>
+        <displaymode>Display mode</displaymode>
+        <normal>Original</normal>
+        <ratio43>4 : 3</ratio43>
+        <ratio169>16 : 9</ratio169>
+        <stretch>Stretch</stretch>
+        <noalarm>No Alarm</noalarm>
+        <ioalarm>I/O Alarm</ioalarm>
+        <motionalarm>Motion Detection Alarm</motionalarm>
+        <piralarm>PIR Alarm</piralarm>
+        <newocx>Updated plugin is detected, please download and install.</newocx>
+        <unset>Unset</unset>
+        <inset>Set</inset>
+		<fisheyepara>Parameters setting</fisheyepara>
+		<centerx>Center-point horizontal coordinate</centerx>
+		<centery>Center-point vertical coordinate</centery>
+		<innerrad>Center-cut-diameter</innerrad>
+		<outerrad>Outer-border-diameter</outerrad>
+		<reflineangle>Angle-0(De-wrapping line)</reflineangle>
+		<etypecrossline>Line Crossing</etypecrossline>
+		<etypeinstrusion>Intrusion</etypeinstrusion>
+        <etypeloitering>Loitering</etypeloitering>
+        <bodydetect>Human detection</bodydetect>
+        <facedetect>Face detection</facedetect>
+        <withoutmask>No mask</withoutmask>
+        <wearmask>Wear mask</wearmask>
+        <vehicledct>Vehicle detection</vehicledct>
+        <falldct>Fall dectection</falldct>
+        <petdetect>Pet detection</petdetect>
+        <smokefire>Smoke and fire Detection</smokefire>
+        <facerecogfail>Face Unrecognised</facerecogfail>
+        <facerecogblist>Face Blacklist</facerecogblist>
+        <facerecogwlist>Face Whitelist</facerecogwlist>
+		<leftmoved>Object Remain / Remove</leftmoved>
+    </preview>
+    <playback>
+        <noauth>The current user does not have sufficient privileges to run playback. Please run as an administrator group member.</noauth>
+        <stopplay>Stop</stopplay>
+        <slowplay>Slow forward</slowplay>
+        <startplay>Play</startplay>
+        <pauseplay>Pause</pauseplay>
+        <fastplay>Fast forward</fastplay>
+        <frameplay>Single frame</frameplay>
+        <speakeron>Audio on</speakeron>
+        <speakeroff>Mute</speakeroff>
+        <videoclip>Clipping</videoclip>
+        <fullscreen>Full screen</fullscreen>
+        <downloadrec>Download</downloadrec>
+        <startsearch>Search</startsearch>
+        <alarmrec>Alarm</alarmrec>
+        <continuousrec>Continuous</continuousrec>
+        <manualrec>Manual</manualrec>
+        <recfilename>File name</recfilename>
+        <rectype>Record type</rectype>
+        <recfilesize>Size</recfilesize>
+        <searchdate>Target date</searchdate>
+        <startdownload>Start download</startdownload>
+        <stopdownload>Stop download</stopdownload>
+        <otheralarmrec>Other alarm</otheralarmrec>
+    </playback>
+    <configuration>
+        <videoctr>Video control</videoctr>
+        <basesetting>Basic settings</basesetting>
+        <system>System</system>
+        <network>Network</network>
+        <avsetting>Video &amp; Audio</avsetting>
+        <storage>Storage</storage>
+        <event>Event</event>
+        <security>Security</security>
+        <general>General</general>
+        <maintain>Auto maintain</maintain>
+        <upgrade>Upgrade</upgrade>
+        <information>Information</information>
+        <log>Log</log>
+        <tcpip>TCP/IP</tcpip>
+        <wifi>WIFI</wifi>
+        <pppoe>PPPoE</pppoe>
+        <smtp>SMTP</smtp>
+        <upnp>UPnP</upnp>
+        <ddns>DDNS</ddns>
+        <rtsp>RTSP</rtsp>
+        <rtmp>RTMP</rtmp>
+        <voip>VoIP</voip>
+        <audio>Audio</audio>
+        <video>Video</video>
+        <osd>OSD</osd>
+        <imagesetting>Image settings</imagesetting>
+        <privacymask>Privacy mask</privacymask>
+        <roi>ROI</roi>
+        <localsetting>Local settings</localsetting>
+        <disk>Disk</disk>
+        <ftp>FTP</ftp>
+        <evtserver>Event server</evtserver>
+        <motion>Motion detection</motion>
+        <ioalarm>I/O alarm</ioalarm>
+        <pir>PIR</pir>
+        <abnormality>Abnormality</abnormality>
+        <user>Manage users</user>
+        <ipfilter>IP filter</ipfilter>
+    </configuration>
+    <subpages>
+        <guide>
+            <time>Time</time>
+            <users>Users</users>
+            <tcpip>TCP/IP</tcpip>
+            <audio>Audio</audio>
+            <video>Video</video>
+            <system>System</system>
+            <maintain>Maintenance</maintain>
+            <p2pcode>Mobile P2P QR Code</p2pcode>
+            <p2pid>P2P ID</p2pid>
+            <p2pstatus>P2P Status</p2pstatus>
+            <online>Online</online>
+            <offline>Offline</offline>
+              <online_nobind>Online unbound</online_nobind>
+            <product>IP camera</product>
+            <productdeclare>The default parameter is the device's optimal setting for most applications.You may modify the settings based on your reference.For detailed information, please refer to the manual included with the device.</productdeclare>
+        </guide>
+        <general>
+            <datetime>Date &amp; Time</datetime>
+            <regular>General</regular>
+            <date>Date</date>
+            <time>Time</time>
+            <datetimefmt>Date &amp; Time format</datetimefmt>
+            <datefmt>Date format</datefmt>
+            <timefmt>Time format</timefmt>
+            <timeset>Device time settings</timeset>
+            <timezone>Time zone</timezone>
+            <dstenable>Enable DST</dstenable>
+            <dstbias>DST bias</dstbias>
+            <dststart>Start time</dststart>
+            <dstend>End time</dstend>
+            <syncserver>Sync with NTP server</syncserver>
+            <syncpc>Sync with PC time</syncpc>
+            <manualset>Manually set</manualset>
+            <ntpserver>NTP server</ntpserver>
+            <ntpperiod>Update period</ntpperiod>
+            <dateymd>YYYY-MM-DD</dateymd>
+            <datedmy>DD-MM-YYYY</datedmy>
+            <datemDy>MM-DD-YYYY</datemDy>
+            <timetwentyfour>24H</timetwentyfour>
+            <timetwelve>12H</timetwelve>
+            <timezoneitem>
+                <zone0>GMT-14</zone0>
+                <zone1>GMT-13</zone1>
+                <zone2>GMT-12(Eniwetok)</zone2>
+                <zone3>GMT-11(Midway Island, Samoa)</zone3>
+                <zone4>GMT-10(Hawaii, the Aleutian Islands)</zone4>
+                <zone5>GMT-09(Alaska)</zone5>
+                <zone6>GMT-08(Los Angeles, San Francisco, Vancouver)</zone6>
+                <zone7>GMT-07(Calgary, Denver, Salt Lake City)</zone7>
+                <zone8>GMT-06(Chicago, Dallas, New Orleans)</zone8>
+                <zone9>GMT-06(Mexico City)</zone9>
+                <zone10>GMT-05(Cuba)</zone10>
+                <zone11>GMT-05(New York, Toronto, Washington, DC)</zone11>
+                <zone12>GMT-04:30(Bolivarian Republic of Venezuela)</zone12>
+                <zone13>GMT-04 (Paraguay)</zone13>
+                <zone14>GMT-04(Paraguay,Chile)</zone14>
+                <zone15>GMT-04(Charlottetown, Manaus)</zone15>
+                <zone16>GMT-03:30(Newfoundland)</zone16>
+                <zone17>GMT-03(Sao Paulo, Brazil)</zone17>
+                <zone18>GMT-02(Noronha, Mid-Atlantic)</zone18>
+                <zone19>GMT-01(Azores, Cape Verde)</zone19>
+                <zone20>GMT(Dublin, Lisbon, London, Reykjavik)</zone20>
+                <zone21>GMT+01(Amsterdam, Berlin, Rome, Stockholm, Warsaw)</zone21>
+                <zone22>GMT+02(Athens, Helsinki, Istanbul, Riga)</zone22>
+                <zone23>GMT+02(Egypt)</zone23>
+                <zone24>GMT+02(Israel)</zone24>
+                <zone25>GMT+02(Johannesburg)</zone25>
+                <zone26>GMT+02(Lebanon)</zone26>
+                <zone27>GMT+02(Syria)</zone27>
+                <zone28>GMT+03(Moscow, Riyadh)</zone28>
+                <zone29>GMT+03(Iraq)</zone29>
+                <zone30>GMT+03:30(Iran)</zone30>
+                <zone31>GMT+04(Abu Dhabi Emirate, Baku)</zone31>
+                <zone32>GMT+04:30(Kabul)</zone32>
+                <zone33>GMT+05(Islamabad, Karachi, Tashkent)</zone33>
+                <zone34>GMT+05:30(Mumbai, Calcutta, New Delhi)</zone34>
+                <zone35>GMT+05:45(Kathmandu)</zone35>
+                <zone36>GMT+06(Novosibirsk, Omsk)</zone36>
+                <zone37>GMT+06:30(Yangon)</zone37>
+                <zone38>GMT+07(Bangkok, Hanoi, Jakarta)</zone38>
+                <zone39>GMT+08(Beijing, Hong Kong, Shanghai)</zone39>
+                <zone40>GMT+08(Perth)</zone40>
+                <zone41>GMT+09(Osaka, Sapporo, Tokyo, Seoul)</zone41>
+                <zone42>GMT+09:30(Darwin)</zone42>
+                <zone43>GMT+09:30(Adelaide)</zone43>
+                <zone44>GMT+10(Hobart, Canberra, Melbourne, Sydney)</zone44>
+                <zone45>GMT+11(Solomon Islands)</zone45>
+                <zone46>GMT+11:30(Norfolk)</zone46>
+                <zone47>GMT+12(Auckland, Wellington)</zone47>
+                <zone48>GMT+12(Fiji)</zone48>
+                <zone49>GMT+12(Kamchatka Peninsula)</zone49>
+                <zone50>GMT+12(Marshall Islands)</zone50>
+                <zone51>GMT+12:45(Chatham)</zone51>
+                <zone52>GMT+13 (Tongatapu, Nuku'alofa)</zone52>
+            </timezoneitem>
+            <devinfo>Device information</devinfo>
+            <qrcode>Mobile P2P</qrcode>
+            <firmware>Firmware version:</firmware>
+            <hardware>Hardware version:</hardware>
+            <onvif>ONVIF version:</onvif>
+            <mac>MAC address:</mac>
+            <sn>Serial number:</sn>
+            <firstweek>1st</firstweek>
+            <secondweek>2nd</secondweek>
+            <thirdweek>3rd</thirdweek>
+            <fourthweek>4th</fourthweek>
+            <lastweek>Lastweek</lastweek>
+            <notep2pcode>The device will reboot when it is changed.</notep2pcode>
+			<aflenschk>AF LENS Initialization</aflenschk>
+        </general>
+        <maintain>
+            <maintaintitle>Auto maintain</maintaintitle>
+            <autoreboot>Auto reboot</autoreboot>
+            <everyday>Everyday</everyday>
+            <reboot>Reboot</reboot>
+            <cfgdeclare>Export your current configuration or import previously saved configuration.</cfgdeclare>
+            <import>Import</import>
+            <export>Export</export>
+            <devmaintain>Device maintain</devmaintain>
+            <notedefault>Restore all of the parameters except IP to default settings.</notedefault>
+            <factoryset>Restore Factory Settings</factoryset>
+            <rebooterr>Fail to reboot!!</rebooterr>
+            <rebootsuc>Successfully reboot!!</rebootsuc>
+            <restoreerr>Fail to restore!!</restoreerr>
+            <restoresuc>Successfully restore!!</restoresuc>
+            <notereboot>Reboot the device.</notereboot>
+            <noterestore>Restore all of the parameters to factory settings.</noterestore>
+        </maintain>
+        <upgrade>
+            <upgradetitle>Upgrade</upgradetitle>
+            <devconfirm1>The current model is</devconfirm1>
+            <devconfirm2>Please be sure that you select the right firmware file.</devconfirm2>
+            <selectfile>Select firmware</selectfile>
+            <upgradenote1>1. If the upgrade failed, please inspect camera connection and check if the correct upgrade file has been selected.</upgradenote1>
+            <upgradenote2>2. Do not POWER OFF the unit while upgrading. The unit will reboot during the upgrade process, the process will take roughly 1 - 10 minutes.</upgradenote2>
+            <startupgrade>Upgrade</startupgrade>
+            <upgradeprogress>Upgrade progress</upgradeprogress>
+            <waitupgrade>Wait for upgrade to complete...</waitupgrade>
+            <upgradefailed>Upgrade failed!!</upgradefailed>
+            <fileerror>Invalid firmware file!!</fileerror>
+            <hardnotmatch>Mismatched hardware!!</hardnotmatch>
+            <upgradesuccess>Upgrade successfully!!</upgradesuccess>
+	    <uploaderror>Upload failed</uploaderror>
+        </upgrade>
+        <ptzconfig>
+            <config3d>3D Positioning</config3d>
+            <showzoom>Show Zoom value</showzoom>
+            <rsconfigt>RS485 settings</rsconfigt>
+            <ptzconfigt>PTZ config</ptzconfigt>
+            <addressmask>Address</addressmask>
+            <baudrate>Baudrate</baudrate>
+            <databits>Data bits</databits>
+            <stopbits>Stop bits</stopbits>
+            <verifys>Parity</verifys>
+            <datacontrol>Flow control</datacontrol>
+            <send>Data to send</send>
+            <text>Text</text>
+            <hexadecimal>Hexadecimal</hexadecimal>
+            <sendtips>Hexadecimal should be seperated by spaces</sendtips>
+            <oddcheck>Odd</oddcheck>
+            <evencheck>Even</evencheck>
+        </ptzconfig>
+        <information>
+            <sysinfo>System information</sysinfo>
+            <sysoverview>System overview</sysoverview>
+            <sysstatus>System status</sysstatus>
+            <firmver>Firmware version:</firmver>
+            <hardver>Hardware version:</hardver>
+            <onvifver>ONVIF version:</onvifver>
+            <mac>MAC address:</mac>
+            <sn>Serial number:</sn>
+            <ipaddr>IP address:</ipaddr>
+            <datetime>Date &amp; Time:</datetime>
+            <uptime>Uptime:</uptime>
+            <timemode>Time mode:</timemode>
+            <cpu>CPU load:</cpu>
+            <video>Video:</video>
+            <audio>Audio:</audio>
+            <ftp>FTP:</ftp>
+            <upnp>UPnP:</upnp>
+            <rtsp>RTSP:</rtsp>
+            <recording>Recording:</recording>
+            <snapshot>Snapshot:</snapshot>
+            <tcp>TCP:</tcp>
+            <ddns>DDNS:</ddns>
+            <onvif>ONVIF:</onvif>
+            <timesyncntp>Sync with NTP server time</timesyncntp>
+            <timemanual>Manual set</timemanual>
+        </information>
+        <log>
+            <syslog>System log</syslog>
+            <bsslog>Business Log</bsslog>
+            <download>Download</download>
+        </log>
+        <tcpip>
+            <networksta>Network status</networksta>
+            <tcpip>TCP/IP</tcpip>
+            <wiredsta>Wired network status</wiredsta>
+            <wifista>WIFI network status</wifista>
+            <ipv4addr>IPV4 IP address:</ipv4addr>
+            <ipv4mask>IPV4 subnet mask:</ipv4mask>
+            <ipv4gateway>IPV4 gateway:</ipv4gateway>
+            <ipv6addr>IPV6 IP address:</ipv6addr>
+            <ipv6gateway>IPV6 gateway:</ipv6gateway>
+            <domain>Domain:</domain>
+            <primarydns>Primary DNS:</primarydns>
+            <secondarydns>Secondary DNS:</secondarydns>
+            <ntpserver>NTP server:</ntpserver>
+            <wificonnect>Connection status:</wificonnect>
+            <wifiipaddr>Current IP address:</wifiipaddr>
+            <ipv4set>IPV4 network settings</ipv4set>
+            <ipv6set>IPV6 network settings</ipv6set>
+            <mode>Mode</mode>
+            <static>Static</static>
+            <dhcp>DHCP</dhcp>
+            <ipaddr>IP address:</ipaddr>
+            <submask>Subnet mask:</submask>
+            <gateway>Gateway:</gateway>
+            <mtu>MTU:</mtu>
+            <networktype>Network type:</networktype>
+            <tenmilhalf>10M Half-dup</tenmilhalf>
+            <tenmilfull>10M Full-dup</tenmilfull>
+            <hunmilhalf>100M Half-dup</hunmilhalf>
+            <hummilfull>100M Full-dup</hummilfull>
+            <tcpiptips>Please make sure that changes are made. If the IP address has been changed, please login the camera with the new IP address again.</tcpiptips>
+            <dhcpmode>DHCP mode</dhcpmode>
+            <manualatips>Attention! Switching to manual mode is for advanced users only!</manualatips>
+            <hosename>Hostname</hosename>
+            <indentifie>Dhcp-class-indentifier</indentifie>
+            <classid>Dhcp-user-class-id</classid>
+        </tcpip>
+        <port>
+            <serverport>Port</serverport>
+            <httpport>HTTP port</httpport>
+            <httpsport>HTTPS port</httpsport>
+            <rtspport>RTSP port</rtspport>
+            <tcpport>Service port</tcpport>
+            <flashport>RTMP port</flashport>
+            <httptips>Please make sure that changes are made. If the HTTP port has been changed, please login the camera with the new HTTP port again.</httptips>
+            <httpstips>Please make sure that changes are made. If the HTTPS port has been changed, please login the camera again.</httpstips>
+			<portsetting>Port settings</portsetting>
+			<protosetting>Protocol settings</protosetting>
+        </port>
+        <wifi>
+            <addssid>Add SSID</addssid>
+            <searchssid>Search SSID</searchssid>
+            <ssid>SSID</ssid>
+            <encrypt>Encryption</encrypt>
+            <signal>Signal</signal>
+            <curnetwork>Current network</curnetwork>
+            <defaultgateway>Default gateway</defaultgateway>
+            <authandenc>Authentication/Encryption</authandenc>
+            <contowifi>Connect To WIFI</contowifi>
+            <connect>Connect</connect>
+        </wifi>
+        <pppoe>
+            <pppoetitle>PPPoE</pppoetitle>
+            <enablepppoe>Enable PPPoE</enablepppoe>
+            <connectsta>Connection status</connectsta>
+        </pppoe>
+        <smtp>
+            <smtptitle>SMTP</smtptitle>
+            <smtpserver>SMTP server</smtpserver>
+            <sender>Sender Name</sender>
+            <receiver>Recipient email</receiver>
+            <test>Test</test>
+            <subject>Title</subject>
+        </smtp>
+        <upnp>
+            <upnptitle>UPnP</upnptitle>
+            <interport>Internal port</interport>
+            <exterport>External port</exterport>
+            <protocol>Protocol</protocol>
+            <mapsuccess>Mapping successful</mapsuccess>
+            <mapfail>Mapping failed</mapfail>
+        </upnp>
+        <ddns>
+            <ddnstitle>DDNS</ddnstitle>
+            <servertype>Server type</servertype>
+            <serverdomain>Hostname</serverdomain>
+            <updateinterval>Update interval</updateinterval>
+            <autodns>Auto DNS</autodns>
+            <hostname>Host name</hostname>
+            <autoddns>Auto DDNS</autoddns>
+            <manualddns>Manual DDNS</manualddns>
+        </ddns>
+        <rtsp>
+            <rtsptitle>RTSP</rtsptitle>
+            <rtspinfo>RTSP information</rtspinfo>
+            <rtspbroadcast>Multicast-SSM</rtspbroadcast>
+            <enablemulticast>Enable multicast</enablemulticast>
+            <multicastaddress>Multicast address</multicastaddress>
+            <ttl>TTL</ttl>
+            <metdata>Metadata transmission</metdata>
+        </rtsp>
+        <rtmp>
+            <rtmptitle>RTMP</rtmptitle>
+            <youtubeen>YouTube compatible</youtubeen>
+            <pushtype>Push type</pushtype>
+            <pushurl>Push URL</pushurl>
+        </rtmp>
+        <voip>
+            <voiptitle>VoIP</voiptitle>
+            <serveraddr>Server address</serveraddr>
+            <callid>Call ID</callid>
+            <streamtype>Stream type</streamtype>
+            <duration>Max. call duration</duration>
+        </voip>
+        <snmp>
+            <rcommunity>Read SNMP community</rcommunity>
+            <wcommunity>Write SNMP community</wcommunity>
+            <trapaddr>Trap address</trapaddr>
+            <trapport>Trap port</trapport>
+            <rtapname>Trap community</rtapname>
+            <rusername>Read username</rusername>
+            <wusername>Write username</wusername>
+            <securityl>Security level</securityl>
+            <authalgorithm>Authentication algorithm</authalgorithm>
+            <authpwd>Authentication password</authpwd>
+            <privatealgorithm>Private-key algorithm</privatealgorithm>
+            <privatepwd>Private-key password</privatepwd>
+            <snmpextend>SNMP other settings</snmpextend>
+            <snmpport>SNMP port</snmpport>
+        </snmp>
+        <ieee>
+            <protocal>Protocol</protocal>
+            <eapolver>EAPOL version</eapolver>
+            <clientid>Client certificates ID</clientid>
+            <file>Certificate file</file>
+            <idtips>(e.g user@example.org)</idtips>
+            <passwordtips>Password for encrypted client key (e.g whatever)</passwordtips>
+            <tip1>* All certificates should be from RADIUS server. (e.g. /freeradius/3.0/certs/)</tip1>
+            <tip2>* The certificates files could be ca.pem / client.crt / client.pem</tip2>
+            <tip3>1) CA certificates (.crt):</tip3>
+            <tip4>- ca.pem >>> ca.crt</tip4>
+            <tip5>- You need to change the extensions manually.</tip5>
+            <tip6>- The certificate should not be encrypted.</tip6>
+            <tip7>2) Client certificate (.crt):</tip7>
+            <tip8>- client.crt</tip8>
+            <tip9>3) Client private Key (.pem):</tip9>
+            <tip10>- client.pem</tip10>
+            <tip11>- The key should be encrypted by the above Password in IEEE 802.1x setup.</tip11>
+        </ieee>
+        <gb>
+            <sipserveid>SIP server Number</sipserveid>
+            <sipdomain>SIP domain</sipdomain>
+            <sipserveip>SIP server IP</sipserveip>
+            <sipserveprot>SIP server port</sipserveprot>
+            <devcode>Equipment coding</devcode>
+            <rejectpass>Login password</rejectpass>
+            <localserveport>Local SIP server port</localserveport>
+            <rejectexpires>Validity of registration</rejectexpires>
+            <heartinterval>Heartbeat cycle</heartinterval>
+            <heartmaxtime>Maximum number of heartbeat timeout times</heartmaxtime>
+            <streamtype>Stream type</streamtype>
+            <protocol>Protocol</protocol>
+            <mainstream>Main stream</mainstream>
+            <substream>Sub stream</substream>
+            <asilecode>Channel number</asilecode>
+            <alarmlevel>Alarm level</alarmlevel>
+            <ailsemessgae>Channel Information</ailsemessgae>
+            <alarmmessage>Alarm related information</alarmmessage>
+            <speechoutput>Voice channel information</speechoutput>
+        </gb>        
+        <bonjour>
+            <servername>Server nickname</servername>
+        </bonjour>
+        <qos>
+            <streamdscp>Stream DSCP</streamdscp>
+        </qos>
+        <https>
+            <createcertificate>Create a certificate</createcertificate>
+            <requestcreated>Request created</requestcreated>
+            <install>Install signed certificate</install>
+            <certificationpath>Certification path</certificationpath>
+            <passpath>Certificate key path</passpath>
+            <certificateinstalled>Certificate installed</certificateinstalled>
+            <attributes>Attributes</attributes>
+            <example>E.g</example>
+            <day>day</day>
+            <range>range</range>
+            <country>Country</country>
+            <domainname>IP/domain name</domainname>
+            <expirationdate>Expiration date</expirationdate>
+            <province>Province</province>
+            <position>Position</position>
+            <organization>Organization</organization>
+            <organizationalunit>Organizational Unit</organizationalunit>
+            <email>Mail</email>
+            <downloadcrt>Download certificate</downloadcrt>
+            <downloadkey>Download key</downloadkey>
+            <infotext>The configuration takes effect! The device is restarting, please do not leave the page or close the browser ...</infotext>
+            <httpstips>Need to restart the device</httpstips>
+            <notefilefmt>The selected file is unavailable!!</notefilefmt>
+        </https>
+        <wireless>
+            <mobile>4G</mobile>
+            <status>Dialing status</status>
+            <params>Dialing parameters</params>
+            <schedule>Dialing schedule</schedule>
+            <operator>Operator</operator>
+            <strength>Signal strength</strength>
+            <ip>IP address</ip>
+            <mask>Mask address</mask>
+            <gateway>Gateway address</gateway>
+            <dns>DNS address</dns>
+            <networking>Networking</networking>
+            <nonet>No net</nonet>
+            <dialingway>Dialing method</dialingway>
+            <auto>Auto</auto>
+            <manual>Manual</manual>
+            <dialphone>Dialing number</dialphone>
+        </wireless>
+        <vpn>
+            <name>Name</name>
+        </vpn>
+        <audio>
+            <audiotitle>Audio</audiotitle>
+            <enableaudio>Enable audio</enableaudio>
+            <codec>Audio codec format</codec>
+            <sample>Sampling rate</sample>
+            <audioin>Audio in</audioin>
+            <inputvol>Input volume</inputvol>
+            <outputvol>Output volume</outputvol>
+            <micin>MIC In</micin>
+            <linein>Line-In</linein>
+            <bitrates>Audio bit rate</bitrates>
+        </audio>
+        <video>
+            <thirdstream>Third stream</thirdstream>
+            <videotitle>Video</videotitle>
+            <codec>Encode type</codec>
+            <resolution>Resolution</resolution>
+            <profile>Profile</profile>
+            <frameratio>Frame rate</frameratio>
+            <bitratetype>Bit rate type</bitratetype>
+            <bitraterange>Refrence bit rate</bitraterange>
+            <bitrate>Bit rate</bitrate>
+            <quality>Encode quality</quality>
+            <keyframe>Key frame interval</keyframe>
+            <noteframe>To use 30FPS, change video standard under Image Settings to 60Hz.</noteframe>
+            <notequality>The bigger the number, the better the picture quality.</notequality>
+            <notekeyframe>The shorter the Interval, the better chance you have of video being of better quality.</notekeyframe>
+            <withaudio>Enable audio</withaudio>
+            <best>The best</best>
+            <better>Better</better>
+            <good>Good</good>
+            <normal>Normal</normal>
+            <worse>Worse</worse>
+            <worst>The worst</worst>
+            <videowm>Working mode</videowm>
+            <smartenc>Encoding enhancement</smartenc>
+        </video>
+        <osd>
+            <osdtitle>OSD</osdtitle>
+            <devinfo>Display device information</devinfo>
+            <devtime>Display datetime</devtime>
+            <devcustom>Display customized content</devcustom>
+            <devpicture>Display picture</devpicture>
+            <upload>Upload</upload>
+            <picturenote>Notice: The picture should be less than 250*150 pixel of size with JPG format. </picturenote>
+        </osd>
+        <imagesettings>
+            <always>Always on</always>
+            <flash>Flash</flash>
+            <mediumflash>Medium flash</mediumflash>
+            <slowflash>Slow flash</slowflash>
+            <speed>Strobe speed</speed>
+            <irlevel>IR brightness:</irlevel>
+            <maxlevel>Maximum brightness:</maxlevel>
+            <imagetitle>Image settings</imagetitle>
+            <saturation>Saturation</saturation>
+            <brightness>Brightness</brightness>
+            <sharpness>Sharpness</sharpness>
+            <contrast>Contrast</contrast>
+            <blc>BLC</blc>
+            <wdr>WDR</wdr>
+            <daynight>Day/Night mode</daynight>
+            <icut>IR-CUT filter</icut>
+            <wb>White balance</wb>
+            <shutter>Shutter</shutter>
+            <mirror>Mirror</mirror>
+            <metering>Light metering</metering>
+            <iris>Auto IRIS</iris>
+            <standard>Video standard</standard>
+            <defog>Defog</defog>
+            <nr>NR adjustment</nr>
+            <ldc>LDC</ldc>
+            <color>Day</color>
+            <bw>Night</bw>
+            <timing>Timing</timing>
+            <intersync>Auto(Inter sync)</intersync>
+            <bwtocolor>THR. of day</bwtocolor>
+            <colortobw>THR. of night</colortobw>
+            <colortogreydelay>Day Range</colortogreydelay>
+	    <greytocolordelay>Night Range</greytocolordelay>
+            <RealtimeBrightness>Realtime Brightness</RealtimeBrightness>
+            <indoor>Indoor</indoor>
+            <outdoor>Outdoor</outdoor>
+            <fluorescent>Fluorescent lamp</fluorescent>
+            <manual>Manual</manual>
+            <rgain>Red gain</rgain>
+            <ggain>Green gain</ggain>
+            <bgain>Blue gain</bgain>
+            <vertical>Vertical</vertical>
+            <horizontal>Horizontal</horizontal>
+            <verandhor>Vertical &amp; Horizontal</verandhor>
+            <global>Global</global>
+            <middle>Middle</middle>
+            <corridor>Corridor mode</corridor>
+            <imgprofile>Output Mode</imgprofile>
+            <custom>Custom</custom>
+            <normal>Standard</normal>
+            <bright>Bright</bright>
+            <colorful>Vivid</colorful>
+            <pastel>Gentle</pastel>
+            <dymodetips>Device will work on Color mode during this period.</dymodetips>
+            <imagesetnote>Note: Image change takes effect immediately.</imagesetnote>
+            <infrared>Infrared light</infrared>
+            <smartir>Smart IR</smartir>
+            <smartled>Smart LED</smartled>
+			<imgbase>Image</imgbase>
+            <blclevel>BLC Adjustment</blclevel>
+			<hlclevel>HLC Adjustment</hlclevel>
+			<wdrlevel>WDR Adjustment</wdrlevel>
+			<lightsene>Light sensitivity</lightsene>
+			<gain>Gain</gain>
+			<imgtemplate>Current template</imgtemplate>
+			<imgmodel>Mode</imgmodel>
+			<imgadjust>Image adjustment</imgadjust>
+			<expsettings>Exposure settings</expsettings>
+			<expmode>Exposure mode</expmode>
+			<imgenhancement>Image enhancement</imgenhancement>
+			<imgadvance>Advance</imgadvance>
+			<daynightmod>Day/Night</daynightmod>
+            <daynightmodfull>LED</daynightmodfull>
+            <daymode>Day</daymode>
+            <nightmode>Night</nightmode>
+            <imgconf>Working mode</imgconf>
+            <periodset>Period setting</periodset>
+            <imgnormal>Normal</imgnormal>
+            <supplementled>Light control</supplementled>
+            <supplementledfull>Light control</supplementledfull>
+            <supplementled2>Lighting control</supplementled2>
+            <blacklight>Smart Blacklight</blacklight>
+            <blacklightfull>White light on mode</blacklightfull>
+            <ledlevel>Brightness level</ledlevel>
+            <smartevt>Interactive mode</smartevt>
+            <imgfixed>Fixed</imgfixed>
+            <hlc>HLC</hlc>
+            <hsblc>HSBLC</hsblc>
+            <ledonlevel>LED turn-on threshold</ledonlevel>
+            <ledofflevel>LED turn off threshold</ledofflevel>
+        </imagesettings>
+        <privacymask>
+            <privacytitle>Privacy mask</privacytitle>
+            <enableprivacy>Enable privacy mask</enableprivacy>
+        </privacymask>
+        <roi>
+            <roititle>ROI</roititle>
+            <enableroi>Enable ROI</enableroi>
+            <roilevel>ROI Level</roilevel>
+            <lower>Low</lower>
+            <middle>Middle</middle>
+            <higher>High</higher>
+            <nonroifps>Non-ROI FPS</nonroifps>
+        </roi>
+        <local>
+            <localtitle>Local settings</localtitle>
+            <liverecord>Live record</liverecord>
+            <livesnapshot>Live snapshot</livesnapshot>
+            <picturetype>Snapshot type</picturetype>
+        </local>
+        <disk>
+            <disktitle>Storage disk</disktitle>
+            <formatted>Formatted</formatted>
+            <format>Format</format>
+            <usage>Usage status</usage>
+            <nodisk>Not installed</nodisk>
+			<installed>Installed</installed>
+            <abnormal>Abnormal</abnormal>
+            <full>Full</full>
+            <normal>Normal</normal>
+            <formatting>The disk is being formatted.</formatting>
+            <usedsize>Used</usedsize>
+            <unusedsize>Unused</unusedsize>
+            <formatips>WARNING: Formatting will erase ALL data on this disk, To format the disk,click Confirm,To quit,click Cancel.</formatips>
+        </disk>
+        <ftp>
+            <ftptitle>FTP</ftptitle>
+            <serveraddr>Server address</serveraddr>
+            <remotepath>Remote path</remotepath>
+            <breakpoint>Breakpoint resume</breakpoint>
+            <testftp>Test FTP</testftp>
+        </ftp>
+        <nfs>
+            <hostaddr>Server address</hostaddr>
+            <rootpath>Remote path</rootpath>
+            <staumount>Unmounted</staumount>
+            <stamounted>Mounted</stamounted>
+        </nfs>
+        <schedule>
+            <record>Record</record>
+            <snapshot>Snapshot</snapshot>
+            <ftpupload>FTP upload</ftpupload>
+            <prerecord>Pre-record</prerecord>
+            <stream>Stream</stream>
+            <overwrite>Overwrite</overwrite>
+            <recordpkg>Record package</recordpkg>
+            <quality>Quality</quality>
+            <framerate>Frame rate</framerate>
+            <interval>Interval</interval>
+            <mjpeg>MJPEG-HTTP</mjpeg>
+            <snapshoturl>Snapshot URL</snapshoturl>
+            <notefps>The bigger the number, the better the picture quality.</notefps>
+            <destination>Destination</destination>
+			<recordparams>Record settings</recordparams>
+        </schedule>
+        <evtserver>
+            <evtservertitle>Event server</evtservertitle>
+            <serveraddr>Server address</serveraddr>
+            <alias>Alias</alias>
+            <url>Post URL</url>
+            <type>Type</type>
+            <typeprivate>Private</typeprivate>
+            <typehttp>HTTP</typehttp>
+            <test>Test</test>
+            <dataformat>Data Format</dataformat>
+            <confidential>Server confidential</confidential>
+            <subtheme>Topic</subtheme>
+            <clientid>Client id</clientid>
+        </evtserver>
+        <motion>
+            <zone>Detection settings</zone>
+            <enablemotion>Enable motion detection</enablemotion>
+            <sensitivity>Sensitivity</sensitivity>
+            <threshold>Threshold</threshold>
+            <allrect>Full screen</allrect>
+            <allmotions>All motions</allmotions>
+            <smartmotions>Smart motions</smartmotions>
+            <smarttips>Smart motions detected by</smarttips>
+            <smarthuman>Human</smarthuman>
+            <smartvehicle>Vehicle</smartvehicle>
+        </motion>
+        <ioalarm>
+            <ioalarmtitle>I/O alarm</ioalarmtitle>
+            <triggerlevel>Trigger level:</triggerlevel>
+            <outputlevel>Alarm output level:</outputlevel>
+            <alarmdn>Linkage day and night switch</alarmdn>
+            <currentin>Current input:</currentin>
+            <currentout>Current output:</currentout>
+            <alarmsetting>Alarm trigger settings</alarmsetting>
+            <linkout>Linkage</linkout>
+            <fixoutput>Fixed output</fixoutput>
+            <timeroutput>Timing output</timeroutput>
+            <iointerface>Alarm Interface</iointerface>
+            <hardwareinfo>Hardware interface info</hardwareinfo>
+            <hardwarestate>The status of the hardware interface built-in</hardwarestate>
+            <hardwaretest>Test the hardware interfaces</hardwaretest>
+            <alarminputnumber>Number of alarm inputs:</alarminputnumber>
+            <alarmoutputnumber>Number of alarm outputs:</alarmoutputnumber>
+            <inputlevel>Input:</inputlevel>
+            <output>Output:</output>
+            <outputlevelset>Output level setting</outputlevelset>
+            <triggerlevelset>IO alarm trigger level setting</triggerlevelset>
+        </ioalarm>
+        <pir>
+        </pir>
+        <abnormality>
+            <networkdisconnect>Network disconnection</networkdisconnect>
+            <startup>Device startup</startup>
+        </abnormality>
+        <user>
+            <usertitle>Manage users</usertitle>
+            <group>Group name</group>
+            <administrator>Administrator</administrator>
+            <operator>Operator</operator>
+            <viewer>Viewer</viewer>
+            <confirmpwd>Confirm password</confirmpwd>
+            <authlist>Authority list</authlist>
+            <preview>Preview</preview>
+            <playback>Playback</playback>
+            <intercom>Intercom</intercom>
+            <maintain>Maintain</maintain>
+            <storage>Storage</storage>
+            <ptzcontrol>PTZ</ptzcontrol>
+            <upgrade>Upgrade</upgrade>
+            <system>System</system>
+            <network>Network</network>
+            <audio>Audio</audio>
+            <video>Video</video>
+            <event>Event</event>
+            <record>Record</record>
+            <usermgr>User management</usermgr>
+            <smartav>Smart-AV</smartav>
+        </user>
+        <ipfilter>
+            <ipfiltertitle>IP filter</ipfiltertitle>
+            <ipfiltermode>IP address filter type</ipfiltermode>
+            <startip>Start IP</startip>
+            <endip>End IP</endip>
+            <alias>Alias</alias>
+            <allows>Allowed</allows>
+            <forbidden>Forbidden</forbidden>
+        </ipfilter>
+        <avanalysis>
+            <resetcounters>Reset Counters</resetcounters>
+            <autoreset>Auto Reset</autoreset>
+            <manualreset>Manual Reset</manualreset>
+            <resettip>To reset the counter to start from zero</resettip>
+            <onceaday>Once a day</onceaday>
+            <vehicledct>Vehicle detection</vehicledct>
+	      <facedct>Facial detection</facedct>
+            <falldct>Fall Dectection</falldct>
+	     <linenum>Number of lines</linenum>
+            <smokefire>Smoke and fire Detection</smokefire>
+            <facedetection>Facial detection</facedetection>
+            <enablefd>Enable FD</enablefd>
+            <showframe>Show the frame</showframe>
+            <showfaceid>Show the face ID</showfaceid>
+            <faceconfidence>Face confidence</faceconfidence>
+            <maskconfidence>Mask confidence</maskconfidence>
+            <maskblink>Mark the face without wearing mask</maskblink>
+            <facefilter>Ignore faces</facefilter>
+            <maxrect>Bigger than zone</maxrect>
+            <minrect>Smaller than zone</minrect>
+            <snapshotmode>Snapshot mode</snapshotmode>
+            <fullframe>Full frame</fullframe>
+            <faceframe>Face</faceframe>
+            <picturecompress>Snapshot quality</picturecompress>
+            <uploadinterval>Update interval</uploadinterval>
+            <keepsize>Keep the original proposition of the face frame</keepsize>
+            <strechface>Size of the face frame</strechface>
+            <workmode>Working mode</workmode>
+            <optiinterval>Optimal face capture within specified time intervals</optiinterval>
+            <optiarea>Optimal face capture in a specified area</optiarea>
+            <keeptime>Min stay time</keeptime>
+            <delaytime>Capture delay time</delaytime>
+            <authorize>Authorization activation</authorize>
+            <authstatus>Authorization status</authstatus>
+            <unauthorized>Unauthorized</unauthorized>
+            <authorized>Authorized</authorized>
+            <authfailed>Authorization failed, please try again</authfailed>
+            <authkey>Authorization code</authkey>
+            <authnote>Note: Please obtain and use the correct authorization code. Please confirm that the device is connected to the Internet before authorization.</authnote>
+            <suctorboot>The authorization is successful, the device is restarting, please refresh the page later!</suctorboot>
+	        <withoutmask>No mask</withoutmask>
+            <wearmask>Wear mask</wearmask>
+            <allface>All faces</allface>
+            <videoanalysis>Video analysis</videoanalysis>
+            <peoplecount>People Counting</peoplecount>
+            <etypeloitering>Loitering</etypeloitering>
+            <humandct>Human Detection</humandct>
+            <crosslinedct>Line-crossing Detection</crosslinedct>
+            <intrusiondct>Intrusion Detection</intrusiondct>
+	    <leftmoved>Object Remain / Remove</leftmoved>
+            <confidenceval>Confidence</confidenceval>
+            <targetmask>Target mask</targetmask>
+            <scenemode>Scene mode</scenemode>
+            <indoorhuman>Indoor human</indoorhuman>
+            <outdoorhuman>Outdoor human</outdoorhuman>
+            <humanandcar>Outdoor car</humanandcar>
+            <sensitivity>Sensitivity</sensitivity>
+            <linedirection>Direction</linedirection>
+            <crsindoor>Indoor</crsindoor>
+            <crsoutdoor>Outdoor</crsoutdoor>
+            <targetblink>Trigger blink</targetblink>
+            <intsenter>Enter</intsenter>
+            <intsleft>Left</intsleft>
+            <intsboth>Both</intsboth>
+	    <showid>Show ID</showid>
+            <reporttoftp>Report to FTP</reporttoftp>
+            <quotaforftp>Quota for report</quotaforftp>
+            <reportsend>Report sending to FTP</reportsend>
+            <sendtime>Time for report sending</sendtime>
+            <attemptstimes>Attempts of report sending</attemptstimes>
+            <reportfile>File</reportfile>
+            <reportsendtime>Report sending time</reportsendtime>
+            <uploadsta>Upload status</uploadsta>
+            <sendsuccess>Succeed</sendsuccess>
+            <sendfailed>Failed</sendfailed>
+            <sendready>Unsent</sendready>
+            <exporttopc>Export to PC</exporttopc>
+            <sendtoftp>Send to FTP</sendtoftp>
+            <send>Export to FTP</send>
+            <todate>To</todate>
+            <needseldate>Please select date range for searching!!</needseldate>
+            <minstay>Minimum time</minstay>
+            <plate>Enable and target the plate at the same time</plate>
+            <nonmotor>Enable and target the non-motor vehicle</nonmotor>
+            <vehicleshowid>Show vehicle track ID</vehicleshowid>
+            <enabledoubleline>Enable double lines</enabledoubleline>
+        </avanalysis>
+    </subpages>
+    <tipsinfo>
+        <unauth>This function requires the license.</unauth>
+        <errlogin>Failed to login!</errlogin>
+        <errpwd>User name or password is incorrect, please input again.</errpwd>
+        <errset>Failed to set!</errset>
+        <errnotsupport>Note: The device does not support this feature.</errnotsupport>
+        <errrequest>Bad request!</errrequest>
+        <errauthority>Insufficient permissions!</errauthority>
+        <errmastinie>Please download and install the WEB Plugins in IE browser.</errmastinie>
+        <errmastinqt>Please download and install the QT Plugins in browser.</errmastinqt>
+        <maxrect>Maximum can only set 4 areas.</maxrect>
+        <errinput>Incorrect input!!</errinput>
+        <infosave>Set successfully!</infosave>
+        <createsave>Successfully created!</createsave>
+        <installsuc>Successful installation!</installsuc>
+        <installfail>Installation failed!</installfail>
+        <uploadsuc>Successfully upload!!</uploadsuc>
+        <uploadfai>Fail to upload!!</uploadfai>
+        <resetsuc>Reset successfully!!</resetsuc>
+        <resetfai>Reset failed!!</resetfai>
+        <activatesuc>Activation succeeded！！</activatesuc>
+        <activatefai>Activation failed！！</activatefai>
+        <connectsuc>Connection succeeded!!</connectsuc>
+        <connectfai>Connection failed!!</connectfai>
+        <restoresuc>Restore default successfully!!</restoresuc>
+        <restorefai>Restore default failed!!</restorefai>
+        <testsuc>Test passed!!</testsuc>
+        <testfai>Test failed!!</testfai>
+        <addsuc>Add successfully!!</addsuc>
+        <addfai>Add failed!!</addfai>
+        <modifysuc>Modify successfully!!</modifysuc>
+        <modifyfai>Modify failed!!</modifyfai>
+        <deletesuc>Delete Successfully!!</deletesuc>
+        <deletefai>Delete failed!!</deletefai>
+        <erradmin>The primary administrator cannot be deleted!!</erradmin>
+        <pwdnomatch>The Passwords do not match!</pwdnomatch>
+	<pwdmaxlength>The maximum length of the password is 15.</pwdmaxlength>
+        <errexist>The item already exists!</errexist>
+        <formatsuc>Format Successfully!</formatsuc>
+        <formatfai>Failed to format!</formatfai>
+        <downocx>Please click to download and install Video ActiveX Plug-ins.</downocx>
+        <supportinie>This feature can be supported under IE only!</supportinie>
+        <supportinqt>Please confirm that the browser plugin has been installed, otherwise this feature is not supported！</supportinqt>
+        <configuploadsuc>Configuration file is imported successfully, please wait for device restart. </configuploadsuc>
+        <configuploadfai>Configuration file is imported failed, please check the file and try again.</configuploadfai>
+        <streamnotsupport>The current browser does not support H.265 codec video preview, please use Internet Explorer.</streamnotsupport>
+        <userexist>User already exists!</userexist>
+        <reboottips>Change the setting will cause that the device will reboot. Do you want to continue?</reboottips>
+        <logintimes>Incorrect user name or password, The device will be locked after {times} failed login attempts.</logintimes>
+        <loginwait>The device is locked. Please try again after {time} minute(s).</loginwait>
+        <noflash>The video can not be play, because there is no FLASH plugin installed,</noflash>
+        <enableflash>Please click here to download or enable Adobe Flash Plugin.</enableflash>
+        <waitmessage>Restarting...</waitmessage>
+        <manualreboot>It will take a little time to reboot, are you sure to reboot?</manualreboot>
+        <manualrestore>Are you sure to restore the device to the factory mode?</manualrestore>
+        <manualdefault>It will make all of the parameters except IP address and HTTP ports to be defaulted, are you sure to be continued?</manualdefault>
+        <notesupport>Note: This device does not support this feature.</notesupport>
+        <noterecord>Note: If you need to download the archive files, please download it using the tool IPCManager.</noterecord>
+        <notesecurity>Attention! Enabling this function will leave the device more vulnerable to network attacks.</notesecurity>
+        <noteonvif>Note: If this feature is turned off, the RTSP password authentication will be disabled.</noteonvif>
+        <check>Security verification</check>
+	<noteurl>The User and Password showing in the above URLs are factory default. Please use the camera's current username and password in the appropriate locations.</noteurl>
+        <notevreboot>Changes will be applied after reboot. Reboot now?</notevreboot>
+        <noinstllqt>No browser plug-in is currently installed. Installing a browser plug-in can improve the user experience. If you need to install it, please click the "Download" button in the upper right corner to download and install it. Please close this window to abort the installation.</noinstllqt>
+        <oldversion1>It is detected that the current browser plug-in needs to be updated. Please click</oldversion1>
+        <oldversion2>Or click the "Download" button in the upper right corner to download and install it. Please close the window directly if you want to give up the update.</oldversion2>
+        <recordsave>The records file is saved in</recordsave>
+        <snapsave>The snapshot file is saved in</snapsave>
+        <savelengthrecord>The save path for the video is too long, please choose again</savelengthrecord>
+        <savelengthsnap>The saved path captured is too long, please choose again</savelengthsnap>
+        <question1>The selected questions cannot be the same</question1>
+        <question2>Same answers are not allowed</question2>
+        <question3>The character length of the answer is too long</question3>
+        <inputrule>Password filling requirements:</inputrule>
+        <inputTips>The password must be at least 25 characters long.**The password must contain uppercase and lowercase letters, numbers, and special symbols.**The password must not include consecutive characters from the keyboard.**The password must not contain the username.**The password must not include repeated long sequences.**The password meets the requirements.</inputTips>
+        <manageuserTipList>Minimum length of 25 characters.**Must include lowercase letters – [a..z].**Must include uppercase letters – [A..Z].**Must include numbers – [0..9].**Must include special symbols – [$， #， %， ...].**Must not consist of sequential keyboard characters (e.g., "qwertyuiopasdfghjkl123456+").**Must not repeat any of the user's previous 24 passwords.</manageuserTipList>
+    </tipsinfo>
+</allpages>

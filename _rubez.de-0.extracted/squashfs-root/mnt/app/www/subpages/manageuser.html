@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" http-equiv="pragma" content="no-cache">
+  <title></title>
+  <link rel="stylesheet" media="all" href="css/subcommon.css">
+  <link rel="stylesheet" media="all" href="../script/jqueryui/jquery-ui.min.css">
+  <link rel="stylesheet" media="all" href="css/manageuser.css">
+  <script src="../script/jquery-3.5.1.min.js"></script>
+  <script src="../script/jssha.js"></script>
+  <script src="../script/jqueryui/jquery-ui.min.js"></script>
+  <script src="../script/bvipccgisdk.js"></script>
+  <script src="../script/base64.js"></script>
+  <script src="../script/translator.js"></script>
+  <script src="../script/inputrestriction.js"></script>
+  <script src="script/manageuser.js"></script>
+  <script src="../script/advVailpwd.js"></script>
+  <script src="../script/crypto.js"></script>
+</head>
+
+<body>
+  <div id="div_usermanage_main">
+    <div id="div_usermanage_titlebar" style="width: 100%;height: 36px;float: left;">
+      <div id="div_title_usermanage" class="cls_tablebar_item cls_tablebar_item_selected" style="width:212px;border-bottom: 4px solid #1baafb;color:white;">
+        <div id="div_title_usermanage_text" class="cls_tablebar_item_text">Manage Users</div>
+      </div>
+    </div>
+    <div id="div_usermanage_content">
+      <div id="div_usermanage_list">
+        <div id="div_usermanage_list_header">
+          <table style="border: 1px solid black;width: 100%;height: 24px;">
+            <tbody>
+              <tr style="padding: 0;">
+                <th class="cls_usermanage_list_header_item" id="list_column_number" style="border-right: 1px solid black;">No.</th>
+                <th class="cls_usermanage_list_header_item" id="list_column_username" style="border-right: 1px solid black;">User Name</th>
+                <th class="cls_usermanage_list_header_item" id="list_column_groupname" style="width: 190px;">Group Name</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="div_usermanage_list_content">
+          <div id="div_usermanage_list_items" class="cls_scrollbar">
+            <table>
+              <tbody id="table_usermanage_list" style="width: 160px">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="div_add_or_modify_dialog" style="display: none;">
+        <div id="div_dialog_content">
+          <div id="div_usermanage_username" class="cls_usermanage_dialog_item">
+            <div id="div_usermanage_username_name" class="cls_usermanage_dialog_item_name">User Name</div>
+            <div id="div_usermanage_username_value" class="cls_usermanage_dialog_item_value">
+              <div style="width: 180px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                <input type="text" id="input_usermanage_username_text" maxlength="15" class="cls_subpage_content_input" style="float: left;border: none;">
+              </div>
+            </div>
+            <div id="div_username_declare" class="cls_input_maxbit">[Max 15 CH]</div>
+          </div>
+          <div id="div_usermanage_password" class="cls_usermanage_dialog_item">
+            <div id="div_usermanage_password_name" class="cls_usermanage_dialog_item_name">Password</div>
+            <div id="div_usermanage_password_value" class="cls_usermanage_dialog_item_value">
+              <div style="width: 180px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                <input type="password" id="input_usermanage_password_text" class="cls_subpage_content_input" style="float: left;border: none;">
+                <div id="div_password_eye" style="float: left;margin-left: 6px;">
+                  <img class="cls_input_icon" id="password_eye_hide" onclick="fun_password_eye_showorhide(0)" style="margin-top: 6px;" src="../ui/images/weyehide.png">
+                  <img class="cls_input_icon" id="password_eye_show" onclick="fun_password_eye_showorhide(1)" style="margin-top: 6px;" src="../ui/images/eyeshow.png" hidden>
+                </div>
+              </div>
+            </div>
+            <div id="div_password_declare" class="cls_input_maxbit">[Min 40 CH]</div>
+          </div>
+
+          <!-- newpassword ================tips -->
+          <div id="div_retrieval_newpassword_tip" class="cls_usermanage_dialog_item" style="height: auto;line-height: 20px;display: none;">
+            <div id="div_retrieval_newpassword_tip_info" class="cls_retrieval_dialog_item_name" style="width: 267px;color: red;margin-left: 120px;"></div>
+          </div>
+
+          <div id="div_usermanage_confirm" class="cls_usermanage_dialog_item">
+            <div id="div_usermanage_confirm_name" class="cls_usermanage_dialog_item_name">Confirm Password</div>
+            <div id="div_usermanage_confirm_value" class="cls_usermanage_dialog_item_value">
+              <div style="width: 180px;height: 22px;background-color: #2f2f2f;border: 1px solid #242424;">
+                <input type="password" id="input_usermanage_confirm_text" class="cls_subpage_content_input" style="float: left;border: none;">
+                <div id="div_confirm_password_eye" style="float: left;margin-left: 6px;">
+                  <img class="cls_input_icon" id="confirm_password_eye_hide" onclick="fun_confirm_password_eye_showorhide(0)" style="margin-top: 6px;" src="../ui/images/weyehide.png">
+                  <img class="cls_input_icon" id="confirm_password_eye_show" onclick="fun_confirm_password_eye_showorhide(1)" style="margin-top: 6px;" src="../ui/images/eyeshow.png" hidden>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="div_usermanage_group" class="cls_usermanage_dialog_item" style="height: 28px;">
+            <div id="div_usermanage_group_name" class="cls_usermanage_dialog_item_name" style="height: 22px;line-height: 22px;">Group</div>
+            <div id="div_usermanage_group_value" class="cls_usermanage_dialog_item_value">
+              <select id="select_user_group" class="cls_subpage_content_select" style="width: 128px;">
+                <option value="0">Administrator</option>
+                <option value="1">Operator</option>
+                <option value="2">Viewer</option>
+              </select>
+            </div>
+          </div>
+          <div id="div_usermanage_authorities" class="cls_usermanage_dialog_item" style="height: 24px;">
+            <div id="div_usermanage_authorities_name" class="cls_usermanage_dialog_item_name">Authority List</div>
+            <div id="div_usermanage_authorities_value" class="cls_usermanage_dialog_item_value">
+              <input type="checkbox" id="check_usermanage_authorities_all" class="cls_dialog_check cls_item_hcenter">
+              <label id="label_check_all" for="check_usermanage_authorities_all" class="cls_dialog_check_declare cls_item_hcenter">All</label>
+            </div>
+          </div>
+          <div id="div_usermanage_authorities_list">
+            <div id="div_usermanage_authorities_list_content" class="cls_scrollbar">
+              <div id="div_authorities_item_preview" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_preview" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_preview" for="check_authorities_preview" class="cls_auth_list_item_declare cls_item_hcenter">Preview</label>
+              </div>
+              <div id="div_authorities_item_playback" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_playback" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_playback" for="check_authorities_playback" class="cls_auth_list_item_declare cls_item_hcenter">Playback</label>
+              </div>
+              <div id="div_authorities_item_talkback" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_talkback" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_talkback" for="check_authorities_talkback" class="cls_auth_list_item_declare cls_item_hcenter">Intercom</label>
+              </div>
+              <div id="div_authorities_item_maintain" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_maintain" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_maintain" for="check_authorities_maintain" class="cls_auth_list_item_declare cls_item_hcenter">Maintain</label>
+              </div>
+              <div id="div_authorities_item_storage" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_storage" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_storage" for="check_authorities_storage" class="cls_auth_list_item_declare cls_item_hcenter">Storage</label>
+              </div>
+              <div id="div_authorities_item_ptz" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_ptz" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_ptz" for="check_authorities_ptz" class="cls_auth_list_item_declare cls_item_hcenter">PTZ</label>
+              </div>
+              <div id="div_authorities_item_upgrade" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_upgrade" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_upgrade" for="check_authorities_upgrade" class="cls_auth_list_item_declare cls_item_hcenter">Upgrade</label>
+              </div>
+              <div id="div_authorities_item_system" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_system" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_system" for="check_authorities_system" class="cls_auth_list_item_declare cls_item_hcenter">System</label>
+              </div>
+              <div id="div_authorities_item_network" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_network" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_network" for="check_authorities_network" class="cls_auth_list_item_declare cls_item_hcenter">Network</label>
+              </div>
+              <div id="div_authorities_item_audio" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_audio" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_audio" for="check_authorities_audio" class="cls_auth_list_item_declare cls_item_hcenter">Audio</label>
+              </div>
+              <div id="div_authorities_item_video" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_video" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_video" for="check_authorities_video" class="cls_auth_list_item_declare cls_item_hcenter">Video</label>
+              </div>
+              <div id="div_authorities_item_event" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_event" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_event" for="check_authorities_event" class="cls_auth_list_item_declare cls_item_hcenter">Event</label>
+              </div>
+              <div id="div_authorities_item_record" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_record" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_record" for="check_authorities_record" class="cls_auth_list_item_declare cls_item_hcenter">Record</label>
+              </div>
+              <div id="div_authorities_item_usermgr" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_usermgr" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_usermgr" for="check_authorities_usermgr" class="cls_auth_list_item_declare cls_item_hcenter">User Management</label>
+              </div>
+              <div id="div_authorities_item_smart" class="cls_auth_list_item">
+                <input type="checkbox" id="check_authorities_smart" class="cls_auth_list_item_check cls_item_hcenter">
+                <label id="label_check_smart" for="check_authorities_smart" class="cls_auth_list_item_declare cls_item_hcenter">Smart-VA</label>
+              </div>
+            </div>
+          </div>
+
+          <!--  -->
+          <div style="float: left;" id="inputrule_content">
+            <p style="margin-left: 10px;" id="inputrule_name"></p>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li id="repeat_pwd_tips">密码不应重复此用户帐户的前 24 个密码</li>
+            </ul>
+          </div>
+
+          <div id="div_usermanage_buttons">
+            <input type="button" id="button_usermanage_dialog_save" class="cls_subpage_content_button" value="Save">
+            <input type="button" id="button_usermanage_dialog_cancel" class="cls_subpage_content_button" value="Cancel">
+          </div>
+        </div>
+      </div>
+      <div id="div_user_authorities"></div>
+      <div id="div_usermanage_options">
+        <input type="button" id="button_usermanage_add" class="cls_subpage_content_button" value="Add">
+        <input type="button" id="button_usermanage_modify" class="cls_subpage_content_button" value="Modify">
+        <input type="button" id="button_usermanage_delete" class="cls_subpage_content_button" value="Delete">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

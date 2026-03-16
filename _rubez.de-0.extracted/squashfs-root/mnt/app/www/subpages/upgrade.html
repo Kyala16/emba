@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="pragma" content="no-cache">
+    <title></title>
+    <link rel="stylesheet" media="all" href="css/subcommon.css">
+    <link rel="stylesheet" media="all" href="css/upgrade.css">
+    <link rel="stylesheet" media="all" href="../script/jqueryui/jquery-ui.min.css">
+    <script src="../script/jquery-3.5.1.min.js"></script>
+    <script src="../script/jqueryui/jquery-ui.min.js"></script>
+    <script src="../script/ajaxfileupload.js"></script>
+    <script src="../script/bvipccgisdk.js"></script>
+    <script src="../script/translator.js"></script>
+    <script src="script/upgrade.js"></script>
+    <style>
+      #div_progressbar .ui-progressbar-value {
+        height: 12px;
+    }
+    </style>
+</head>
+<body>
+    <div id="div_upgrade_main">
+        <div id="div_upgrade_tablebar" style="width: 100%;height: 36px;float: left;">
+            <div id="div_table_information" class="cls_tablebar_item cls_tablebar_item_selected" style="border-bottom: 4px solid #1baafb;color:white;">
+                <div id="div_table_information_text" class="cls_tablebar_item_text">Upgrade</div>
+            </div>
+        </div>
+        <div id="div_upgrade_operation">
+            <div id="div_upgrade_file_tips">
+                <div id="div_upgrade_file_tips_text">
+                    <div id="div_tips_text_one" class="cls_upgrade_file_tips cls_item_font_light cls_item_mini_font" style="margin-left: 0;">The current mode is</div>
+                    <div id="div_tips_text_two" style="color:red" class="cls_upgrade_file_tips cls_item_font_light cls_item_mini_font">BVH-G3-200V5</div>
+                    <div id="div_tips_text_three" class="cls_upgrade_file_tips cls_item_font_light cls_item_mini_font">Please be sure that you select the right firmware file.</div>
+                </div>
+            </div>
+            <div id="div_upgrade_file_select">
+                <div id="div_select_upgrade_file_text" class="cls_item_mini_font cls_item_font_light">Select Firmware File</div>
+                <div id="div_select_upgrade_file">
+                    <input type="text" id="text_select_upgrade_file" disabled="disabled" class="cls_subpage_content_input">
+                    <input type="file" style="display: none" id="input_file_select">
+                    <input type="button" class="cls_subpage_content_button" id="button_select_file" value="Browse...">
+                    <input type="button" class="cls_subpage_content_button" id="button_start_upgrade" value="Upgrade">
+                </div>
+                <div id="div_progress_dialog" style="display: none">
+                    <div id="div_progressbar" style="height: 12px;width:90%;margin-top: 32px;margin-left:26px;float: left;"></div>
+                    <div id="div_progress_text" style="margin-top: 4px;float: left; height: 24px;width:100%;text-align: center;">99%</div>
+                    <div id="div_wait_for_upgrade" style="width: 100%;height:22px;line-height: 22px;float: left;">
+                        <div id="div_wait_for_gugrade_completed" style="width: 100%;float: left;height: auto;">
+                            <div id="div_wait_time_tips" style="width:auto;height:22px;float: left;margin-left: 48px;">Wait for upgrade complete:</div>
+                            <div id="div_wait_time_text" style="width: 60px;height:22px;float: left;margin-left: 6px;">200s</div>
+                        </div>
+                    </div>
+                    <div id="div_upgrade_status" style="width: 380px;height:42px;float: left;margin-left:30px;">
+                        <div id="div_upgrade_status_icon" style="float: left;height:20px;width:20px;margin:10px 8px 0 20px;">
+                            <img src="images/tips.png">
+                        </div>
+                        <div id="div_upgrade_status_text" style="text-align: left;color: red;margin-top: 12px;">upgrade failed!!!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div_upgrade_information">
+            <div id="div_information_icon" class="cls_upgrade_informations" style="margin-top: 0;">
+                <img src="images/tips.png">
+            </div>
+            <div id="div_information_first" class="cls_upgrade_informations cls_item_font_grey cls_item_mini_font">
+                1. If the upgrade failed,please inspect camera connection and check if the correct upgrade file has been selected.
+            </div>
+            <div id="div_information_second" class="cls_upgrade_informations cls_item_font_grey cls_item_mini_font">
+                2. Do not POWER OFF the unit while upgrading. The unit will reboot during the upgrade process,the process will take roughly 1-10 minutes.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="pragma" content="no-cache">
+    <title></title>
+    <link rel="stylesheet" media="all" href="css/subcommon.css">
+    <link rel="stylesheet" media="all" href="../script/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" media="all" href="css/upnp.css">
+    <script src="../script/jquery-3.5.1.min.js"></script>
+    <script src="../script/jqueryui/jquery-ui.min.js"></script>
+    <script src="../script/bvipccgisdk.js"></script>
+    <script src="../script/translator.js"></script>
+    <script src="../script/inputrestriction.js"></script>
+    <script src="script/upnp.js"></script>
+</head>
+<body>
+<div id="div_upnp_main">
+    <div id="div_upnp_titlebar" style="width: 100%;height: 36px;float: left;">
+        <div id="div_title_upnp" class="cls_tablebar_item cls_tablebar_item_selected" style="border-bottom: 4px solid #1baafb;color:white;">
+            <div id="div_title_upnp_text" class="cls_tablebar_item_text">UPnP</div>
+        </div>
+    </div>
+    <div id="div_upnp_content">
+        <div id="div_upnp_enable" style="width: 100%;height: 24px;">
+            <div id="div_upnp_enable_item" style="width: 480px;height: 24px;float: left;">
+                <input id="check_enable_upnp" type="checkbox" class="cls_schedule_radio">
+                <div style="float: left;height: 24px;">
+                    <label id="div_upnp_enable_name" for="check_enable_upnp" class="cls_item_mini_font cls_item_font_light">Enable DDNS</label>
+                </div>
+            </div>
+        </div>
+        <div id="div_upnp_device" style="display: none;">
+            <div id="div_upnp_device_name">Camera Name</div>
+            <div id="div_upnp_device_value">
+                <input type="text" id="input_device_name" class="cls_subpage_content_input" style="width: 168px;">
+            </div>
+            <dvi id="div_upnp_save_device">
+                <input type="button" id="button_save_device" class="cls_subpage_content_button" value="Save">
+            </dvi>
+        </div>
+        <div id="div_upnp_maping_list">
+            <div id="div_upnp_list_header">
+                <table style="border: 1px solid black;width: 100%;height: 24px;">
+                    <tbody>
+                        <tr style="padding: 0;">
+                            <th id="list_column_inter_port" class="cls_upnp_list_header_item" style="border-right: 1px solid black;">Internal Port</th>
+                            <th id="list_column_exter_port" class="cls_upnp_list_header_item" style="border-right: 1px solid black;">External Port</th>
+                            <th id="list_column_protocol" class="cls_upnp_list_header_item" style="border-right: 1px solid black;">Protocol</th>
+                            <th id="list_column_enable" class="cls_upnp_list_header_item" style="border-right: 1px solid black;">Enable</th>
+                            <th id="list_column_status" class="cls_upnp_list_header_item" style="width: 140px;">Status</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="div_upnp_list_content">
+                <div id="div_upnp_list_items" class="cls_scrollbar">
+                    <table>
+                        <tbody id="table_upnp_mapping_list" style="width: 160px">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="div_upno_options">
+            <input type="button" id="button_upnp_add" class="cls_subpage_content_button" value="Add">
+            <input type="button" id="button_upnp_modify" class="cls_subpage_content_button" value="Modify">
+            <input type="button" id="button_upnp_delete" class="cls_subpage_content_button" value="Delete">
+        </div>
+        <div id="div_upnp_addormodify_dialog" style="display: none;">
+            <div id="div_dialog_area">
+                <div id="div_dialog_item_enable" class="cls_dialog_item">
+                    <div id="div_dialog_item_enable_name" class="cls_dialog_item_name" style="height: 22px;line-height: 22px;">Enable</div>
+                    <div id="div_dialog_item_enable_value" class="cls_dialog_item_value">
+                        <select id="select_upnp_item_enable" class="cls_subpage_content_select" style="width: 122px;">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="div_dialog_item_protocol" class="cls_dialog_item">
+                    <div id="div_dialog_item_protocal_name" class="cls_dialog_item_name" style="height: 22px;line-height: 22px;">Protocal</div>
+                    <div id="div_dialog_item_protocal_value" class="cls_dialog_item_value">
+                        <select id="select_upnp_protocal" class="cls_subpage_content_select" style="width: 122px;">
+                            <option value="0">TCP</option>
+                            <option value="1">UDP</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="div_dialog_item_interport" class="cls_dialog_item">
+                    <div id="div_dialog_item_interport_name" class="cls_dialog_item_name">Internal Port</div>
+                    <div id="div_dialog_item_interport_value" class="cls_dialog_item_value">
+                        <input type="number" id="input_upnp_inter_port" maxlength="5" class="cls_subpage_content_input" style="width: 120px;">
+                    </div>
+                </div>
+                <div id="div_dialog_item_exterport" class="cls_dialog_item">
+                    <div id="div_dialog_item_exterport_name" class="cls_dialog_item_name">External Port</div>
+                    <div id="div_dialog_item_exterport_value" class="cls_dialog_item_value">
+                        <input type="number" id="input_upnp_exter_port" maxlength="5" class="cls_subpage_content_input" style="width: 120px;">
+                    </div>
+                </div>
+                <div id="div_dialog_item_options" class="cls_dialog_item" style="margin-top: 10px;width: 340px;margin-left: 0;">
+                    <input type="button" id="button_upnp_add_or_modify" class="cls_subpage_content_button" value="Save">
+                    <input type="button" id="button_upnp_cancel" class="cls_subpage_content_button" value="Cancel">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

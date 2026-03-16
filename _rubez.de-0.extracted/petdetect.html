@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" media="all" href="css/subcommon.css" />
+    <link rel="stylesheet" media="all" href="/script/jqueryui/jquery-ui.min.css" />
+    <link rel="stylesheet" media="all" href="css/humandetect.css" />
+    <script src="../script/jquery-3.5.1.min.js"></script>
+    <script src="../script/jqueryui/jquery-ui.min.js"></script>
+    <script src="../script/translator.js"></script>
+    <script src="../script/bvipccgisdk.js"></script>
+    <script src="../script/videodrawx.js"></script>
+    <script src="../script/normalschedule.js"></script>
+    <script src="/script/flvplayer/mpegts.js" charset="utf-8"></script>
+    <link rel="stylesheet" media="all" href="/ui/css/mpegts.css" />
+    <script src="../script/timeredit.js"></script>
+    <script src="script/petdetect.js"></script>
+    <script src="../script/inputrestriction.js"></script>
+  </head>
+  <body>
+    <div id="div_main">
+      <div id="div_facedetect_tablebar">
+        <div id="div_table_facedetect_region" class="cls_tablebar_item cls_tablebar_item_selected">
+          <div id="div_table_facedetect_region_text" class="cls_tablebar_item_text">Base Settings</div>
+        </div>
+        <div id="div_table_facedetect_schedule" class="cls_tablebar_item">
+          <div id="div_table_facedetect_schedule_text" class="cls_tablebar_item_text">Arming Schedule</div>
+        </div>
+        <div id="div_table_facedetect_actions" class="cls_tablebar_item">
+          <div id="div_table_facedetect_actions_text" class="cls_tablebar_item_text">Actions</div>
+        </div>
+      </div>
+      <div id="div_page_content">
+        <!--区域设置-->
+        <div id="div_page_region">
+          <div id="div_video_view" style="display: none">
+            <div id="div_page_media_area">
+              <div id="div_page_video_draw"></div>
+            </div>
+            <!-- <div id="div_region_options">
+                    <input id="button_region_clear" type="button" class="cls_subpage_content_button" value="Clear" style="display: none;">
+                    <input id="button_region_fullscreen" type="button" class="cls_subpage_content_button" value="Full screen" style="display: none;">
+                    <input id="button_region_restore" type="button" class="cls_subpage_content_button" value="Restore">
+                    <input id="button_region_refresh" type="button" class="cls_subpage_content_button" value="Refresh">
+                    <input id="button_region_save" type="button" class="cls_subpage_content_button" value="Save">
+                </div> -->
+          </div>
+          <div id="div_page_base_parameters" style="border: none">
+            <div id="div_humandct_confidence" class="cls_base_param_item" style="margin-top: 8px">
+              <div id="div_confidence_name" class="cls_base_param_item_name cls_item_mini_font cls_item_font_light">Confidence</div>
+              <div id="slider_humandct_confidence"></div>
+              <div id="div_confidence_value" class="cls_item_mini_font cls_item_font_grey" style="width: 36px; height: 24px; line-height: 24px; float: left; margin: 0 0 0 4px">0</div>
+            </div>
+            <div id="div_humandct_tagmask" class="cls_base_param_item">
+              <input type="checkbox" id="check_humandct_tagmask" style="margin-left: 0; float: left" />
+              <div style="width: 240px; height: 24px; float: left">
+                <label for="check_humandct_tagmask" id="label_humandct_tagmask_name" class="cls_item_mini_font cls_item_font_light">Target mask</label>
+              </div>
+            </div>
+            <div id="div_region_options">
+              <input id="button_region_restore" type="button" class="cls_subpage_content_button" value="Restore" />
+              <input id="button_region_refresh" type="button" class="cls_subpage_content_button" value="Refresh" />
+              <input id="button_region_save" type="button" class="cls_subpage_content_button" value="Save" />
+            </div>
+          </div>
+        </div>
+        <!--计划设置-->
+        <div id="div_page_schedule" style="display: none">
+          <div id="div_page_schedule_trigger" class="cls_schedule_item" style="margin-top: 8px">
+            <div id="div_schedule_trigger_parameters">
+              <div id="div_schedule_trigger_name" class="cls_schedule_trigger_name cls_item_font_light">Trigger interval min time</div>
+              <input type="text" id="input_schedule_trigger_value" style="float: left; margin: 0 4px 0 4px" class="cls_subpage_content_input" value="20" />
+              <div id="div_schedule_trigger_declare" class="cls_item_mini_font cls_item_font_grey" style="float: left; width: 220px; height: 24px; line-height: 24px">[Max 300 Seconds]</div>
+            </div>
+          </div>
+          <div id="div_page_schedule_allday" class="cls_schedule_item">
+            <input type="radio" id="radio_schedule_allday" name="normal_schedule" class="cls_schedule_radio" style="margin-left: 0" />
+            <div style="float: left; width: auto">
+              <label id="label_schedule_allday" for="radio_schedule_allday" class="cls_item_mini_font cls_item_font_light">7*24 Hours</label>
+            </div>
+          </div>
+          <div id="div_page_schedule_custom" class="cls_schedule_item">
+            <input type="radio" id="radio_schedule_custom" name="normal_schedule" class="cls_schedule_radio" style="margin-left: 0" />
+            <div style="float: left; width: auto">
+              <label id="label_schedule_custom" for="radio_schedule_custom" class="cls_item_mini_font cls_item_font_light">Schedule</label>
+            </div>
+          </div>
+          <div id="div_page_schedule_setting" style="display: none">
+            <div id="div_week_day">
+              <div style="width: 124px; height: 32px; margin: 0; float: left">
+                <div id="div_sunday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px; text-align: right">Sunday</div>
+              </div>
+              <div style="width: 124px; height: 32px; margin: 0; float: left">
+                <div id="div_monday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px; text-align: right">Monday</div>
+              </div>
+              <div style="width: 124px; height: 32px; margin: 0; float: left">
+                <div id="div_tuesday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px; text-align: right">Tuesday</div>
+              </div>
+              <div style="width: 124px; height: 32px; margin: 0; float: left">
+                <div id="div_wednesday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px; text-align: right">Wednesday</div>
+              </div>
+              <div style="width: 124px; height: 32px; margin: 0; float: left">
+                <div id="div_thursday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px; text-align: right">Thursday</div>
+              </div>
+              <div style="width: 124px; height: 32px; margin: 0; float: left">
+                <div id="div_friday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px; text-align: right">Friday</div>
+              </div>
+              <div style="width: 124px; height: 32px; margin: 0; float: left">
+                <div id="div_saturday" class="cls_item_mini_font cls_item_font_light" style="margin: 7px 0 0 1px; text-align: right">Saturday</div>
+              </div>
+            </div>
+            <div id="div_schedule_show">
+              <div id="div_schedule_ruler">
+                <img src="../ui/images/schedule.png" />
+              </div>
+              <div id="div_schedule_panel"></div>
+            </div>
+            <div id="div_schedule_operations">
+              <div style="width: 90px; height: 32px">
+                <input type="button" class="cls_subpage_content_button cls_schedule_setup_dialog_button" id="button_schedule_sunday_setup" style="width: 90px; height: 26px; margin-top: 4px" value="Setup" />
+              </div>
+              <div style="width: 90px; height: 32px">
+                <input type="button" class="cls_subpage_content_button cls_schedule_setup_dialog_button" id="button_schedule_monday_setup" style="width: 90px; height: 26px; margin-top: 4px" value="Setup" />
+              </div>
+              <div style="width: 90px; height: 32px">
+                <input type="button" class="cls_subpage_content_button cls_schedule_setup_dialog_button" id="button_schedule_tuesday_setup" style="width: 90px; height: 26px; margin-top: 4px" value="Setup" />
+              </div>
+              <div style="width: 90px; height: 32px">
+                <input type="button" class="cls_subpage_content_button cls_schedule_setup_dialog_button" id="button_schedule_wednesday_setup" style="width: 90px; height: 26px; margin-top: 4px" value="Setup" />
+              </div>
+              <div style="width: 90px; height: 32px">
+                <input type="button" class="cls_subpage_content_button cls_schedule_setup_dialog_button" id="button_schedule_thursday_setup" style="width: 90px; height: 26px; margin-top: 4px" value="Setup" />
+              </div>
+              <div style="width: 90px; height: 32px">
+                <input type="button" class="cls_subpage_content_button cls_schedule_setup_dialog_button" id="button_schedule_friday_setup" style="width: 90px; height: 26px; margin-top: 4px" value="Setup" />
+              </div>
+              <div style="width: 90px; height: 32px">
+                <input type="button" class="cls_subpage_content_button cls_schedule_setup_dialog_button" id="button_schedule_saturday_setup" style="width: 90px; height: 26px; margin-top: 4px" value="Setup" />
+              </div>
+            </div>
+          </div>
+          <div id="div_page_schedule_disable" class="cls_schedule_item">
+            <input type="radio" id="radio_schedule_disable" name="normal_schedule" class="cls_schedule_radio" style="margin-left: 0" />
+            <div style="float: left; width: auto">
+              <label id="label_schedule_disable" for="radio_schedule_disable" class="cls_item_mini_font cls_item_font_light">Disable</label>
+            </div>
+          </div>
+          <!--设置窗口-->
+          <div id="div_normal_schedule_setdialog" style="display: none">
+            <div id="div_setup_panel">
+              <div id="div_setup_weekday_select" class="cls_schedule_dialog_item">
+                <div id="div_weekday_all" class="cls_schedule_dialog_check" style="width: 120px">
+                  <input type="checkbox" id="check_weekday_alldays" class="cls_schedule_dialog_check_item cls_item_hcenter" style="float: left" />
+                  <label for="check_weekday_alldays" id="label_all" class="cls_item_mini_font cls_item_font_light cls_item_hcenter cls_schedule_dialog_check_item_name">All</label>
+                </div>
+                <div id="div_weekday_sunday" class="cls_schedule_dialog_check">
+                  <input type="checkbox" id="check_weekday_sunday" class="cls_schedule_dialog_check_item cls_item_hcenter smartva_checkbox_change" style="float: left" />
+                  <label for="check_weekday_sunday" id="label_sunday" class="cls_item_mini_font cls_item_font_light cls_item_hcenter cls_schedule_dialog_check_item_name">Sunday</label>
+                </div>
+                <div id="div_weekday_monday" class="cls_schedule_dialog_check">
+                  <input type="checkbox" id="check_weekday_monday" class="cls_schedule_dialog_check_item cls_item_hcenter smartva_checkbox_change" style="float: left" />
+                  <label for="check_weekday_monday" id="label_monday" class="cls_item_mini_font cls_item_font_light cls_item_hcenter cls_schedule_dialog_check_item_name">Monday</label>
+                </div>
+                <div id="div_weekday_tuesday" class="cls_schedule_dialog_check">
+                  <input type="checkbox" id="check_weekday_tuesday" class="cls_schedule_dialog_check_item cls_item_hcenter smartva_checkbox_change" style="float: left" />
+                  <label for="check_weekday_tuesday" id="label_tuesday" class="cls_item_mini_font cls_item_font_light cls_item_hcenter cls_schedule_dialog_check_item_name">Tuesday</label>
+                </div>
+                <div id="div_weekday_wednesday" class="cls_schedule_dialog_check">
+                  <input type="checkbox" id="check_weekday_wednesday" class="cls_schedule_dialog_check_item cls_item_hcenter smartva_checkbox_change" style="float: left" />
+                  <label for="check_weekday_wednesday" id="label_wednesday" class="cls_item_mini_font cls_item_font_light cls_item_hcenter cls_schedule_dialog_check_item_name">Wednesday</label>
+                </div>
+                <div id="div_weekday_thursday" class="cls_schedule_dialog_check">
+                  <input type="checkbox" id="check_weekday_thursday" class="cls_schedule_dialog_check_item cls_item_hcenter smartva_checkbox_change" style="float: left" />
+                  <label for="check_weekday_thursday" id="label_thursday" class="cls_item_mini_font cls_item_font_light cls_item_hcenter cls_schedule_dialog_check_item_name">Thursday</label>
+                </div>
+                <div id="div_weekday_friday" class="cls_schedule_dialog_check">
+                  <input type="checkbox" id="check_weekday_friday" class="cls_schedule_dialog_check_item cls_item_hcenter smartva_checkbox_change" style="float: left" />
+                  <label for="check_weekday_friday" id="label_friday" class="cls_item_mini_font cls_item_font_light cls_item_hcenter cls_schedule_dialog_check_item_name">Friday</label>
+                </div>
+                <div id="div_weekday_saturday" class="cls_schedule_dialog_check">
+                  <input type="checkbox" id="check_weekday_saturday" class="cls_schedule_dialog_check_item cls_item_hcenter smartva_checkbox_change" style="float: left" />
+                  <label for="check_weekday_saturday" id="label_saturday" class="cls_item_mini_font cls_item_font_light cls_item_hcenter cls_schedule_dialog_check_item_name">Saturday</label>
+                </div>
+              </div>
+              <div id="div_schedule_timer_sections" style="width: 600px; float: left; margin: 0 0 0 20px">
+                <div id="div_setup_time_section_one" class="cls_schedule_dialog_item">
+                  <div id="div_section_one_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                    <label id="label_section1">Period 1:</label>
+                  </div>
+                  <div id="div_section_one_duration" style="float: left">
+                    <div id="timeredit_one_start" class="cls_schedule_dialog_timer"></div>
+                    <div id="div_timer_split_one" style="width: 22px; height: 22px; float: left; margin-top: 4px">--</div>
+                    <div id="timeredit_one_end" class="cls_schedule_dialog_timer"></div>
+                  </div>
+                </div>
+                <div id="div_setup_time_section_two" class="cls_schedule_dialog_item">
+                  <div id="div_section_two_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                    <label id="label_section2">Period 2:</label>
+                  </div>
+                  <div id="div_section_two_duration" style="float: left">
+                    <div id="timeredit_two_start" class="cls_schedule_dialog_timer"></div>
+                    <div id="div_timer_split_two" style="width: 22px; height: 22px; float: left; margin-top: 4px">--</div>
+                    <div id="timeredit_two_end" class="cls_schedule_dialog_timer"></div>
+                  </div>
+                </div>
+                <div id="div_setup_time_section_three" class="cls_schedule_dialog_item">
+                  <div id="div_section_three_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                    <label id="label_section3">Period 3:</label>
+                  </div>
+                  <div id="div_section_three_duration" style="float: left">
+                    <div id="timeredit_three_start" class="cls_schedule_dialog_timer"></div>
+                    <div id="div_timer_split_three" style="width: 22px; height: 22px; float: left; margin-top: 4px">--</div>
+                    <div id="timeredit_three_end" class="cls_schedule_dialog_timer"></div>
+                  </div>
+                </div>
+                <div id="div_setup_time_section_four" class="cls_schedule_dialog_item">
+                  <div id="div_section_four_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                    <label id="label_section4">Period 4:</label>
+                  </div>
+                  <div id="div_section_four_duration" style="float: left">
+                    <div id="timeredit_four_start" class="cls_schedule_dialog_timer"></div>
+                    <div id="div_timer_split_four" style="width: 22px; height: 22px; float: left; margin-top: 4px">--</div>
+                    <div id="timeredit_four_end" class="cls_schedule_dialog_timer"></div>
+                  </div>
+                </div>
+                <div id="div_setup_time_section_five" class="cls_schedule_dialog_item">
+                  <div id="div_section_five_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                    <label id="label_section5">Period 5:</label>
+                  </div>
+                  <div id="div_section_five_duration" style="float: left">
+                    <div id="timeredit_five_start" class="cls_schedule_dialog_timer"></div>
+                    <div id="div_timer_split_five" style="width: 22px; height: 22px; float: left; margin-top: 4px">--</div>
+                    <div id="timeredit_five_end" class="cls_schedule_dialog_timer"></div>
+                  </div>
+                </div>
+                <div id="div_setup_time_section_six" class="cls_schedule_dialog_item">
+                  <div id="div_section_six_name" class="cls_schedule_dialog_duration_name cls_item_mini_font">
+                    <label id="label_section6">Period 6:</label>
+                  </div>
+                  <div id="div_section_six_duration" style="float: left">
+                    <div id="timeredit_six_start" class="cls_schedule_dialog_timer"></div>
+                    <div id="div_timer_split_six" style="width: 22px; height: 22px; float: left; margin-top: 4px">--</div>
+                    <div id="timeredit_six_end" class="cls_schedule_dialog_timer"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="div_schedule_time_section_options" class="cls_schedule_dialog_item">
+                <div id="div_time_section_options" style="width: 380px; height: 32px; margin: 10px 0 0 20px">
+                  <input type="button" id="button_schedule_timesection_save" class="cls_subpage_content_button" value="Save" />
+                  <input type="button" id="button_schedule_timesection_cancel" class="cls_subpage_content_button" value="Cancel" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="div_page_schedule_options" class="cls_page_schedule_options">
+            <input type="button" id="button_schedule_restore" class="cls_subpage_content_button" value="Restore default" />
+            <input type="button" id="button_schedule_refresh" class="cls_subpage_content_button" value="Refresh" />
+            <input type="button" id="button_schedule_save" class="cls_subpage_content_button" value="Save" />
+          </div>
+        </div>
+        <!--联动设置-->
+        <div id="div_page_actions" style="display: none">
+          <div id="div_page_action_iooutput" class="cls_schedule_item" style="margin-top: 8px">
+            <div id="div_action_iooutput">
+              <input type="checkbox" id="check_action_iooutput" class="cls_schedule_radio" style="float: left; margin-left: 0" />
+              <div style="width: 240px; height: 24px; float: left">
+                <label for="check_action_iooutput" id="label_action_alarm_output" class="cls_item_mini_font cls_item_font_light">Alarm Output</label>
+              </div>
+            </div>
+          </div>
+          <div id="div_page_action_record" class="cls_schedule_item">
+            <div id="div_action_record">
+              <input type="checkbox" id="check_action_record" class="cls_schedule_radio" style="float: left; margin-left: 0" />
+              <div style="width: 240px; height: 24px; float: left">
+                <label for="check_action_record" id="label_action_record" class="cls_item_mini_font cls_item_font_light">Record</label>
+              </div>
+            </div>
+          </div>
+          <div id="div_page_action_ftp" class="cls_schedule_item">
+            <div id="div_action_ftp">
+              <input type="checkbox" id="check_action_ftp" class="cls_schedule_radio" style="float: left; margin-left: 0" />
+              <div style="width: 240px; height: 24px; float: left">
+                <label for="check_action_ftp" id="label_action_ftp" class="cls_item_mini_font cls_item_font_light">FTP</label>
+              </div>
+            </div>
+          </div>
+          <div id="div_page_action_sendemail" class="cls_schedule_item">
+            <div id="div_action_sendemail">
+              <input type="checkbox" id="check_action_sendemail" class="cls_schedule_radio" style="float: left; margin-left: 0" />
+              <div style="width: 240px; height: 24px; float: left">
+                <label for="check_action_sendemail" id="label_action_send_email" class="cls_item_mini_font cls_item_font_light">Send Email</label>
+              </div>
+            </div>
+          </div>
+          <div id="div_page_action_snapshot" class="cls_schedule_item">
+            <div id="div_action_snapshot">
+              <input type="checkbox" id="check_action_snapshot" class="cls_schedule_radio" style="float: left; margin-left: 0" />
+              <div style="width: 240px; height: 24px; float: left">
+                <label for="check_action_snapshot" id="label_action_snapshot" class="cls_item_mini_font cls_item_font_light">Snapshot</label>
+              </div>
+            </div>
+          </div>
+          <div id="div_page_action_audioout" class="cls_schedule_item">
+            <div id="div_action_audioout">
+              <input type="checkbox" id="check_action_audioout" class="cls_schedule_radio" style="float: left; margin-left: 0" />
+              <div style="width: 240px; height: 24px; float: left">
+                <label for="check_action_audioout" id="label_action_audio_out" class="cls_item_mini_font cls_item_font_light">Audio Out</label>
+              </div>
+            </div>
+          </div>
+          <div id="div_page_action_evtserver" class="cls_schedule_item">
+            <div id="div_action_evtserver">
+              <input type="checkbox" id="check_action_evtserver" class="cls_schedule_radio" style="float: left; margin-left: 0" />
+              <div style="width: 240px; height: 24px; float: left">
+                <label for="check_action_evtserver" id="label_action_notify_server" class="cls_item_mini_font cls_item_font_light">Notify the event server</label>
+              </div>
+            </div>
+          </div>
+          <div id="div_page_action_ledblink" class="cls_schedule_item" style="display: none">
+            <div id="div_action_ledblink">
+              <input type="checkbox" id="check_action_ledblink" class="cls_schedule_radio" style="float: left; margin-left: 0" />
+              <div style="width: 240px; height: 24px; float: left">
+                <label for="check_action_ledblink" id="label_action_alarm_ledblink" class="cls_item_mini_font cls_item_font_light">LED Flashing</label>
+              </div>
+            </div>
+          </div>
+          <div id="div_page_action_rsio" class="cls_schedule_item">
+            <div id="div_action_rsio">
+              <input type="checkbox" id="check_action_rsio" class="cls_schedule_radio" style="float: left; margin-left: 0" />
+              <div style="width: 240px; height: 24px; float: left">
+                <label for="check_action_rsio" id="label_action_rsio" class="cls_item_mini_font cls_item_font_light">RS485</label>
+              </div>
+            </div>
+          </div>
+          <div id="div_page_actions_option" class="cls_page_schedule_options">
+            <input type="button" id="button_actions_restore" class="cls_subpage_content_button" value="Restore default" />
+            <input type="button" id="button_actions_refresh" class="cls_subpage_content_button" value="Refresh" />
+            <input type="button" id="button_actions_save" class="cls_subpage_content_button" value="Save" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

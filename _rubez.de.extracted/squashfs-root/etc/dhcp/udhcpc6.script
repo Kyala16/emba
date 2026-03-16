@@ -1,0 +1,55 @@
+#!/bin/sh
+# udhcpc script edited by Tim Riker <Tim@Rikers.org>
+
+RESOLV_CONF="/tmp/resolv.conf"
+DHCP_OPT_CONF="/tmp/dhcpopt.conf"
+DHCP_CONF="/tmp/ipv6_dhcp.conf"
+
+[ -n "$1" ] || { echo "Error: should be called from udhcpc"; exit 1; }
+[ -n "$ipv6" ] && ip="$ipv6/128"
+
+
+
+save_ipv6_dhcp_set()
+{
+	dev=$1
+	tag=$2
+	val=$3
+	old=`cat $DHCP_CONF | grep "$dev $tag"`
+	new="$dev $tag $val"
+	
+	if [ -n "$old" ]; then
+		sed -i "s#$old#$new#g" $DHCP_CONF
+	else
+		echo "$new" >> $DHCP_CONF
+	fi
+}
+
+case "$1" in
+	deconfig)
+		echo "Delete IP address on $interface"
+		save_ipv6_dhcp_set $interface addr ""
+		save_ipv6_dhcp_set $interface nameserver0 ""
+		save_ipv6_dhcp_set $interface nameserver1 ""
+		;;
+
+	renew|bound)
+		echo "Setting IP address $ip on $interface"
+		#ifconfig $interface $ip
+		save_ipv6_dhcp_set $interface addr $ip
+
+		if [ -n "$router" ] ; then
+			echo "unsupport routers options now"
+		fi
+
+		num=0
+		for i in $dns ; do
+			echo " Adding DNS server $i"
+			#echo "nameserver $i" >> $RESOLV_CONF-$$
+			save_ipv6_dhcp_set $interface nameserver$num $i
+			let "num=$num+1"
+		done
+		;;
+esac
+
+exit 0

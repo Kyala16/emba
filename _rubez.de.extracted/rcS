@@ -1,0 +1,133 @@
+#! /bin/sh
+
+/bin/mount -a
+
+echo "
+            _ _ _ _ _ _ _ _ _ _ _ _
+            \  _  _   _  _ _ ___
+            / /__/ \ |_/
+           / __   /  -  _ ___
+          / /  / /  / /
+  _ _ _ _/ /  /  \_/  \_ ______
+___________\___\__________________
+"
+for initscript in /etc/init.d/S[0-9][0-9]*
+do
+	if [ -x $initscript ] ;
+	then
+		echo "[RCS]: $initscript"
+		$initscript
+	fi
+done
+
+
+
+################################################################################
+# ANSI COLORS
+COLOR_CRE="[K"
+COLOR_NORMAL="[0;39m"
+COLOR_RED="[1;31m"
+COLOR_GREEN="[1;32m"
+COLOR_YELLOW="[1;33m"
+COLOR_BLUE="[1;34m"
+COLOR_MAGENTA="[1;35m"
+COLOR_CYAN="[1;36m"
+COLOR_WHITE="[1;37m"
+
+#$1: string
+#$2: color
+ECHO()
+{
+  [ -n "$2" ] && eval echo -n \"\${${2}}\";
+  echo "${1}${COLOR_NORMAL}"
+}
+
+PRI()
+{
+  echo "${COLOR_GREEN} ^vv^: ${1}${COLOR_NORMAL}" >&2
+}
+
+ERR()
+{
+  echo "${COLOR_RED} ERR: ${1}${COLOR_NORMAL}" >&2
+}
+
+WARN()
+{
+  echo "${COLOR_YELLOW}WARN: ${1}${COLOR_NORMAL}" >&2
+}
+
+################################################################################
+export IPCAM_HOME=/home/bvtech
+export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:$IPCAM_HOME/lib"
+################################################################################
+CONFIG_IPCAM_MAC()
+{
+    ENV_MAC=`fw_printenv mac`
+    if [ ! -n "$ENV_MAC" ]; then
+        ENV_MAC=`grep mac /mnt/nand/system.conf`
+    fi
+    MAC_VAL=${ENV_MAC:4}
+    if [ "$MAC_VAL" != "" ]; then
+        ifconfig  eth0 hw ether $MAC_VAL
+    fi
+}
+
+CONFIG_IPCAM_REG()
+{
+    ENV_HARDVER=`fw_printenv BoardType`
+    if [ ! -n "$ENV_HARDVER" ]; then
+        ENV_HARDVER=`grep Hardware /mnt/nand/system.conf`
+        HARDVER_VAL=${ENV_HARDVER:11}
+    else
+        HARDVER_VAL=${ENV_HARDVER:10}
+    fi
+
+}
+
+################################################################################
+#insmod gpio drv and mount mtd
+ubiattach /dev/ubi_ctrl -m 4 
+mount -o sync -t ubifs /dev/ubi0_0 /mnt/config
+if [ $? -ne 0 ];then
+  ubidetach -d 0 /dev/ubi_ctrl
+  ubiformat /dev/mtd4 -y   
+  ubiattach /dev/ubi_ctrl -m 4   
+  ubimkvol /dev/ubi0 -N config -m  
+  mount -o sync -t ubifs /dev/ubi0_0 /mnt/config
+fi
+
+CONFIG_IPCAM_REG
+CONFIG_IPCAM_MAC
+
+
+ubiattach /dev/ubi_ctrl -m 5
+mount -r -t ubifs /dev/ubi1_0 /mnt/data
+if [ $? -ne 0 ];then
+  ubidetach -d 1 /dev/ubi_ctrl
+  ubiformat /dev/mtd5  -y
+  ubiattach /dev/ubi_ctrl -m 5  
+  ubimkvol /dev/ubi1 -N data -m  
+  mount -t ubifs /dev/ubi1_0 /mnt/data
+fi
+
+################################################################################
+ifconfig lo 127.0.0.1
+ifconfig eth0 192.168.1.120
+route add default gw 192.168.1.1
+ifconfig eth0 up
+################################################################################
+mkdir -p /tmp/var/run
+
+if [ -f "/mnt/app/start_ipcam.sh" ] && [ -f "/mnt/app/bvipcam" ]; then
+    mount /mnt/app $IPCAM_HOME
+    cd $IPCAM_HOME
+    ./start_ipcam.sh
+else
+    echo "decompress application failed! start recovery."
+    cd /home/recovery/
+    ./recovery.sh
+fi
+################################################################################
+#others
+echo "${COLOR_GREEN} System startup success.${COLOR_NORMAL}"
