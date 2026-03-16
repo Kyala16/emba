@@ -1,13 +1,28 @@
-EMBA_Minimal_SBOM
+# EMBA_Minimal_SBOM
+____
 
+## This project for Hard lab (Q1)
+
+You should: 
+```
+# Clone this project
+git clone https://github.com/Kyala16/emba.git
+cd emba
+
+# Create dir for log
 mkdir ~/emba_output
 mkdir ~/emba_output/logs
 mkdir ~/emba_output/external
 
-docker build -t emba-binwalkv2 .
-docker run --rm  -v <path_to_firmware>:/firmware.de:ro \
+# Create docker image
+docker build -t emba-minimal .
+
+# Run emba in docker with your firmware
+docker run --rm  -v <path_to_firmware>:/firmware.<extension>:ro \
  -v ~/emba-output/logs:/logs  \
- -v ~/emba-output/external:/external   emba-binwalkv2:latest \
-  /bin/bash -c "./emba -l /logs -f /firmware.de \ 
+ -v ~/emba-output/external:/external   emba-minimal:latest \
+  /bin/bash -c "./emba -l /logs -f /firmware.<extension> \ 
  -p /scan-profiles/default-sbom.emba"
+
+```
 
