@@ -41,9 +41,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # =============================================================================
-# 2. BINWALK ИЗ ИСХОДНИКОВ (v2.3.3 — последний с setup.py)
+# 2. BINWALK ИЗ ИСХОДНИКОВ (v2.3.4 — последний с setup.py)
 # =============================================================================
-RUN git clone --depth 1 --branch v2.3.3 https://github.com/ReFirmLabs/binwalk.git /tmp/binwalk && \
+RUN git clone --depth 1 --branch v2.3.4 https://github.com/ReFirmLabs/binwalk.git /tmp/binwalk && \
     cd /tmp/binwalk && \
     python3 setup.py install && \
     
